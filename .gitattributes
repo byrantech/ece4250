@@ -1,2 +1,11 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Magic VLSI files
+*.mag  -text -diff
+*.ext  -text -diff
+*.tech -text -diff
+
+# Optional (if used in your flow)
+*.lef  -text -diff
+*.def  -text -diff
