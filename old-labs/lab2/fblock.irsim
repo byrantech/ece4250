@@ -1,0 +1,188 @@
+
+
+
+
+h Vdd!
+l GND!
+s
+
+
+vector a_inputs a7 a6 a5 a4 a3 a2 a1 a0
+vector b_inputs b7 b6 b5 b4 b3 b2 b1 b0
+vector config g0 g1 g2 g3
+vector f_outputs f7 f6 f5 f4 f3 f2 f1 f0
+
+
+echo "=== 8-bit AND Gate (0001) ==="
+setvector config 0001
+s
+
+echo "A=00000000, B=00000000, F=00000000"
+setvector a_inputs 00000000
+setvector b_inputs 00000000
+s
+assert f_outputs 00000000
+
+echo "A=11111111, B=11111111, F=11111111"
+setvector a_inputs 11111111
+setvector b_inputs 11111111
+s
+assert f_outputs 11111111
+
+echo "A=00000001, B=11111111, F=00000001"
+setvector a_inputs 00000001
+setvector b_inputs 11111111
+s
+assert f_outputs 00000001
+
+echo "A=10101010, B=01010101, F=00000000"
+setvector a_inputs 10101010
+setvector b_inputs 01010101
+s
+assert f_outputs 00000000
+
+
+echo "=== 8-bit OR Gate (0111) ==="
+setvector config 0111
+s
+
+echo "A=00000000, B=00000000, F=00000000"
+setvector a_inputs 00000000
+setvector b_inputs 00000000
+s
+assert f_outputs 00000000
+
+echo "A=11111111, B=11111111, F=11111111"
+setvector a_inputs 11111111
+setvector b_inputs 11111111
+s
+assert f_outputs 11111111
+
+echo "A=10101010, B=01010101, F=11111111"
+setvector a_inputs 10101010
+setvector b_inputs 01010101
+s
+assert f_outputs 11111111
+
+echo "A=00000000, B=11110000, F=11110000"
+setvector a_inputs 00000000
+setvector b_inputs 11110000
+s
+assert f_outputs 11110000
+
+
+echo "=== 8-bit XOR Gate (0110) ==="
+setvector config 0110
+s
+
+echo "A=00000000, B=00000000, F=00000000"
+setvector a_inputs 00000000
+setvector b_inputs 00000000
+s
+assert f_outputs 00000000
+
+echo "A=11111111, B=11111111, F=00000000"
+setvector a_inputs 11111111
+setvector b_inputs 11111111
+s
+assert f_outputs 00000000
+
+echo "A=10101010, B=01010101, F=11111111"
+setvector a_inputs 10101010
+setvector b_inputs 01010101
+s
+assert f_outputs 11111111
+
+echo "A=11110000, B=10101010, F=01011010"
+setvector a_inputs 11110000
+setvector b_inputs 10101010
+s
+assert f_outputs 01011010
+
+
+echo "=== 8-bit NAND Gate (1110) ==="
+setvector config 1110
+s
+
+echo "A=00000000, B=00000000, F=11111111"
+setvector a_inputs 00000000
+setvector b_inputs 00000000
+s
+assert f_outputs 11111111
+
+echo "A=11111111, B=11111111, F=00000000"
+setvector a_inputs 11111111
+setvector b_inputs 11111111
+s
+assert f_outputs 00000000
+
+echo "A=11110000, B=10101010, F=01011111"
+setvector a_inputs 11110000
+setvector b_inputs 10101010
+s
+assert f_outputs 01011111
+
+echo "=== 8-bit Constant 0 (0000) ==="
+setvector config 0000
+s
+
+echo "A=11111111, B=11111111, F=00000000"
+setvector a_inputs 11111111
+setvector b_inputs 11111111
+s
+assert f_outputs 00000000
+
+echo "A=10101010, B=01010101, F=00000000"
+setvector a_inputs 10101010
+setvector b_inputs 01010101
+s
+assert f_outputs 00000000
+
+
+echo "=== 8-bit Constant 1 (1111) ==="
+setvector config 1111
+s
+
+echo "A=00000000, B=00000000, F=11111111"
+setvector a_inputs 00000000
+setvector b_inputs 00000000
+s
+assert f_outputs 11111111
+
+echo "A=10101010, B=01010101, F=11111111"
+setvector a_inputs 10101010
+setvector b_inputs 01010101
+s
+assert f_outputs 11111111
+
+
+echo "=== Random Pattern Tests (AND) ==="
+setvector config 0001
+s
+
+echo "A=11010011, B=10110101, F=10010001"
+setvector a_inputs 11010011
+setvector b_inputs 10110101
+s
+assert f_outputs 10010001
+
+echo "A=01101100, B=11001001, F=01001000"
+setvector a_inputs 01101100
+setvector b_inputs 11001001
+s
+assert f_outputs 01001000
+
+
+echo "=== Timing Analysis ==="
+setvector config 0001
+setvector a_inputs 10101010
+setvector b_inputs 01010101
+s
+setvector a_inputs 11111111
+setvector b_inputs 11111111
+s
+path f0
+path f7
+
+echo "=== All Tests Complete ==="
+ana a0 a1 a2 a3 a4 a5 a6 a7 b0 b1 b2 b3 b4 b5 b6 b7 f0 f1 f2 f3 f4 f5 f6 f7 g0 g1 g2 g3

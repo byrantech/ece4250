@@ -1,0 +1,207 @@
+| 8-bit Latch Test File for IRSIM (Refactored for in/out)
+| Tests transparent latch with in0-in7 inputs, out0-out7 outputs, and CLK
+
+h Vdd!
+l GND!
+s
+
+| Define vectors for easier manipulation
+vector in_inputs in7 in6 in5 in4 in3 in2 in1 in0
+vector out_outputs out7 out6 out5 out4 out3 out2 out1 out0
+
+echo "=== 8-bit Latch Functional Tests (Refactored) ==="
+echo ""
+
+echo "=== Test 1: Transparent Mode (CLK=1) - Data Passes Through ==="
+h CLK
+s
+
+echo "IN=00000000, CLK=1, OUT=00000000"
+setvector in_inputs 00000000
+s
+assert out_outputs 00000000
+
+echo "IN=11111111, CLK=1, OUT=11111111"
+setvector in_inputs 11111111
+s
+assert out_outputs 11111111
+
+echo "IN=10101010, CLK=1, OUT=10101010"
+setvector in_inputs 10101010
+s
+assert out_outputs 10101010
+
+echo "IN=01010101, CLK=1, OUT=01010101"
+setvector in_inputs 01010101
+s
+assert out_outputs 01010101
+
+echo "IN=11110000, CLK=1, OUT=11110000"
+setvector in_inputs 11110000
+s
+assert out_outputs 11110000
+
+echo ""
+echo "=== Test 2: Latch Mode (CLK=0) - Data Held ==="
+
+echo "Set IN=10101010, CLK=1 (store pattern)"
+setvector in_inputs 10101010
+h CLK
+s
+assert out_outputs 10101010
+
+echo "CLK=0 (latch closes), OUT should hold 10101010"
+l CLK
+s
+assert out_outputs 10101010
+
+echo "Change IN=01010101, CLK=0, OUT still holds 10101010"
+setvector in_inputs 01010101
+s
+assert out_outputs 10101010
+
+echo "Change IN=11111111, CLK=0, OUT still holds 10101010"
+setvector in_inputs 11111111
+s
+assert out_outputs 10101010
+
+echo "Change IN=00000000, CLK=0, OUT still holds 10101010"
+setvector in_inputs 00000000
+s
+assert out_outputs 10101010
+
+echo ""
+echo "=== Test 3: Open Latch and Store New Value ==="
+echo "CLK=1, IN=11001100, should update to 11001100"
+h CLK
+setvector in_inputs 11001100
+s
+assert out_outputs 11001100
+
+echo "CLK=0, latch new value"
+l CLK
+s
+assert out_outputs 11001100
+
+echo "Change IN=00110011, OUT should still be 11001100"
+setvector in_inputs 00110011
+s
+assert out_outputs 11001100
+
+echo ""
+echo "=== Test 4: Sequential Store Operations ==="
+
+echo "Store pattern 11110000"
+setvector in_inputs 11110000
+h CLK
+s
+assert out_outputs 11110000
+l CLK
+s
+assert out_outputs 11110000
+
+echo "Store pattern 00001111"
+setvector in_inputs 00001111
+h CLK
+s
+assert out_outputs 00001111
+l CLK
+s
+assert out_outputs 00001111
+
+echo "Store pattern 10011001"
+setvector in_inputs 10011001
+h CLK
+s
+assert out_outputs 10011001
+l CLK
+s
+assert out_outputs 10011001
+
+echo ""
+echo "=== Test 5: Individual Bit Tests ==="
+
+echo "Store 00000001 (in0 high)"
+setvector in_inputs 00000001
+h CLK
+s
+assert out_outputs 00000001
+l CLK
+s
+
+echo "Store 10000000 (in7 high)"
+setvector in_inputs 10000000
+h CLK
+s
+assert out_outputs 10000000
+l CLK
+s
+
+echo "Store 00010000 (in4 high)"
+setvector in_inputs 00010000
+h CLK
+s
+assert out_outputs 00010000
+l CLK
+s
+
+echo ""
+echo "=== Test 6: Timing Analysis ==="
+echo "Testing propagation delays..."
+
+setvector in_inputs 00000000
+h CLK
+s
+path out0
+path out7
+
+setvector in_inputs 11111111
+s
+path out0
+path out7
+
+l CLK
+setvector in_inputs 00000000
+s
+
+h CLK
+s
+path out0
+path out7
+
+echo ""
+echo "=== Test 7: Clock Edge Transitions ==="
+echo "Multiple clock cycles with different data"
+
+echo "Cycle 1: Store 11111111"
+setvector in_inputs 11111111
+l CLK
+s
+h CLK
+s
+assert out_outputs 11111111
+l CLK
+s
+assert out_outputs 11111111
+
+echo "Cycle 2: Store 00000000"
+setvector in_inputs 00000000
+h CLK
+s
+assert out_outputs 00000000
+l CLK
+s
+assert out_outputs 00000000
+
+echo "Cycle 3: Store 01010101"
+setvector in_inputs 01010101
+h CLK
+s
+assert out_outputs 01010101
+l CLK
+s
+assert out_outputs 01010101
+
+echo ""
+echo "=== All Latch Tests Complete ==="
+ana in0 in1 in2 in3 in4 in5 in6 in7 out0 out1 out2 out3 out4 out5 out6 out7 CLK

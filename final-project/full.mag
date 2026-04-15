@@ -1,0 +1,231 @@
+magic
+tech scmos
+timestamp 1762314941
+<< metal1 >>
+rect 654 336 676 341
+rect 777 336 799 341
+rect -307 304 -303 308
+rect -300 305 -287 310
+rect -298 215 -293 305
+rect -284 304 -279 309
+rect -28 223 -23 321
+rect -11 281 -6 324
+rect 12 270 17 321
+rect 517 315 534 320
+rect 121 311 126 315
+rect 637 291 642 308
+rect 637 286 688 291
+rect 683 245 688 286
+rect 668 240 688 245
+rect -28 218 4 223
+rect -298 210 -6 215
+rect 310 49 315 58
+rect 344 49 349 58
+<< m2contact >>
+rect -11 324 -6 329
+rect -222 315 -217 320
+rect -308 299 -303 304
+rect -284 299 -279 304
+rect 534 315 539 320
+rect 121 306 126 311
+rect 37 234 42 239
+rect 298 236 303 241
+rect -6 210 -1 215
+rect 37 200 42 205
+<< metal2 >>
+rect -424 1567 -401 1572
+rect -424 1394 -401 1399
+rect -424 1221 -401 1226
+rect -424 1048 -401 1053
+rect -424 875 -401 880
+rect -424 702 -401 707
+rect -424 529 -401 534
+rect -424 356 -401 361
+rect -397 247 -392 435
+rect -11 329 -6 435
+rect -11 310 -6 324
+rect 47 306 94 311
+rect 99 306 121 311
+rect -303 299 -284 304
+rect 203 303 208 435
+rect 534 320 539 435
+rect 534 300 539 315
+rect 577 296 582 1673
+rect 642 1610 671 1615
+rect 642 1437 671 1442
+rect 642 1264 671 1269
+rect 642 1091 671 1096
+rect 642 918 671 923
+rect 642 745 671 750
+rect 642 572 671 577
+rect 642 399 671 404
+rect 298 291 582 296
+rect 46 280 289 285
+rect 46 278 51 280
+rect -280 229 -275 250
+rect 298 241 302 291
+rect 717 286 722 1673
+rect 782 1610 811 1615
+rect 782 1437 811 1442
+rect 782 1264 811 1269
+rect 782 1091 811 1096
+rect 782 918 811 923
+rect 782 745 811 750
+rect 782 572 811 577
+rect 782 399 811 404
+rect 313 281 722 286
+rect 37 229 42 234
+rect -280 224 42 229
+rect -1 210 42 215
+rect 37 205 42 210
+rect 632 190 637 202
+rect 626 185 637 190
+rect 566 176 631 181
+rect 548 144 581 149
+rect 732 146 737 296
+rect 811 200 816 308
+<< m3contact >>
+rect 42 306 47 311
+rect 94 306 99 311
+rect 289 280 294 285
+rect 46 273 51 278
+rect 811 308 816 313
+rect 862 308 867 313
+rect 308 280 313 285
+rect 732 296 737 301
+rect 526 271 531 276
+rect 811 195 816 200
+rect 732 141 737 146
+<< m123contact >>
+rect 637 308 642 313
+rect -11 276 -6 281
+rect 250 247 255 252
+rect 46 236 51 241
+rect 577 195 582 200
+rect 588 141 593 146
+<< metal3 >>
+rect 203 301 208 303
+rect 203 296 732 301
+rect 862 287 867 308
+rect -11 282 124 287
+rect -11 281 -6 282
+rect 46 241 51 273
+rect 119 262 124 282
+rect 294 280 308 285
+rect 526 282 867 287
+rect 526 276 531 282
+rect 119 257 187 262
+rect 182 252 187 257
+rect 182 247 250 252
+rect 582 195 811 200
+rect 62 181 67 186
+rect 146 181 151 186
+rect 230 181 235 186
+rect 314 181 319 186
+rect 398 181 403 186
+rect 482 181 487 186
+rect 63 153 68 158
+rect 147 153 152 158
+rect 231 153 236 158
+rect 315 153 320 158
+rect 399 153 404 158
+rect 483 153 488 158
+rect 593 141 732 146
+rect 556 95 561 110
+<< m4contact >>
+rect 53 175 58 180
+<< metal4 >>
+rect -408 1655 737 1660
+rect 944 1655 950 1660
+rect -408 1482 737 1487
+rect 944 1482 950 1487
+rect -408 1309 737 1314
+rect 944 1309 950 1314
+rect -408 1136 737 1141
+rect 944 1136 950 1141
+rect -408 963 737 968
+rect 944 963 950 968
+rect -408 790 737 795
+rect 944 790 950 795
+rect -408 617 737 622
+rect 944 617 950 622
+rect -408 444 737 449
+rect 944 444 950 449
+rect -12 175 53 180
+use datapath  datapath_0
+timestamp 1762314782
+transform 1 0 -315 0 1 315
+box -109 -68 1326 1397
+use fsm  fsm_0
+timestamp 1762314782
+transform 1 0 54 0 1 -14
+box -54 14 626 295
+<< labels >>
+flabel metal2 -422 358 -422 358 1 FreeSans 80 0 0 0 in0
+flabel metal2 -422 531 -422 531 1 FreeSans 80 0 0 0 in1
+flabel metal2 -422 704 -422 704 1 FreeSans 80 0 0 0 in2
+flabel metal2 -422 877 -422 877 1 FreeSans 80 0 0 0 in3
+flabel metal2 -422 1050 -422 1050 1 FreeSans 80 0 0 0 in4
+flabel metal2 -422 1223 -422 1223 1 FreeSans 80 0 0 0 in5
+flabel metal2 -422 1396 -422 1396 1 FreeSans 80 0 0 0 in6
+flabel metal2 -422 1569 -422 1569 1 FreeSans 80 0 0 0 in7
+flabel metal2 577 146 577 146 1 FreeSans 80 0 0 0 PHI0
+flabel metal2 577 178 577 178 1 FreeSans 80 0 0 0 PHI1
+flabel metal3 558 104 558 104 1 FreeSans 80 0 0 0 RESET
+flabel metal1 347 50 347 50 1 FreeSans 80 0 0 0 ITER
+flabel metal1 313 51 313 51 1 FreeSans 80 0 0 0 LOAD
+flabel metal3 65 155 65 155 1 FreeSans 80 0 0 0 nh1
+flabel metal3 149 155 149 155 1 FreeSans 80 0 0 0 nh2
+flabel metal3 233 155 233 155 1 FreeSans 80 0 0 0 nh3
+flabel metal3 317 155 317 155 1 FreeSans 80 0 0 0 nh4
+flabel metal3 401 155 401 155 1 FreeSans 80 0 0 0 nh5
+flabel metal3 485 155 485 155 1 FreeSans 80 0 0 0 nh6
+flabel metal3 64 183 64 183 1 FreeSans 80 0 0 0 h1
+flabel metal3 148 183 148 183 1 FreeSans 80 0 0 0 h2
+flabel metal3 232 183 232 183 1 FreeSans 80 0 0 0 h3
+flabel metal3 316 183 316 183 1 FreeSans 80 0 0 0 h4
+flabel metal3 400 183 400 183 1 FreeSans 80 0 0 0 h5
+flabel metal3 484 183 484 183 1 FreeSans 80 0 0 0 h6
+flabel metal4 947 447 947 447 1 FreeSans 80 0 0 0 out0
+flabel metal4 947 620 947 620 1 FreeSans 80 0 0 0 out1
+flabel metal4 947 793 947 793 1 FreeSans 80 0 0 0 out2
+flabel metal4 947 966 947 966 1 FreeSans 80 0 0 0 out3
+flabel metal4 947 1139 947 1139 1 FreeSans 80 0 0 0 out4
+flabel metal4 947 1312 947 1312 1 FreeSans 80 0 0 0 out5
+flabel metal4 947 1485 947 1485 1 FreeSans 80 0 0 0 out6
+flabel metal4 947 1658 947 1658 1 FreeSans 80 0 0 0 out7
+flabel metal4 -275 446 -275 446 1 FreeSans 80 0 0 0 wz0
+flabel metal4 -275 619 -275 619 1 FreeSans 80 0 0 0 wz1
+flabel metal4 -275 792 -275 792 1 FreeSans 80 0 0 0 wz2
+flabel metal4 -275 965 -275 965 1 FreeSans 80 0 0 0 wz3
+flabel metal4 -275 1138 -275 1138 1 FreeSans 80 0 0 0 wz4
+flabel metal4 -275 1311 -275 1311 1 FreeSans 80 0 0 0 wz5
+flabel metal4 -275 1484 -275 1484 1 FreeSans 80 0 0 0 wz6
+flabel metal4 -275 1657 -275 1657 1 FreeSans 80 0 0 0 wz7
+flabel metal2 664 401 664 401 1 FreeSans 80 0 0 0 reg0d0
+flabel metal2 664 574 664 574 1 FreeSans 80 0 0 0 reg1d1
+flabel metal2 664 747 664 747 1 FreeSans 80 0 0 0 reg2d2
+flabel metal2 664 920 664 920 1 FreeSans 80 0 0 0 reg3d3
+flabel metal2 664 1093 664 1093 1 FreeSans 80 0 0 0 reg4d4
+flabel metal2 664 1266 664 1266 1 FreeSans 80 0 0 0 reg5d5
+flabel metal2 664 1439 664 1439 1 FreeSans 80 0 0 0 reg6d6
+flabel metal2 664 1612 664 1612 1 FreeSans 80 0 0 0 reg7d7
+flabel metal2 804 575 804 575 1 FreeSans 80 0 0 0 reg2d1
+flabel metal2 804 748 804 748 1 FreeSans 80 0 0 0 reg3d2
+flabel metal2 804 921 804 921 1 FreeSans 80 0 0 0 reg4d3
+flabel metal2 804 1094 804 1094 1 FreeSans 80 0 0 0 reg5d4
+flabel metal2 804 1267 804 1267 1 FreeSans 80 0 0 0 reg6d5
+flabel metal2 804 1440 804 1440 1 FreeSans 80 0 0 0 reg7d6
+flabel metal2 804 1613 804 1613 1 FreeSans 80 0 0 0 reg8d7
+flabel metal2 -395 287 -395 287 1 FreeSans 80 0 0 0 ld
+flabel metal2 -9 334 -9 334 1 FreeSans 80 0 0 0 rfb
+flabel metal2 205 333 205 333 1 FreeSans 80 0 0 0 ros
+flabel metal2 536 328 536 328 1 FreeSans 80 0 0 0 ras
+flabel metal1 639 305 639 305 1 FreeSans 80 0 0 0 reg0r0
+flabel metal2 579 304 579 304 1 FreeSans 80 0 0 0 reg0w
+flabel metal2 719 305 719 305 1 FreeSans 80 0 0 0 reg1w
+flabel metal2 813 302 813 302 1 FreeSans 80 0 0 0 reg1r1
+flabel metal3 865 299 865 299 1 FreeSans 80 0 0 0 rd
+flabel metal2 804 402 804 402 1 FreeSans 80 0 0 0 reg1d0
+flabel metal4 -12 175 53 180 1 FreeSans 80 0 0 0 READY
+<< end >>

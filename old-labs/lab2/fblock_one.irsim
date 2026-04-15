@@ -1,0 +1,224 @@
+h Vdd!
+l GND!
+
+s
+
+vector inputs b a
+vector config g0 g1 g2 g3
+
+echo "=== AND Gate (0001) ==="
+
+
+setvector config 0001
+s
+
+
+echo "Input: a=0, b=0, Expected f=0"
+setvector inputs 00
+s
+assert f 0
+
+echo "Input: a=1, b=0, Expected f=0"
+setvector inputs 01
+s
+assert f 0
+
+echo "Input: a=0, b=1, Expected f=0"
+setvector inputs 10
+s
+assert f 0
+
+echo "Input: a=1, b=1, Expected f=1"
+setvector inputs 11
+s
+assert f 1
+
+
+echo "=== OR Gate (0111) ==="
+
+
+setvector config 0111
+s
+
+
+echo "Input: a=0, b=0, Expected f=0"
+setvector inputs 00
+s
+assert f 0
+
+echo "Input: a=1, b=0, Expected f=1"
+setvector inputs 01
+s
+assert f 1
+
+echo "Input: a=0, b=1, Expected f=1"
+setvector inputs 10
+s
+assert f 1
+
+echo "Input: a=1, b=1, Expected f=1"
+setvector inputs 11
+s
+assert f 1
+
+
+
+
+echo "=== XOR Gate (0110) ==="
+
+
+setvector config 0110
+s
+
+
+echo "Input: a=0, b=0, Expected f=0"
+setvector inputs 00
+s
+assert f 0
+
+echo "Input: a=1, b=0, Expected f=1"
+setvector inputs 01
+s
+assert f 1
+
+echo "Input: a=0, b=1, Expected f=1"
+setvector inputs 10
+s
+assert f 1
+
+echo "Input: a=1, b=1, Expected f=0"
+setvector inputs 11
+s
+assert f 0
+
+
+
+
+echo "=== NAND Gate (1110) ==="
+
+
+setvector config 1110
+s
+
+
+echo "Input: a=0, b=0, Expected f=1"
+setvector inputs 00
+s
+assert f 1
+
+echo "Input: a=1, b=0, Expected f=1"
+setvector inputs 01
+s
+assert f 1
+
+echo "Input: a=0, b=1, Expected f=1"
+setvector inputs 10
+s
+assert f 1
+
+echo "Input: a=1, b=1, Expected f=0"
+setvector inputs 11
+s
+assert f 0
+
+
+
+
+echo "=== NOR Gate (1000) ==="
+
+
+setvector config 1000
+s
+
+
+echo "Input: a=0, b=0, Expected f=1"
+setvector inputs 00
+s
+assert f 1
+
+echo "Input: a=1, b=0, Expected f=0"
+setvector inputs 01
+s
+assert f 0
+
+echo "Input: a=0, b=1, Expected f=0"
+setvector inputs 10
+s
+assert f 0
+
+echo "Input: a=1, b=1, Expected f=0"
+setvector inputs 11
+s
+assert f 0
+
+
+echo "=== Const 0 (0000) ==="
+
+
+setvector config 0000
+s
+
+
+echo "Input: a=0, b=0, Expected f=0"
+setvector inputs 00
+s
+assert f 0
+
+echo "Input: a=1, b=0, Expected f=0"
+setvector inputs 01
+s
+assert f 0
+
+echo "Input: a=0, b=1, Expected f=0"
+setvector inputs 10
+s
+assert f 0
+
+echo "Input: a=1, b=1, Expected f=0"
+setvector inputs 11
+s
+assert f 0
+
+
+
+
+echo "=== Const 1 (1111) ==="
+
+
+setvector config 1111
+s
+
+
+echo "Input: a=0, b=0, Expected f=1"
+setvector inputs 00
+s
+assert f 1
+
+echo "Input: a=1, b=0, Expected f=1"
+setvector inputs 01
+s
+assert f 1
+
+echo "Input: a=0, b=1, Expected f=1"
+setvector inputs 10
+s
+assert f 1
+
+echo "Input: a=1, b=1, Expected f=1"
+setvector inputs 11
+s
+assert f 1
+
+echo "=== Timing Analysis w/ AND Gate ==="
+
+
+setvector config 0001
+setvector inputs 10
+s
+setvector inputs 11
+s
+path f
+
+echo "=== All Tests Complete ==="
+
+ana a b g0 g1 g2 g3 f

@@ -1,0 +1,409 @@
+# power rails
+h Vdd!
+l GND!
+s
+h in0 in1 
+l in2 in3 in4
+h en
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+d o0 o1 o2 o3 o4 o5 o6 o7
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+d o0 o1 o2 o3 o4 o5 o6 o7
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+d o0 o1 o2 o3 o4 o5 o6 o7
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+d o0 o1 o2 o3 o4 o5 o6 o7
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+d o0 o1 o2 o3 o4 o5 o6 o7
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+d o0 o1 o2 o3 o4 o5 o6 o7
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+d o0 o1 o2 o3 o4 o5 o6 o7
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+l clk_all 
+s
+h clk_all 
+s
+d o0 o1 o2 o3 o4 o5 o6 o7
+
+
+
+
+
+

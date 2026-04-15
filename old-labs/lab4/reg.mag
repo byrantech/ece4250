@@ -1,0 +1,67 @@
+magic
+tech scmos
+timestamp 1761166680
+<< metal1 >>
+rect 38 1220 43 1225
+rect 126 1219 131 1224
+rect 38 1047 43 1052
+rect 126 1046 131 1051
+rect 38 874 43 879
+rect 126 873 131 878
+rect 38 701 43 706
+rect 126 700 131 705
+rect 38 528 43 533
+rect 126 527 131 532
+rect 38 355 43 360
+rect 126 354 131 359
+rect 38 182 43 187
+rect 126 181 131 186
+rect 38 9 43 14
+rect 126 8 131 13
+<< metal2 >>
+rect 23 0 28 1290
+rect 52 1224 77 1229
+rect 52 1051 77 1056
+rect 52 878 77 883
+rect 52 705 77 710
+rect 52 532 77 537
+rect 52 359 77 364
+rect 52 186 77 191
+rect 52 13 77 18
+<< metal3 >>
+rect 83 0 88 1239
+rect 117 0 122 1239
+use register_one  register_one_0
+array 0 0 131 0 7 173
+timestamp 1761166680
+transform 1 0 20 0 1 -50
+box -3 50 128 223
+<< labels >>
+flabel metal1 128 9 128 9 1 FreeSans 40 0 0 0 outt0
+flabel metal1 128 182 128 182 1 FreeSans 40 0 0 0 outt1
+flabel metal1 128 355 128 355 1 FreeSans 40 0 0 0 outt2
+flabel metal1 128 528 128 528 1 FreeSans 40 0 0 0 outt3
+flabel metal1 128 701 128 701 1 FreeSans 40 0 0 0 outt4
+flabel metal1 128 874 128 874 1 FreeSans 40 0 0 0 outt5
+flabel metal1 128 1047 128 1047 1 FreeSans 40 0 0 0 outt6
+flabel metal1 128 1220 128 1220 1 FreeSans 40 0 0 0 outt7
+flabel metal2 69 14 69 14 1 FreeSans 40 0 0 0 out0
+flabel metal2 69 187 69 187 1 FreeSans 40 0 0 0 out1
+flabel metal2 69 360 69 360 1 FreeSans 40 0 0 0 out2
+flabel metal2 69 533 69 533 1 FreeSans 40 0 0 0 out3
+flabel metal2 69 706 69 706 1 FreeSans 40 0 0 0 out4
+flabel metal2 69 879 69 879 1 FreeSans 40 0 0 0 out5
+flabel metal2 69 1052 69 1052 1 FreeSans 40 0 0 0 out6
+flabel metal2 69 1225 69 1225 1 FreeSans 40 0 0 0 out7
+flabel metal2 27 4 27 4 1 FreeSans 40 0 0 0 w
+flabel metal3 85 6 85 6 1 FreeSans 40 0 0 0 r1
+flabel metal3 118 6 118 6 1 FreeSans 40 0 0 0 r2
+flabel metal1 41 10 41 10 1 FreeSans 40 0 0 0 in0
+flabel metal1 41 183 41 183 1 FreeSans 40 0 0 0 in1
+flabel metal1 41 356 41 356 1 FreeSans 40 0 0 0 in2
+flabel metal1 41 529 41 529 1 FreeSans 40 0 0 0 in3
+flabel metal1 41 702 41 702 1 FreeSans 40 0 0 0 in4
+flabel metal1 41 875 41 875 1 FreeSans 40 0 0 0 in5
+flabel metal1 41 1048 41 1048 1 FreeSans 40 0 0 0 in6
+flabel metal1 41 1221 41 1221 1 FreeSans 40 0 0 0 in7
+<< end >>

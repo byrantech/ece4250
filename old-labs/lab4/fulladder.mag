@@ -1,0 +1,15 @@
+magic
+tech scmos
+timestamp 1760919277
+<< error_p >>
+rect 0 307 273 400
+rect 0 241 72 246
+rect 0 149 72 164
+rect 0 68 72 73
+rect 0 0 273 39
+use addsub_one  addsub_one_0 ~/Downloads/vlsi-files/lab2
+array 0 0 206 0 7 173
+timestamp 1760632755
+transform 1 0 -167 0 1 45
+box 167 -45 373 128
+<< end >>

@@ -1,0 +1,99 @@
+magic
+tech scmos
+timestamp 1760632755
+<< polycontact >>
+rect 195 -30 200 -25
+<< metal1 >>
+rect 173 119 178 128
+rect 218 123 267 128
+rect 262 119 267 123
+rect 173 114 229 119
+rect 262 114 275 119
+rect 289 114 298 119
+rect 173 91 178 114
+rect 173 -8 178 67
+rect 203 61 208 76
+rect 200 56 208 61
+rect 218 63 230 79
+rect 289 74 298 79
+rect 200 45 205 56
+rect 218 44 225 63
+rect 186 31 202 36
+rect 264 -10 270 -5
+rect 173 -45 178 -33
+rect 218 -39 223 -33
+rect 218 -45 232 -39
+<< m2contact >>
+rect 195 15 200 20
+rect 259 -10 264 -5
+rect 204 -22 209 -17
+<< metal2 >>
+rect 195 8 200 15
+rect 195 3 215 8
+rect 167 -7 200 -2
+rect 210 -17 215 3
+rect 209 -22 215 -17
+rect 259 -23 264 -10
+rect 259 -28 373 -23
+<< m123contact >>
+rect 200 95 205 100
+rect 195 64 200 69
+rect 259 63 264 68
+rect 326 65 331 70
+rect 247 43 252 48
+rect 338 43 343 48
+rect 203 31 208 36
+rect 330 14 335 19
+rect 200 -7 205 -2
+rect 195 -35 200 -30
+<< metal3 >>
+rect 185 36 190 128
+rect 205 95 328 100
+rect 195 83 317 88
+rect 195 69 200 83
+rect 236 63 259 68
+rect 167 31 203 36
+rect 236 -2 241 63
+rect 312 48 317 83
+rect 323 70 328 95
+rect 323 65 326 70
+rect 331 65 373 70
+rect 185 -7 200 -2
+rect 205 -7 241 -2
+rect 312 43 338 48
+rect 343 43 373 48
+rect 247 19 252 43
+rect 247 14 330 19
+rect 185 -45 190 -7
+rect 247 -30 252 14
+rect 200 -35 252 -30
+use nand2  nand2_2
+timestamp 1760631809
+transform 0 -1 224 -1 0 -9
+box -7 -2 29 54
+use nand2  nand2_3
+timestamp 1760631809
+transform 0 -1 224 -1 0 44
+box -7 -2 29 54
+use nand2  nand2_4
+timestamp 1760631809
+transform 0 -1 224 -1 0 93
+box -7 -2 29 54
+use xor3  xor3_0
+timestamp 1760631879
+transform 0 1 286 -1 0 62
+box -60 -65 102 12
+use xor3  xor3_1
+timestamp 1760631879
+transform 0 -1 304 -1 0 62
+box -60 -65 102 12
+<< labels >>
+flabel metal3 370 45 370 45 7 FreeSans 40 0 0 0 b
+flabel metal3 370 67 370 67 7 FreeSans 40 0 0 0 a
+flabel metal3 169 33 169 33 3 FreeSans 40 0 0 0 cout
+flabel metal2 170 -5 170 -5 3 FreeSans 40 0 0 0 cin
+flabel metal3 309 16 309 16 1 FreeSans 16 0 0 0 T_xor_out
+rlabel metal3 250 41 250 41 1 T_xor_b
+flabel metal1 175 114 175 114 1 FreeSans 40 0 0 0 Vdd!
+flabel metal2 371 -25 371 -25 7 FreeSans 40 0 0 0 s
+<< end >>

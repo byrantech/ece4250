@@ -1,0 +1,80 @@
+h Vdd!
+l Gnd!
+s
+
+vector a a7 a6 a5 a4 a3 a2 a1 a0
+vector o o7 o6 o5 o4 o3 o2 o1 o0
+
+echo "=== Test Case 1: No Shift (s=0) ==="
+l s
+l u
+s
+
+echo "A=10101010, s=0, u=0 -> O=10101010"
+setvector a 10101010
+s
+assert o 10101010
+
+echo "A=11110000, s=0, u=0 -> O=11110000"
+setvector a 11110000
+s
+assert o 11110000
+
+h u
+s
+echo "A=01010101, s=0, u=1 -> O=01010101"
+setvector a 01010101
+s
+assert o 01010101
+
+echo "=== Test Case 2: Shift Left (s=1, u=1) ==="
+h s
+h u
+s
+
+echo "A=10101010, s=1, u=1 -> O=01010100"
+setvector a 10101010
+s
+assert o 01010100
+
+echo "A=11110000, s=1, u=1 -> O=11100000"
+setvector a 11110000
+s
+assert o 11100000
+
+echo "A=00001111, s=1, u=1 -> O=00011110"
+setvector a 00001111
+s
+assert o 00011110
+
+echo "A=10000000, s=1, u=1 -> O=00000000 (MSB shifted out)"
+setvector a 10000000
+s
+assert o 00000000
+
+echo "=== Test Case 3: Shift Right (s=1, u=0) ==="
+h s
+l u
+s
+
+echo "A=10101010, s=1, u=0 -> O=01010101"
+setvector a 10101010
+s
+assert o 01010101
+
+echo "A=11110000, s=1, u=0 -> O=01111000"
+setvector a 11110000
+s
+assert o 01111000
+
+echo "A=00001111, s=1, u=0 -> O=00000111"
+setvector a 00001111
+s
+assert o 00000111
+
+echo "A=00000001, s=1, u=0 -> O=00000000 (LSB shifted out)"
+setvector a 00000001
+s
+assert o 00000000
+
+echo "=== All Tests Complete ==="

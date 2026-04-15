@@ -1,0 +1,126 @@
+magic
+tech scmos
+timestamp 1761840437
+<< nwell >>
+rect 20 133 37 136
+<< pwell >>
+rect -3 133 20 136
+<< metal1 >>
+rect 0 214 5 223
+rect 0 209 25 214
+rect 95 209 99 214
+rect 0 164 5 209
+rect 15 192 19 197
+rect 98 195 108 197
+rect 98 194 113 195
+rect 120 174 125 223
+rect 96 169 125 174
+rect 40 166 45 169
+rect 17 139 22 141
+rect 0 127 5 138
+rect 17 134 25 139
+rect 25 127 28 134
+rect 40 132 45 139
+rect 80 133 85 139
+rect 120 131 125 169
+rect 17 120 22 124
+rect 0 50 5 78
+rect 57 68 60 74
+rect 105 68 108 71
+rect 105 63 106 68
+rect 120 50 125 84
+<< m2contact >>
+rect 99 209 104 214
+rect 10 192 15 197
+rect 27 192 32 197
+rect 37 192 42 197
+rect 108 195 113 200
+rect 101 186 106 191
+rect 63 161 68 166
+rect 21 153 26 158
+rect 85 151 90 156
+rect 63 144 68 149
+rect 25 134 30 139
+rect 17 124 22 129
+rect 63 134 68 139
+rect 97 134 102 139
+rect 57 63 62 68
+rect 106 63 111 68
+<< metal2 >>
+rect 104 209 122 214
+rect 27 202 58 207
+rect 27 197 32 202
+rect 53 200 113 202
+rect 53 197 108 200
+rect 3 192 10 197
+rect 3 129 8 192
+rect 37 185 42 192
+rect 12 180 42 185
+rect 72 181 106 186
+rect 12 139 17 180
+rect 21 161 63 166
+rect 21 158 26 161
+rect 72 149 77 181
+rect 117 156 122 209
+rect 90 151 122 156
+rect 68 144 77 149
+rect 12 134 25 139
+rect 30 134 63 139
+rect 68 134 97 139
+rect 3 124 17 129
+rect 32 63 57 68
+<< m3contact >>
+rect 27 63 32 68
+<< m123contact >>
+rect 63 73 68 78
+rect 97 73 102 78
+rect 18 59 23 64
+<< metal3 >>
+rect 18 64 23 179
+rect 27 68 32 207
+<< m234contact >>
+rect 106 58 111 63
+<< m4contact >>
+rect 27 207 32 212
+rect 18 179 23 184
+<< metal4 >>
+rect 106 63 111 86
+use new_latch  new_latch_1
+timestamp 1761103337
+transform 1 0 -73 0 1 55
+box 70 2 121 78
+use new_latch  new_latch_3
+timestamp 1761103337
+transform 1 0 7 0 -1 143
+box 70 2 121 78
+use new_latch  new_latch_2
+timestamp 1761103337
+transform -1 0 158 0 -1 143
+box 70 2 121 78
+use new_latch  new_latch_0
+timestamp 1761103337
+transform 0 1 33 -1 0 287
+box 70 2 121 78
+use inv  inv_1 ~/Downloads/vlsi-files/lab2
+timestamp 1760631879
+transform 0 1 4 1 0 145
+box -9 -7 21 44
+use inv  inv_0
+timestamp 1760631879
+transform 0 -1 81 -1 0 157
+box -9 -7 21 44
+use inv  inv_2
+timestamp 1760631879
+transform 1 0 19 0 -1 210
+box -9 -7 21 44
+<< labels >>
+flabel metal2 55 198 55 198 1 FreeSans 40 0 0 0 notw
+rlabel metal2 73 165 73 165 1 tp1
+flabel metal2 72 136 72 136 1 FreeSans 40 0 0 0 data
+flabel m123contact 64 75 64 75 1 FreeSans 40 0 0 0 r1
+flabel m2contact 59 65 59 65 1 FreeSans 40 0 0 0 out1
+flabel m123contact 98 75 98 75 1 FreeSans 40 0 0 0 r2
+flabel m123contact 20 61 20 61 1 FreeSans 40 0 0 0 in
+flabel metal2 16 127 16 127 1 FreeSans 40 0 0 0 w
+flabel metal4 108 65 108 65 1 FreeSans 40 0 0 0 out2
+<< end >>

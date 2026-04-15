@@ -1,0 +1,153 @@
+| ====================================
+| Test 8: Continuous Operation
+| ====================================
+echo "=== Test 8: Continuous Iterations ==="
+echo "Running 10 iterations to verify stability"
+echo "Reloading 0x55 first"
+
+setvector DATAPATH_IN 01010101
+s
+h load
+c
+c
+l load
+c
+d DATAPATH_OUT
+assert DATAPATH_OUT 00000000
+
+echo "Continuous iter 1:"
+h iter
+c
+l iter
+c
+c
+d H
+assert H 100000
+d DATAPATH_OUT
+assert DATAPATH_OUT 01010101
+
+echo "Continuous iter 2:"
+h iter
+c
+l iter
+c
+c
+d H
+assert H 100000
+d DATAPATH_OUT
+assert DATAPATH_OUT 11111111
+
+echo "Continuous iter 3:"
+h iter
+c
+l iter
+c
+c
+d H
+assert H 100000
+d DATAPATH_OUT
+assert DATAPATH_OUT 10101011
+
+echo "Continuous iter 4:"
+h iter
+c
+l iter
+c
+c
+d H
+assert H 100000
+d DATAPATH_OUT
+assert DATAPATH_OUT 00000011
+
+echo "Continuous iter 5:"
+h iter
+c
+l iter
+c
+c
+d H
+assert H 100000
+d DATAPATH_OUT
+assert DATAPATH_OUT 01010011
+
+echo "Continuous iter 6:"
+h iter
+c
+l iter
+c
+c
+d H
+assert H 100000
+d DATAPATH_OUT
+assert DATAPATH_OUT 11110011
+
+echo "Continuous iter 7:"
+h iter
+c
+l iter
+c
+c
+d H
+assert H 100000
+d DATAPATH_OUT
+assert DATAPATH_OUT 10110011
+
+echo "Continuous iter 8:"
+h iter
+c
+l iter
+c
+c
+d H
+assert H 100000
+d DATAPATH_OUT
+assert DATAPATH_OUT 00110011
+
+echo "Continuous iter 9:"
+h iter
+c
+l iter
+c
+c
+d H
+assert H 100000
+d DATAPATH_OUT
+assert DATAPATH_OUT 00110011
+
+echo "Continuous iter 10:"
+h iter
+c
+l iter
+c
+c
+d H
+assert H 100000
+d DATAPATH_OUT
+assert DATAPATH_OUT 00110011
+
+echo ""
+echo "=== All System Tests Complete ==="
+echo ""
+echo "Verified:"
+echo "  - System initialization and reset"
+echo "  - Data loading via FSM control (x=0, y=input)"
+echo "  - Single iteration cycle"
+echo "  - Multiple consecutive iterations"
+echo "  - New data loading and computation"
+echo "  - Detailed signal timing"
+echo "  - Reset interrupt handling"
+echo "  - Continuous operation stability"
+echo ""
+echo "Algorithm tested: x = (x << 1) XOR y"
+echo "With y = 01010101:"
+echo "  Iter 1: 00000000 -> 01010101"
+echo "  Iter 2: 01010101 -> 11111111"
+echo "  Iter 3: 11111111 -> 10101011"
+echo "  Iter 4: 10101011 -> 00000011"
+echo "  Iter 5: 00000011 -> 01010011"
+echo "  Iter 6: 01010011 -> 11110011"
+echo "  Iter 7: 11110011 -> 10110011"
+echo "  Iter 8: 10110011 -> 00110011"
+echo "  Iter 9+: Converges to 00110011"
+echo ""
+echo "System operational!"

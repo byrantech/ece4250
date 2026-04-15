@@ -1,0 +1,82 @@
+magic
+tech scmos
+timestamp 1765589256
+<< metal1 >>
+rect 475 -4 481 90
+rect 498 83 503 85
+rect 495 40 507 45
+<< m2contact >>
+rect 507 70 512 75
+rect 498 53 503 58
+rect 493 32 498 37
+rect 507 11 512 16
+<< metal2 >>
+rect 455 58 468 59
+rect 507 58 512 70
+rect 461 53 468 58
+rect 503 53 512 58
+rect 482 8 487 53
+rect 498 32 512 37
+rect 507 16 512 32
+rect 482 3 493 8
+<< m3contact >>
+rect 414 55 419 60
+rect 456 53 461 58
+rect 482 53 487 58
+rect 431 30 436 35
+<< m123contact >>
+rect 498 85 503 90
+rect 412 68 417 73
+rect 458 68 463 73
+rect 493 62 498 67
+rect 444 30 449 35
+rect 507 41 512 46
+rect 493 19 498 24
+rect 493 3 498 8
+<< metal3 >>
+rect 412 86 498 90
+rect 412 73 417 86
+rect 395 68 412 73
+rect 421 77 494 82
+rect 421 60 426 77
+rect 395 55 414 60
+rect 419 55 426 60
+rect 431 68 458 69
+rect 431 64 463 68
+rect 489 67 494 77
+rect 431 35 436 64
+rect 489 62 493 67
+rect 461 53 482 58
+rect 507 46 512 90
+rect 449 30 521 35
+rect 431 24 436 30
+rect 431 19 493 24
+rect 498 3 512 8
+rect 507 -4 512 3
+use nand2  nand2_0
+timestamp 1765589256
+transform 0 -1 525 -1 0 83
+box -7 1 28 52
+use nand2  nand2_1
+timestamp 1765589256
+transform 0 -1 525 -1 0 53
+box -7 1 28 52
+use nand2  nand2_5
+timestamp 1765589256
+transform 0 -1 525 1 0 3
+box -7 1 28 52
+use xor2  xor2_1 ~/Downloads/vlsi-files/final-project
+timestamp 1765589256
+transform 0 1 495 -1 0 212
+box 124 -63 214 -12
+use xor2  xor2_0
+timestamp 1765589256
+transform 0 -1 380 -1 0 212
+box 124 -63 214 -12
+<< labels >>
+flabel m123contact 446 33 446 33 1 FreeSans 24 0 0 0 S
+flabel metal3 415 88 415 88 5 FreeSans 24 0 0 0 A
+flabel metal1 501 42 501 42 1 FreeSans 24 0 0 0 COUT
+flabel m123contact 495 5 495 5 1 FreeSans 24 0 0 0 CIN
+flabel m3contact 417 58 417 58 1 FreeSans 24 0 0 0 B
+<< end >>

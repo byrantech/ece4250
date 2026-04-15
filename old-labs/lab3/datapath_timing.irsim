@@ -1,0 +1,240 @@
+| Datapath Timing Analysis Test
+| Measures critical path delays through all functional units
+
+h Vdd!
+l GND!
+s
+
+| Initialize ALL control signals
+l ld rfb ros ras rd w1 w2 reg1r1 reg1r2 reg2r1 reg2r2 cin s u g0 g1 g2 g3
+s
+
+| Define vectors
+vector inputs in7 in6 in5 in4 in3 in2 in1 in0
+vector outputs out7 out6 out5 out4 out3 out2 out1 out0
+vector wz_bus wz7 wz6 wz5 wz4 wz3 wz2 wz1 wz0
+vector rx_bus rx7 rx6 rx5 rx4 rx3 rx2 rx1 rx0
+vector ry_bus ry7 ry6 ry5 ry4 ry3 ry2 ry1 ry0
+
+echo "=== DATAPATH TIMING ANALYSIS ==="
+echo ""
+
+| Setup: Load test patterns into registers
+echo "Setup: Loading test patterns..."
+setvector inputs 10101010
+h ld
+s
+h w1
+s
+l w1
+l ld
+s
+
+setvector inputs 01010101
+h ld
+s
+h w2
+s
+l w2
+l ld
+s
+
+echo ""
+echo "=== Path 1: Register Read to Output (through rd latch) ==="
+echo "Measures: Register -> rx bus -> rd latch -> output staticizers"
+l reg1r1 rd
+s
+h reg1r1
+stepsize 10p
+s
+h rd
+s
+echo "Waiting for output to settle..."
+s
+s
+s
+echo "Final output:"
+d outputs
+echo "Critical path analysis:"
+path out0
+path out7
+l reg1r1 rd
+stepsize 100p
+s
+
+echo ""
+echo "=== Path 2: Addition through ALU ==="
+echo "Measures: Register read -> rx/ry buses -> adder -> ras latch -> wz bus -> register write"
+l cin
+h reg1r1 reg2r2
+stepsize 10p
+s
+h ras
+s
+echo "Waiting for addition to complete..."
+s
+s
+s
+echo "Result on wz bus:"
+d wz_bus
+echo "Critical path through adder:"
+path wz0
+path wz7
+l reg1r1 reg2r2 ras
+stepsize 100p
+s
+
+echo ""
+echo "=== Path 3: Function Block (XOR) ==="
+echo "Measures: Register read -> rx/ry buses -> function block -> rfb latch -> wz bus"
+setvector fblock_ctrl 0110
+h reg1r1 reg2r2
+stepsize 10p
+s
+h rfb
+s
+echo "Waiting for function block to complete..."
+s
+s
+s
+echo "Result on wz bus:"
+d wz_bus
+echo "Critical path through function block:"
+path wz0
+path wz7
+l reg1r1 reg2r2 rfb
+stepsize 100p
+s
+
+echo ""
+echo "=== Path 4: Left Shift ==="
+echo "Measures: Register read -> rx bus -> shifter -> ros latch -> wz bus"
+h s
+h u
+h reg1r1
+stepsize 10p
+s
+h ros
+s
+echo "Waiting for shift to complete..."
+s
+s
+s
+echo "Result on wz bus:"
+d wz_bus
+echo "Critical path through shifter:"
+path wz0
+path wz7
+l reg1r1 ros s u
+stepsize 100p
+s
+
+echo ""
+echo "=== Path 5: Right Shift ==="
+h s
+l u
+h reg1r1
+stepsize 10p
+s
+h ros
+s
+echo "Waiting for shift to complete..."
+s
+s
+s
+echo "Result on wz bus:"
+d wz_bus
+echo "Critical path through shifter:"
+path wz0
+path wz7
+l reg1r1 ros s u
+stepsize 100p
+s
+
+echo ""
+echo "=== Path 6: Complete Read-Modify-Write Cycle ==="
+echo "Measures: Full datapath loop (register -> ALU -> register)"
+echo "Starting at t=0 with registers stable..."
+l reg1r1 reg2r2 ras w1
+s
+
+echo "Read registers (transition starts)"
+h reg1r1 reg2r2
+stepsize 10p
+s
+h ras
+s
+echo "Wait for ALU output..."
+s
+s
+s
+l reg1r1 reg2r2
+s
+echo "Write back to register"
+h w1
+s
+s
+s
+l w1 ras
+s
+echo "Read back result"
+h reg1r1
+s
+h rd
+s
+s
+s
+echo "Final output:"
+d outputs
+echo "End-to-end critical path:"
+path out0
+path out7
+l reg1r1 rd
+stepsize 100p
+s
+
+echo ""
+echo "=== Path 7: Input to Register Write ==="
+echo "Measures: Input pins -> ld latch -> wz bus -> register"
+setvector inputs 11110000
+l ld w1
+stepsize 10p
+s
+h ld
+s
+echo "Wait for input latch..."
+s
+s
+h w1
+s
+echo "Wait for register write..."
+s
+s
+s
+l ld w1
+echo "Verify write:"
+h reg1r1
+s
+h rd
+s
+d outputs
+echo "Input to output path:"
+path out0
+path out7
+l reg1r1 rd
+stepsize 100p
+s
+
+echo ""
+echo "=== SUMMARY: Maximum Delays ==="
+echo "Run 'path' command on critical nodes to see detailed timing"
+echo "Key paths measured:"
+echo "  1. Register Read -> Output Display"
+echo "  2. Addition (rx/ry -> adder -> wz)"
+echo "  3. Function Block (rx/ry -> fblock -> wz)"
+echo "  4. Left Shift (rx -> shifter -> wz)"
+echo "  5. Right Shift (rx -> shifter -> wz)"
+echo "  6. Complete Read-Modify-Write cycle"
+echo "  7. Input -> Register Write -> Output"
+echo ""
+echo "=== Timing Analysis Complete ==="

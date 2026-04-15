@@ -1,0 +1,14 @@
+magic
+tech scmos
+timestamp 1765589256
+<< ndiffusion >>
+rect 1 1 12 4
+<< ndcontact >>
+rect 4 10 9 15
+<< polysilicon >>
+rect 1 6 12 8
+<< metal1 >>
+rect 4 1 9 10
+<< labels >>
+flabel space 2 5 3 6 3 FreeSans 24 0 0 0 1
+<< end >>

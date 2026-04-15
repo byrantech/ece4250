@@ -1,0 +1,380 @@
+magic
+tech scmos
+timestamp 1763264000
+<< nwell >>
+rect -11 74 95 100
+<< pwell >>
+rect -11 -15 95 74
+<< ptransistor >>
+rect 4 86 9 88
+rect 15 86 20 88
+rect 26 86 31 88
+rect 37 86 42 88
+rect 48 86 53 88
+rect 59 86 64 88
+rect 70 86 75 88
+rect 81 86 86 88
+<< pdiffusion >>
+rect 4 88 9 89
+rect 4 85 9 86
+rect 15 88 20 89
+rect 15 85 20 86
+rect 26 88 31 89
+rect 26 85 31 86
+rect 37 88 42 89
+rect 37 85 42 86
+rect 48 88 53 89
+rect 48 85 53 86
+rect 59 88 64 89
+rect 59 85 64 86
+rect 70 88 75 89
+rect 70 85 75 86
+rect 81 88 86 89
+rect 81 85 86 86
+<< ndcontact >>
+rect -4 0 1 5
+rect -4 18 1 23
+rect -4 36 1 41
+rect -4 54 1 59
+<< pdcontact >>
+rect 4 89 9 94
+rect 4 80 9 85
+rect 15 89 20 94
+rect 15 80 20 85
+rect 26 89 31 94
+rect 26 80 31 85
+rect 37 89 42 94
+rect 37 80 42 85
+rect 48 89 53 94
+rect 48 80 53 85
+rect 59 89 64 94
+rect 59 80 64 85
+rect 70 89 75 94
+rect 70 80 75 85
+rect 81 89 86 94
+rect 81 80 86 85
+<< polysilicon >>
+rect 1 86 4 88
+rect 9 86 15 88
+rect 20 86 26 88
+rect 31 86 37 88
+rect 42 86 48 88
+rect 53 86 59 88
+rect 64 86 70 88
+rect 75 86 81 88
+rect 86 86 92 88
+rect -12 60 1 62
+rect -12 51 1 53
+rect -12 42 1 44
+rect -12 33 1 35
+rect -12 24 1 26
+rect -12 15 1 17
+rect -12 6 1 8
+rect -12 -3 1 -1
+<< polycontact >>
+rect -4 85 1 90
+rect -17 59 -12 64
+rect -17 50 -12 55
+rect -17 41 -12 46
+rect -17 32 -12 37
+rect -17 23 -12 28
+rect -17 14 -12 19
+rect -17 5 -12 10
+rect -17 -4 -12 1
+<< metal1 >>
+rect -9 -10 -4 96
+rect 9 89 15 94
+rect 20 89 26 94
+rect 31 89 37 94
+rect 42 89 48 94
+rect 53 89 59 94
+rect 64 89 70 94
+rect 75 89 81 94
+rect 4 -13 9 80
+rect 15 -13 20 80
+rect 26 -13 31 80
+rect 37 -13 42 80
+rect 48 -13 53 80
+rect 59 -13 64 80
+rect 70 -13 75 80
+rect 81 -13 86 80
+use rom_0bit  rom_0bit_0_54
+timestamp 1763262509
+transform 1 0 0 0 1 54
+box 1 0 12 14
+use rom_0bit  rom_0bit_11_54
+timestamp 1763262509
+transform 1 0 11 0 1 54
+box 1 0 12 14
+use rom_0bit  rom_0bit_22_54
+timestamp 1763262509
+transform 1 0 22 0 1 54
+box 1 0 12 14
+use rom_0bit  rom_0bit_33_54
+timestamp 1763262509
+transform 1 0 33 0 1 54
+box 1 0 12 14
+use rom_0bit  rom_0bit_44_54
+timestamp 1763262509
+transform 1 0 44 0 1 54
+box 1 0 12 14
+use rom_0bit  rom_0bit_55_54
+timestamp 1763262509
+transform 1 0 55 0 1 54
+box 1 0 12 14
+use rom_0bit  rom_0bit_66_54
+timestamp 1763262509
+transform 1 0 66 0 1 54
+box 1 0 12 14
+use rom_0bit  rom_0bit_77_54
+timestamp 1763262509
+transform 1 0 77 0 1 54
+box 1 0 12 14
+use rom_0bit  rom_0bit_0_59
+timestamp 1763262509
+transform 1 0 0 0 -1 59
+box 1 0 12 14
+use rom_0bit  rom_0bit_11_59
+timestamp 1763262509
+transform 1 0 11 0 -1 59
+box 1 0 12 14
+use rom_0bit  rom_0bit_22_59
+timestamp 1763262509
+transform 1 0 22 0 -1 59
+box 1 0 12 14
+use rom_0bit  rom_0bit_33_59
+timestamp 1763262509
+transform 1 0 33 0 -1 59
+box 1 0 12 14
+use rom_0bit  rom_0bit_44_59
+timestamp 1763262509
+transform 1 0 44 0 -1 59
+box 1 0 12 14
+use rom_0bit  rom_0bit_66_59
+timestamp 1763262509
+transform 1 0 66 0 -1 59
+box 1 0 12 14
+use rom_0bit  rom_0bit_77_59
+timestamp 1763262509
+transform 1 0 77 0 -1 59
+box 1 0 12 14
+use rom_0bit  rom_0bit_0_36
+timestamp 1763262509
+transform 1 0 0 0 1 36
+box 1 0 12 14
+use rom_0bit  rom_0bit_11_36
+timestamp 1763262509
+transform 1 0 11 0 1 36
+box 1 0 12 14
+use rom_0bit  rom_0bit_22_36
+timestamp 1763262509
+transform 1 0 22 0 1 36
+box 1 0 12 14
+use rom_0bit  rom_0bit_33_36
+timestamp 1763262509
+transform 1 0 33 0 1 36
+box 1 0 12 14
+use rom_0bit  rom_0bit_44_36
+timestamp 1763262509
+transform 1 0 44 0 1 36
+box 1 0 12 14
+use rom_0bit  rom_0bit_0_41
+timestamp 1763262509
+transform 1 0 0 0 -1 41
+box 1 0 12 14
+use rom_0bit  rom_0bit_11_41
+timestamp 1763262509
+transform 1 0 11 0 -1 41
+box 1 0 12 14
+use rom_0bit  rom_0bit_22_41
+timestamp 1763262509
+transform 1 0 22 0 -1 41
+box 1 0 12 14
+use rom_0bit  rom_0bit_33_41
+timestamp 1763262509
+transform 1 0 33 0 -1 41
+box 1 0 12 14
+use rom_0bit  rom_0bit_55_41
+timestamp 1763262509
+transform 1 0 55 0 -1 41
+box 1 0 12 14
+use rom_0bit  rom_0bit_77_41
+timestamp 1763262509
+transform 1 0 77 0 -1 41
+box 1 0 12 14
+use rom_0bit  rom_0bit_0_18
+timestamp 1763262509
+transform 1 0 0 0 1 18
+box 1 0 12 14
+use rom_0bit  rom_0bit_11_18
+timestamp 1763262509
+transform 1 0 11 0 1 18
+box 1 0 12 14
+use rom_0bit  rom_0bit_22_18
+timestamp 1763262509
+transform 1 0 22 0 1 18
+box 1 0 12 14
+use rom_0bit  rom_0bit_33_18
+timestamp 1763262509
+transform 1 0 33 0 1 18
+box 1 0 12 14
+use rom_0bit  rom_0bit_66_18
+timestamp 1763262509
+transform 1 0 66 0 1 18
+box 1 0 12 14
+use rom_0bit  rom_0bit_0_23
+timestamp 1763262509
+transform 1 0 0 0 -1 23
+box 1 0 12 14
+use rom_0bit  rom_0bit_11_23
+timestamp 1763262509
+transform 1 0 11 0 -1 23
+box 1 0 12 14
+use rom_0bit  rom_0bit_22_23
+timestamp 1763262509
+transform 1 0 22 0 -1 23
+box 1 0 12 14
+use rom_0bit  rom_0bit_44_23
+timestamp 1763262509
+transform 1 0 44 0 -1 23
+box 1 0 12 14
+use rom_0bit  rom_0bit_55_23
+timestamp 1763262509
+transform 1 0 55 0 -1 23
+box 1 0 12 14
+use rom_0bit  rom_0bit_66_23
+timestamp 1763262509
+transform 1 0 66 0 -1 23
+box 1 0 12 14
+use rom_0bit  rom_0bit_77_23
+timestamp 1763262509
+transform 1 0 77 0 -1 23
+box 1 0 12 14
+use rom_0bit  rom_0bit_0_0
+timestamp 1763262509
+transform 1 0 0 0 1 0
+box 1 0 12 14
+use rom_0bit  rom_0bit_11_0
+timestamp 1763262509
+transform 1 0 11 0 1 0
+box 1 0 12 14
+use rom_0bit  rom_0bit_22_0
+timestamp 1763262509
+transform 1 0 22 0 1 0
+box 1 0 12 14
+use rom_0bit  rom_0bit_44_0
+timestamp 1763262509
+transform 1 0 44 0 1 0
+box 1 0 12 14
+use rom_0bit  rom_0bit_55_0
+timestamp 1763262509
+transform 1 0 55 0 1 0
+box 1 0 12 14
+use rom_0bit  rom_0bit_77_0
+timestamp 1763262509
+transform 1 0 77 0 1 0
+box 1 0 12 14
+use rom_0bit  rom_0bit_0_5
+timestamp 1763262509
+transform 1 0 0 0 -1 5
+box 1 0 12 14
+use rom_0bit  rom_0bit_11_5
+timestamp 1763262509
+transform 1 0 11 0 -1 5
+box 1 0 12 14
+use rom_0bit  rom_0bit_22_5
+timestamp 1763262509
+transform 1 0 22 0 -1 5
+box 1 0 12 14
+use rom_0bit  rom_0bit_44_5
+timestamp 1763262509
+transform 1 0 44 0 -1 5
+box 1 0 12 14
+use rom_0bit  rom_0bit_66_5
+timestamp 1763262509
+transform 1 0 66 0 -1 5
+box 1 0 12 14
+use rom_0bit  rom_0bit_77_5
+timestamp 1763262509
+transform 1 0 77 0 -1 5
+box 1 0 12 14
+use rom_1bit  rom_1bit_55_59
+timestamp 1763262524
+transform 1 0 55 0 -1 59
+box 1 0 12 14
+use rom_1bit  rom_1bit_55_36
+timestamp 1763262524
+transform 1 0 55 0 1 36
+box 1 0 12 14
+use rom_1bit  rom_1bit_66_36
+timestamp 1763262524
+transform 1 0 66 0 1 36
+box 1 0 12 14
+use rom_1bit  rom_1bit_77_36
+timestamp 1763262524
+transform 1 0 77 0 1 36
+box 1 0 12 14
+use rom_1bit  rom_1bit_44_41
+timestamp 1763262524
+transform 1 0 44 0 -1 41
+box 1 0 12 14
+use rom_1bit  rom_1bit_66_41
+timestamp 1763262524
+transform 1 0 66 0 -1 41
+box 1 0 12 14
+use rom_1bit  rom_1bit_44_18
+timestamp 1763262524
+transform 1 0 44 0 1 18
+box 1 0 12 14
+use rom_1bit  rom_1bit_55_18
+timestamp 1763262524
+transform 1 0 55 0 1 18
+box 1 0 12 14
+use rom_1bit  rom_1bit_77_18
+timestamp 1763262524
+transform 1 0 77 0 1 18
+box 1 0 12 14
+use rom_1bit  rom_1bit_33_23
+timestamp 1763262524
+transform 1 0 33 0 -1 23
+box 1 0 12 14
+use rom_1bit  rom_1bit_33_0
+timestamp 1763262524
+transform 1 0 33 0 1 0
+box 1 0 12 14
+use rom_1bit  rom_1bit_66_0
+timestamp 1763262524
+transform 1 0 66 0 1 0
+box 1 0 12 14
+use rom_1bit  rom_1bit_33_5
+timestamp 1763262524
+transform 1 0 33 0 -1 5
+box 1 0 12 14
+use rom_1bit  rom_1bit_55_5
+timestamp 1763262524
+transform 1 0 55 0 -1 5
+box 1 0 12 14
+use 3to8_decoder  3to8_decoder_0
+timestamp 1763347716
+transform 1 0 -112 0 1 37
+box -103 -48 100 57
+<< labels >>
+flabel metal1 6 -11 6 -11 1 FreeSans 24 0 0 0 o0
+flabel metal1 17 -11 17 -11 1 FreeSans 24 0 0 0 o1
+flabel metal1 28 -11 28 -11 1 FreeSans 24 0 0 0 o2
+flabel metal1 39 -11 39 -11 1 FreeSans 24 0 0 0 o3
+flabel metal1 50 -11 50 -11 1 FreeSans 24 0 0 0 o4
+flabel metal1 61 -11 61 -11 1 FreeSans 24 0 0 0 o5
+flabel metal1 72 -11 72 -11 1 FreeSans 24 0 0 0 o6
+flabel metal1 83 -11 83 -11 1 FreeSans 24 0 0 0 o7
+flabel metal1 -7 10 -7 10 3 FreeSans 24 0 0 0 GND!
+flabel metal1 12 91 12 91 5 FreeSans 24 0 0 0 Vdd!
+rlabel polycontact -15 62 -15 62 1 w0
+rlabel polycontact -15 53 -15 53 1 w1
+rlabel polycontact -15 44 -15 44 1 w2
+rlabel polycontact -15 35 -15 35 1 w3
+rlabel polycontact -15 26 -15 26 1 w4
+rlabel polycontact -15 17 -15 17 1 w5
+rlabel polycontact -15 8 -15 8 1 w6
+rlabel polycontact -15 -1 -15 -1 1 w7
+<< end >>

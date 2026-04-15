@@ -1,0 +1,71 @@
+magic
+tech scmos
+timestamp 1762981534
+<< metal1 >>
+rect 494 40 511 45
+<< m2contact >>
+rect 506 70 511 75
+rect 492 48 497 53
+rect 492 32 497 37
+rect 506 11 511 16
+rect 492 3 497 8
+<< metal2 >>
+rect 418 82 423 83
+rect 452 77 477 82
+rect 472 69 477 77
+rect 506 53 511 70
+rect 481 8 486 53
+rect 497 48 511 53
+rect 497 32 511 37
+rect 506 16 511 32
+rect 481 3 492 8
+<< m3contact >>
+rect 418 83 423 88
+rect 420 60 425 65
+rect 472 64 477 69
+rect 455 55 460 60
+rect 481 53 486 58
+rect 431 30 436 35
+<< m123contact >>
+rect 497 83 502 88
+rect 492 62 497 67
+rect 444 30 449 35
+rect 492 19 497 24
+<< metal3 >>
+rect 423 83 497 88
+rect 420 73 497 78
+rect 420 65 425 73
+rect 431 64 472 69
+rect 492 67 497 73
+rect 431 35 436 64
+rect 460 55 481 58
+rect 455 53 481 55
+rect 431 24 436 30
+rect 431 19 492 24
+use xor2  xor2_0
+timestamp 1762977313
+transform 0 -1 380 -1 0 212
+box 122 -63 216 -12
+use xor2  xor2_1
+timestamp 1762977313
+transform 0 1 495 -1 0 212
+box 122 -63 216 -12
+use nand2  nand2_5
+timestamp 1762924182
+transform 0 -1 524 -1 0 24
+box -7 1 28 52
+use nand2  nand2_0
+timestamp 1762924182
+transform 0 -1 524 -1 0 83
+box -7 1 28 52
+use nand2  nand2_1
+timestamp 1762924182
+transform 0 -1 524 -1 0 53
+box -7 1 28 52
+<< labels >>
+flabel m3contact 420 86 420 86 5 FreeSans 24 0 0 0 A
+flabel m3contact 423 63 423 63 1 FreeSans 24 0 0 0 B
+flabel metal1 500 42 500 42 1 FreeSans 24 0 0 0 COUT
+flabel m2contact 494 5 494 5 1 FreeSans 24 0 0 0 CIN
+flabel m123contact 446 33 446 33 1 FreeSans 24 0 0 0 S
+<< end >>

@@ -1,0 +1,50 @@
+magic
+tech scmos
+timestamp 1762272485
+<< nwell >>
+rect 30 47 71 61
+rect 30 24 35 47
+<< pwell >>
+rect 30 7 34 24
+rect 30 -7 70 7
+<< metal1 >>
+rect 30 52 70 57
+rect 34 46 70 52
+rect 27 26 38 30
+rect 34 20 38 26
+rect 65 27 81 32
+rect 65 24 70 27
+rect 32 1 72 6
+rect 28 0 72 1
+rect 27 -4 72 0
+<< m2contact >>
+rect -3 18 2 23
+rect 26 18 31 23
+rect 49 24 54 29
+rect 69 16 74 21
+rect 101 18 106 23
+<< metal2 >>
+rect 49 29 54 56
+rect -3 -7 2 18
+rect 26 -7 31 18
+rect 69 -7 74 16
+rect 101 -7 106 18
+use nor2  nor2_2
+timestamp 1762197657
+transform -1 0 102 0 1 -5
+box -4 -2 32 66
+use nor2  nor2_0
+timestamp 1762197657
+transform 1 0 1 0 1 -5
+box -4 -2 32 66
+use nand2  nand2_0 ~/Downloads/vlsi-files/lab2
+timestamp 1760631809
+transform 1 0 41 0 1 0
+box -7 -2 29 54
+<< labels >>
+flabel metal2 -2 -6 -2 -6 2 FreeSans 16 0 0 0 a
+flabel metal2 28 -6 28 -6 1 FreeSans 16 0 0 0 b
+flabel metal2 104 -6 104 -6 8 FreeSans 16 0 0 0 d
+flabel metal2 71 -6 71 -6 1 FreeSans 16 0 0 0 c
+flabel metal2 51 54 51 54 5 FreeSans 16 0 0 0 out
+<< end >>

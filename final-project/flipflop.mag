@@ -1,0 +1,47 @@
+magic
+tech scmos
+timestamp 1765589256
+<< nwell >>
+rect 51 75 68 84
+<< pwell >>
+rect 68 75 91 84
+<< metal1 >>
+rect 66 70 71 84
+rect 83 69 88 84
+rect 21 61 26 65
+rect 3 0 8 10
+rect 43 0 48 10
+rect 66 0 71 14
+rect 83 0 88 10
+<< m2contact >>
+rect 21 73 26 78
+rect 66 65 71 70
+rect 35 39 40 44
+rect 51 39 56 44
+rect 25 7 30 12
+<< metal2 >>
+rect 10 0 15 84
+rect 26 74 81 79
+rect 35 65 66 70
+rect 35 44 40 65
+rect 76 56 81 74
+rect 51 32 56 39
+rect 25 27 56 32
+rect 25 12 30 27
+use inv  inv_0 ~/Downloads/vlsi-files/final-project
+timestamp 1765589256
+transform 0 1 9 1 0 65
+box -8 -9 19 42
+use new_latch  new_latch_0
+timestamp 1765589256
+transform 1 0 -70 0 1 -2
+box 70 2 121 77
+use new_latch  new_latch_1
+timestamp 1765589256
+transform -1 0 161 0 1 -2
+box 70 2 121 77
+<< labels >>
+flabel metal1 69 7 69 7 1 FreeSans 24 0 0 0 D
+flabel metal1 68 80 68 80 5 FreeSans 24 0 0 0 Q
+flabel metal2 12 81 12 81 5 FreeSans 24 0 0 0 CLK
+<< end >>

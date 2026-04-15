@@ -1,0 +1,198 @@
+| FSM Test Script with Detailed Assertions
+| Tests one-hot FSM state transitions and output signals
+| Two-phase non-overlapping clock: phi0, phi1
+
+h Vdd!
+l GND!
+
+
+s
+
+| Define signal vectors for easier observation
+vector CLOCK phi0 phi1
+clock CLOCK 00 10 00 01
+vector H h1 h2 h3 h4 h5 h6
+vector N nh1 nh2 nh3 nh4 nh5 nh6
+vector I ih1 ih2 ih3 ih4 ih5 ih6
+vector INPUT reset load iter
+setvector INPUT 000
+
+echo "=== Initialized clock ==="
+
+| Initial clock cycle to stabilize
+c
+p
+
+echo "=== Resetting ==="
+| Assert reset signal
+h reset
+p
+p
+p
+
+| In reset state (h2), rfb should be high
+assert rfb 1
+
+p
+
+| Deassert reset, should transition to h1
+l reset
+
+p
+
+| In h1, multiple outputs should be high
+assert reg0w 1
+assert reg1w 1
+assert reg0r0 1
+assert rd 1
+
+p
+p
+p
+
+| Verify we're in h1 state
+assert H 100000
+assert N 100000
+
+| TEST: Load sequence (h1 -> h3 -> h4 -> h1)
+| Assert load signal
+h load
+p
+
+| Deassert load immediately (single pulse)
+l load
+
+| Next state should be h3
+assert N 001000
+
+p
+p
+
+| In h3 (load0), ld signal should be high
+assert ld 1
+
+p
+p
+
+| In h3, reg1w should be high (writing to register 1)
+assert reg1w 1
+
+| Verify in h3, next should be h4
+assert H 001000
+assert N 000100
+
+p
+p
+
+| In h4 (load1), rfb should be high
+assert rfb 1
+
+p
+p
+
+| In h4, multiple outputs high
+assert reg0w 1
+assert reg0r0 1
+assert rd 1
+
+p
+p
+p
+
+| Should return to h1 from h4
+assert H 100000
+assert N 100000
+
+| Full clock cycle
+c
+
+
+
+
+
+| TEST: Iter sequence (h1 -> h5 -> h6 -> h1)
+| Assert iter signal
+h iter
+p
+
+| In h1, next state should be h5
+assert H 100000
+assert N 000010
+
+p
+p
+
+| In h5 (iter0), ros and reg0r0 high
+assert reg0r0 1
+assert ros 1
+
+p
+| Deassert iter
+l iter
+p
+
+| In h5, reg0w should be high
+assert reg0w 1
+
+p
+p
+
+| In h6 (iter1), multiple outputs high
+assert reg0r0 1
+assert reg1r1 1
+assert fblockg1g2 1
+assert rd 1
+assert H 000001
+
+p
+
+p
+p
+p
+p
+
+| Back to h1 from h6
+assert H 100000
+assert N 100000
+
+| TEST: Reset from non-h1 state
+| Start load sequence
+h load
+p
+p
+l load
+p
+
+| In h3, ld should be high
+assert ld 1
+
+p
+
+| Assert reset while in h3
+h reset
+
+p
+p
+
+| Deassert reset
+l reset
+
+p
+p
+
+| Should be in h2 (reset state), next is h1
+assert H 010000
+assert N 100000
+
+| Edge: Iter directly from h2
+h iter
+
+p
+p
+p
+
+| Should transition to h5
+assert H 100000
+assert N 000010
+
+p

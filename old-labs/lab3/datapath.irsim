@@ -1,0 +1,856 @@
+| Datapath Functional Test File for IRSIM
+| Tests complete datapath with all components
+| FIXED VERSION - Proper signal sequencing to avoid conflicts
+
+h Vdd!
+l GND!
+s
+
+| Initialize ALL control signals to known state (LOW)
+echo "=== Initializing all control signals ==="
+l ld rfb ros ras rd w1 w2 reg1r1 reg1r2 reg2r1 reg2r2 cin s u g0 g1 g2 g3
+s
+
+| Define vectors for easier manipulation
+vector inputs in7 in6 in5 in4 in3 in2 in1 in0
+vector outputs out7 out6 out5 out4 out3 out2 out1 out0
+vector wz_bus wz7 wz6 wz5 wz4 wz3 wz2 wz1 wz0
+vector fblock_ctrl g3 g2 g1 g0
+
+echo "=== Datapath Functional Tests ==="
+echo ""
+
+echo "=== Test 1: Initialize reg1 with 0x2A (00101010) ==="
+echo "Set inputs to 00101010"
+setvector inputs 00101010
+s
+
+echo "Enable input latch to pass data to wz bus"
+h ld
+s
+
+echo "Write to reg1"
+h w1
+s
+l w1
+s
+
+echo "Disable input latch"
+l ld
+s
+
+echo ""
+echo "=== Test 2: Initialize reg2 with 0x15 (00010101) ==="
+echo "Set inputs to 00010101"
+setvector inputs 00010101
+s
+
+echo "Enable input latch"
+h ld
+s
+
+echo "Write to reg2"
+h w2
+s
+l w2
+s
+
+echo "Disable input latch"
+l ld
+s
+
+echo ""
+echo "=== Test 3: Verify reg1 contents ==="
+echo "Read reg1 port 1 to rx bus, then through rd latch to output"
+h reg1r1
+s
+h rd
+s
+
+echo "Output should be 00101010"
+assert outputs 00101010
+path out0
+path out7
+
+echo "Disable read"
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 4: Verify reg2 contents ==="
+echo "Read reg2 port 1 to rx bus, then through rd latch to output"
+h reg2r1
+s
+h rd
+s
+
+echo "Output should be 00010101"
+assert outputs 00010101
+
+echo "Disable read"
+l reg2r1 rd
+s
+
+echo ""
+echo "=== Test 5: Addition (reg1 + reg2 = 0x2A + 0x15 = 0x3F) ==="
+echo "Step 1: Read reg1 to rx bus (port 1), reg2 to ry bus (port 2)"
+h reg1r1 reg2r2
+s
+
+echo "Step 2: Set cin=0 for addition"
+l cin
+s
+
+echo "Step 3: Enable addsub output latch to capture result on wz"
+h ras
+s
+
+echo "Step 4: Disable all reads BEFORE writing"
+l reg1r1 reg2r2
+s
+
+echo "Step 5: Write result to reg1"
+h w1
+s
+l w1
+s
+
+echo "Step 6: Disable addsub latch"
+l ras
+s
+
+echo "Step 7: Verify result in reg1"
+h reg1r1
+s
+h rd
+s
+echo "Output should be 00111111 (0x3F = 63)"
+assert outputs 00111111
+path out0
+path out7
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 6: Addition 0x3F + 0x2A = 0x54 ==="
+echo "Load 0x2A into reg2"
+setvector inputs 00101010
+s
+h ld
+s
+h w2
+s
+l w2
+s
+l ld
+s
+
+echo "Read both registers"
+h reg1r1 reg2r2
+s
+
+echo "Addition (cin=0)"
+l cin
+s
+
+echo "Enable addsub latch"
+h ras
+s
+
+echo "Disable reads"
+l reg1r1 reg2r2
+s
+
+echo "Write to reg1"
+h w1
+s
+l w1
+s
+
+echo "Disable latch"
+l ras
+s
+
+echo "Verify result"
+h reg1r1
+s
+h rd
+s
+echo "Output should be 01101001 (0x68 = 104)"
+assert outputs 01101001
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 7: Addition 0x80 + 0x80 = 0x00 (with carry) ==="
+echo "Load 0x80 into reg1"
+setvector inputs 10000000
+s
+h ld
+s
+h w1
+s
+l w1
+s
+l ld
+s
+
+echo "Load 0x80 into reg2"
+setvector inputs 10000000
+s
+h ld
+s
+h w2
+s
+l w2
+s
+l ld
+s
+
+echo "Read both registers"
+h reg1r1 reg2r2
+s
+
+echo "Addition"
+l cin
+s
+
+echo "Enable addsub latch"
+h ras
+s
+
+echo "Disable reads"
+l reg1r1 reg2r2
+s
+
+echo "Write to reg1"
+h w1
+s
+l w1
+s
+
+echo "Disable latch"
+l ras
+s
+
+echo "Verify result"
+h reg1r1
+s
+h rd
+s
+echo "Output should be 00000000 (0x00, carry out ignored)"
+assert outputs 00000000
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 8: Subtraction (0x00 - 0x80 = 0x80 with wrap) ==="
+echo "reg1 already has 0x00, reg2 has 0x80"
+
+echo "Read both registers"
+h reg1r1 reg2r2
+s
+
+echo "Subtraction (cin=1)"
+h cin
+s
+
+echo "Enable addsub latch"
+h ras
+s
+
+echo "Disable reads"
+l reg1r1 reg2r2
+s
+
+echo "Write to reg1"
+h w1
+s
+l w1
+s
+
+echo "Disable latch and cin"
+l ras cin
+s
+
+echo "Verify result"
+h reg1r1
+s
+h rd
+s
+echo "Output should be 10000000 (0x80 = 128)"
+assert outputs 10000000
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 9: Subtraction 0xFF - 0x01 = 0xFE ==="
+echo "Load 0xFF into reg1"
+setvector inputs 11111111
+s
+h ld
+s
+h w1
+s
+l w1
+s
+l ld
+s
+
+echo "Load 0x01 into reg2"
+setvector inputs 00000001
+s
+h ld
+s
+h w2
+s
+l w2
+s
+l ld
+s
+
+echo "Read both registers"
+h reg1r1 reg2r2
+s
+
+echo "Subtraction"
+h cin
+s
+
+echo "Enable addsub latch"
+h ras
+s
+
+echo "Disable reads"
+l reg1r1 reg2r2
+s
+
+echo "Write to reg1"
+h w1
+s
+l w1
+s
+
+echo "Disable latch and cin"
+l ras cin
+s
+
+echo "Verify result"
+h reg1r1
+s
+h rd
+s
+echo "Output should be 11111110 (0xFE = 254)"
+assert outputs 11111110
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 10: Subtraction 0x00 - 0x01 = 0xFF (underflow) ==="
+echo "Load 0x00 into reg1"
+setvector inputs 00000000
+s
+h ld
+s
+h w1
+s
+l w1
+s
+l ld
+s
+
+echo "Load 0x01 into reg2"
+setvector inputs 00000001
+s
+h ld
+s
+h w2
+s
+l w2
+s
+l ld
+s
+
+echo "Read both registers"
+h reg1r1 reg2r2
+s
+
+echo "Subtraction"
+h cin
+s
+
+echo "Enable addsub latch"
+h ras
+s
+
+echo "Disable reads"
+l reg1r1 reg2r2
+s
+
+echo "Write to reg1"
+h w1
+s
+l w1
+s
+
+echo "Disable latch and cin"
+l ras cin
+s
+
+echo "Verify result"
+h reg1r1
+s
+h rd
+s
+echo "Output should be 11111111 (0xFF = 255)"
+assert outputs 11111111
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 11: Function Block AND ==="
+echo "Load 0xF0 into reg1"
+setvector inputs 11110000
+s
+h ld
+s
+h w1
+s
+l w1
+s
+l ld
+s
+
+echo "Load 0x55 into reg2"
+setvector inputs 01010101
+s
+h ld
+s
+h w2
+s
+l w2
+s
+l ld
+s
+
+echo "Configure fblock for AND: g0=0, g1=0, g2=0, g3=1"
+setvector fblock_ctrl 1000
+s
+
+echo "Read both registers"
+h reg1r1 reg2r2
+s
+
+echo "Enable function block latch"
+h rfb
+s
+
+echo "Disable reads"
+l reg1r1 reg2r2
+s
+
+echo "Write result to reg1"
+h w1
+s
+l w1
+s
+
+echo "Disable fblock latch"
+l rfb
+s
+
+echo "Verify: 0xF0 & 0x55 = 0x50"
+h reg1r1
+s
+h rd
+s
+assert outputs 01010000
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 12: Function Block OR ==="
+echo "Configure fblock for OR: g0=0, g1=1, g2=1, g3=1"
+setvector fblock_ctrl 1110
+s
+
+echo "Read reg1 (0x50) and reg2 (0x55)"
+h reg1r1 reg2r2
+s
+
+echo "Enable fblock latch"
+h rfb
+s
+
+echo "Disable reads"
+l reg1r1 reg2r2
+s
+
+echo "Write result to reg2"
+h w2
+s
+l w2
+s
+
+echo "Disable fblock latch"
+l rfb
+s
+
+echo "Verify: 0x50 | 0x55 = 0x55"
+h reg2r1
+s
+h rd
+s
+assert outputs 01010101
+l reg2r1 rd
+s
+
+echo ""
+echo "=== Test 13: Function Block XOR ==="
+echo "Configure fblock for XOR: g0=0, g1=1, g2=1, g3=0"
+setvector fblock_ctrl 0110
+s
+
+echo "Read reg1 (0x50) and reg2 (0x55)"
+h reg1r1 reg2r2
+s
+
+echo "Enable fblock latch"
+h rfb
+s
+
+echo "Disable reads"
+l reg1r1 reg2r2
+s
+
+echo "Write result to reg1"
+h w1
+s
+l w1
+s
+
+echo "Disable fblock latch"
+l rfb
+s
+
+echo "Verify: 0x50 ^ 0x55 = 0x05"
+h reg1r1
+s
+h rd
+s
+assert outputs 00000101
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 14: Left Shift ==="
+echo "Load 0x15 (00010101) into reg1"
+setvector inputs 00010101
+s
+h ld
+s
+h w1
+s
+l w1
+s
+l ld
+s
+
+echo "Configure shift: s=1 (enable), u=1 (left shift)"
+h s
+h u
+s
+
+echo "Read reg1"
+h reg1r1
+s
+
+echo "Enable shift output latch"
+h ros
+s
+
+echo "Disable read"
+l reg1r1
+s
+
+echo "Write result to reg1"
+h w1
+s
+l w1
+s
+
+echo "Disable shift latch and controls"
+l ros s u
+s
+
+echo "Verify: 0x15 << 1 = 0x2A"
+h reg1r1
+s
+h rd
+s
+assert outputs 00101010
+path out0
+path out7
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 15: Right Shift ==="
+echo "Configure shift: s=1 (enable), u=0 (right shift)"
+h s
+l u
+s
+
+echo "Read reg1 (0x2A)"
+h reg1r1
+s
+
+echo "Enable shift latch"
+h ros
+s
+
+echo "Disable read"
+l reg1r1
+s
+
+echo "Write result to reg1"
+h w1
+s
+l w1
+s
+
+echo "Disable shift latch and control"
+l ros s
+s
+
+echo "Verify: 0x2A >> 1 = 0x15"
+h reg1r1
+s
+h rd
+s
+assert outputs 00010101
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 16: No Shift (pass through) ==="
+echo "Load 0xAA (10101010) into reg1"
+setvector inputs 10101010
+s
+h ld
+s
+h w1
+s
+l w1
+s
+l ld
+s
+
+echo "Configure shift: s=0 (disable)"
+l s
+s
+
+echo "Read reg1"
+h reg1r1
+s
+
+echo "Enable shift latch (should pass through)"
+h ros
+s
+
+echo "Disable read"
+l reg1r1
+s
+
+echo "Write to reg2"
+h w2
+s
+l w2
+s
+
+echo "Disable shift latch"
+l ros
+s
+
+echo "Verify: output = input = 0xAA"
+h reg2r1
+s
+h rd
+s
+assert outputs 10101010
+l reg2r1 rd
+s
+
+echo ""
+echo "=== Test 17: Complex Operation Chain ==="
+echo "Load 0x0F into reg1"
+setvector inputs 00001111
+s
+h ld
+s
+h w1
+s
+l w1
+s
+l ld
+s
+
+echo "Load 0x03 into reg2"
+setvector inputs 00000011
+s
+h ld
+s
+h w2
+s
+l w2
+s
+l ld
+s
+
+echo "Step 1: Add reg1 + reg2 (0x0F + 0x03 = 0x12)"
+h reg1r1 reg2r2
+s
+l cin
+s
+h ras
+s
+l reg1r1 reg2r2
+s
+h w1
+s
+l w1
+s
+l ras
+s
+
+echo "Step 2: Left shift result (0x12 << 1 = 0x24)"
+h s
+h u
+s
+h reg1r1
+s
+h ros
+s
+l reg1r1
+s
+h w1
+s
+l w1
+s
+l ros s u
+s
+
+echo "Verify final result: 0x24 (00100100)"
+h reg1r1
+s
+h rd
+s
+assert outputs 00100100
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 18: Dual Port Read Simultaneous ==="
+echo "Load 0x12 into reg1"
+setvector inputs 00010010
+s
+h ld
+s
+h w1
+s
+l w1
+s
+l ld
+s
+
+echo "Load 0x34 into reg2"
+setvector inputs 00110100
+s
+h ld
+s
+h w2
+s
+l w2
+s
+l ld
+s
+
+echo "Read both registers on different ports simultaneously"
+h reg1r1 reg2r2
+s
+
+echo "Add them (cin=0)"
+l cin
+s
+h ras
+s
+
+echo "Disable reads"
+l reg1r1 reg2r2
+s
+
+echo "Write result to reg1"
+h w1
+s
+l w1
+s
+
+echo "Disable latch"
+l ras
+s
+
+echo "Verify: 0x12 + 0x34 = 0x46"
+h reg1r1
+s
+h rd
+s
+assert outputs 01000110
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 19: All Zeros ==="
+setvector inputs 00000000
+s
+h ld
+s
+h w1
+s
+l w1
+s
+l ld
+s
+
+h reg1r1
+s
+h rd
+s
+assert outputs 00000000
+l reg1r1 rd
+s
+
+echo ""
+echo "=== Test 20: All Ones ==="
+setvector inputs 11111111
+s
+h ld
+s
+h w2
+s
+l w2
+s
+l ld
+s
+
+h reg2r1
+s
+h rd
+s
+assert outputs 11111111
+l reg2r1 rd
+s
+
+echo ""
+echo "=== All Datapath Tests Complete ==="
+echo "Running timing analysis..."
+ana in0 in7 ld g0 g3 rfb s u ros cin ras reg1r1 reg1r2 reg2r1 reg2r2 w1 w2 rd out0 out7

@@ -1,0 +1,387 @@
+h Vdd!
+l GND!
+
+s
+
+vector b b7 b6 b5 b4 b3 b2 b1 b0
+vector s s7 s6 s5 s4 s3 s2 s1 s0
+vector exp exp7 exp6 exp5 exp4 exp3 exp2 exp1 exp0
+vector mt mt7 mt6 mt5 mt4 mt3 mt2 mt1 mt0
+
+vector CLOCK CLK
+clock CLOCK 0 1
+
+h seed_en seed en
+s
+ana clk b
+c
+d b
+c
+d b
+c
+c
+c
+c
+c
+c
+d b
+l seed_en
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt
+
+c
+d b s E2 E1 E0 L0 L1 L2 exp mt

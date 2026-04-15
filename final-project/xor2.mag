@@ -1,0 +1,132 @@
+magic
+tech scmos
+timestamp 1765589256
+<< nwell >>
+rect 124 -40 212 -12
+<< pwell >>
+rect 124 -63 212 -40
+<< ntransistor >>
+rect 136 -51 138 -46
+rect 145 -51 147 -46
+rect 154 -51 156 -46
+rect 173 -51 175 -46
+rect 182 -51 184 -46
+<< ptransistor >>
+rect 136 -34 138 -24
+rect 145 -34 147 -24
+rect 154 -34 156 -24
+rect 173 -34 175 -24
+rect 182 -34 184 -24
+<< ndiffusion >>
+rect 135 -51 136 -46
+rect 138 -51 139 -46
+rect 144 -51 145 -46
+rect 147 -51 154 -46
+rect 156 -51 160 -46
+rect 165 -51 173 -46
+rect 175 -51 182 -46
+rect 184 -51 185 -46
+<< pdiffusion >>
+rect 130 -29 136 -24
+rect 135 -34 136 -29
+rect 138 -29 139 -24
+rect 144 -29 145 -24
+rect 138 -34 145 -29
+rect 147 -29 154 -24
+rect 147 -34 148 -29
+rect 153 -34 154 -29
+rect 156 -29 157 -24
+rect 156 -34 162 -29
+rect 167 -29 173 -24
+rect 172 -34 173 -29
+rect 175 -29 182 -24
+rect 175 -34 176 -29
+rect 181 -34 182 -29
+rect 184 -29 190 -24
+rect 184 -34 185 -29
+<< ndcontact >>
+rect 130 -51 135 -46
+rect 139 -51 144 -46
+rect 160 -51 165 -46
+rect 185 -51 190 -46
+<< pdcontact >>
+rect 130 -34 135 -29
+rect 139 -29 144 -24
+rect 148 -34 153 -29
+rect 157 -29 162 -24
+rect 167 -34 172 -29
+rect 176 -34 181 -29
+rect 185 -34 190 -29
+<< polysilicon >>
+rect 136 -24 138 -21
+rect 145 -24 147 -21
+rect 154 -24 156 -21
+rect 173 -24 175 -21
+rect 182 -24 184 -21
+rect 136 -41 138 -34
+rect 145 -37 147 -34
+rect 143 -42 147 -37
+rect 154 -39 156 -34
+rect 145 -46 147 -42
+rect 154 -46 156 -44
+rect 173 -46 175 -34
+rect 182 -38 184 -34
+rect 182 -43 186 -38
+rect 182 -46 184 -43
+rect 136 -54 138 -51
+rect 145 -54 147 -51
+rect 154 -54 156 -51
+rect 173 -54 175 -51
+rect 182 -54 184 -51
+<< polycontact >>
+rect 138 -42 143 -37
+<< polynplus >>
+rect 136 -46 138 -41
+<< metal1 >>
+rect 124 -20 212 -15
+rect 139 -24 144 -20
+rect 157 -24 162 -20
+rect 167 -26 190 -23
+rect 167 -29 172 -26
+rect 185 -29 190 -26
+rect 130 -38 135 -34
+rect 153 -34 167 -32
+rect 148 -36 172 -34
+rect 130 -46 135 -43
+rect 176 -46 181 -34
+rect 176 -48 177 -46
+rect 165 -51 177 -48
+rect 139 -55 144 -51
+rect 185 -55 190 -51
+rect 124 -60 212 -55
+<< m2contact >>
+rect 130 -43 135 -38
+rect 195 -37 200 -32
+rect 204 -43 209 -38
+rect 177 -51 182 -46
+<< pm12contact >>
+rect 152 -44 157 -39
+rect 168 -44 173 -39
+rect 186 -43 191 -38
+<< metal2 >>
+rect 152 -32 200 -27
+rect 130 -49 135 -43
+rect 152 -39 157 -32
+rect 163 -49 168 -40
+rect 186 -46 191 -43
+rect 204 -46 209 -43
+rect 130 -54 168 -49
+rect 186 -51 209 -46
+use inv  inv_2
+timestamp 1765589256
+transform 1 0 195 0 1 -54
+box -8 -9 19 42
+<< labels >>
+flabel metal2 153 -39 153 -39 1 FreeSans 16 0 0 0 B
+flabel m2contact 180 -48 180 -48 1 FreeSans 16 0 0 0 OUT
+flabel metal1 166 -18 166 -18 1 FreeSans 16 0 0 0 Vdd!
+rlabel metal2 192 -49 192 -49 1 bbar
+rlabel metal2 133 -52 133 -52 1 abar
+flabel metal1 165 -58 165 -58 1 FreeSans 16 0 0 0 GND!
+flabel polycontact 140 -40 140 -40 1 FreeSans 16 0 0 0 A
+<< end >>

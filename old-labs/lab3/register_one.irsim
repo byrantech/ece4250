@@ -1,0 +1,275 @@
+| 1-bit Register Test File for IRSIM
+| Tests register with: in (data input), w (write enable),
+| r1, r2 (read enables), out1, out2 (read outputs)
+
+h Vdd!
+l GND!
+s
+
+echo "=== 1-bit Dual-Port Register Functional Tests ==="
+echo ""
+
+echo "=== Test 1: Write Operation ==="
+echo "Initialize: in=0, w=0, r1=0, r2=0"
+l in
+l w
+l r1
+l r2
+s
+
+echo "Write 1: in=1, w=1 (write enable)"
+h in
+h w
+s
+l w
+s
+
+echo "Read back with r1=1, should see out1=1"
+h r1
+s
+assert out1 1
+
+echo "Read back with r2=1, should see out2=1"
+l r1
+h r2
+s
+assert out2 1
+
+echo ""
+echo "=== Test 2: Write 0 ==="
+echo "Write 0: in=0, w=1"
+l in
+h w
+s
+l w
+s
+
+echo "Read with r1=1, should see out1=0"
+h r1
+s
+assert out1 0
+
+echo "Read with r2=1, should see out2=0"
+l r1
+h r2
+s
+assert out2 0
+
+echo ""
+echo "=== Test 3: Write Disabled (w=0) ==="
+echo "Current value is 0, try to write 1 with w=0"
+h in
+l w
+s
+
+echo "Read with r1, should still be 0 (write didn't happen)"
+h r1
+l r2
+s
+assert out1 0
+
+echo ""
+echo "=== Test 4: Read Disabled ==="
+echo "Write 1 to register"
+h in
+h w
+s
+l w
+s
+
+echo "Both read enables off: r1=0, r2=0"
+l r1
+l r2
+s
+echo "Outputs should be in high-Z or undefined state"
+
+echo ""
+echo "=== Test 5: Simultaneous Dual Read ==="
+echo "Enable both read ports: r1=1, r2=1"
+h r1
+h r2
+s
+assert out1 1
+assert out2 1
+echo "Both outputs reading same stored value (1)"
+
+echo ""
+echo "=== Test 6: Data Retention Test ==="
+echo "Write 1, then disable write"
+h in
+h w
+s
+l w
+s
+
+echo "Change input to 0 (but w=0, shouldn't affect stored value)"
+l in
+s
+
+echo "Read r1, should still be 1"
+h r1
+l r2
+s
+assert out1 1
+
+echo "Read r2, should still be 1"
+l r1
+h r2
+s
+assert out2 1
+
+echo ""
+echo "=== Test 7: Sequential Write Operations ==="
+echo "Write sequence: 1, 0, 1, 0"
+
+echo "Write 1"
+h in
+h w
+s
+l w
+h r1
+s
+assert out1 1
+
+echo "Write 0"
+l in
+h w
+s
+l w
+s
+assert out1 0
+
+echo "Write 1"
+h in
+h w
+s
+l w
+s
+assert out1 1
+
+echo "Write 0"
+l in
+h w
+s
+l w
+s
+assert out1 0
+
+echo ""
+echo "=== Test 8: Read Port Independence ==="
+echo "Write 1"
+h in
+h w
+s
+l w
+s
+
+echo "Enable only r1, out1 should be 1"
+h r1
+l r2
+s
+assert out1 1
+
+echo "Enable only r2, out2 should be 1"
+l r1
+h r2
+s
+assert out2 1
+
+echo "Toggle between read ports multiple times"
+h r1
+l r2
+s
+assert out1 1
+
+l r1
+h r2
+s
+assert out2 1
+
+echo ""
+echo "=== Test 9: Write with Reads Enabled ==="
+echo "Enable both reads, then write 0"
+h r1
+h r2
+l in
+h w
+s
+l w
+s
+assert out1 0
+assert out2 0
+
+echo ""
+echo "=== Test 10: Timing Analysis ==="
+echo "Test propagation delays"
+
+echo "Write operation timing (in -> stored value)"
+l in
+h w
+s
+h in
+s
+path out1
+
+echo "Read enable timing (r1 -> out1)"
+l r1
+s
+h r1
+s
+path out1
+
+echo "Read port 2 timing (r2 -> out2)"
+l r2
+s
+h r2
+s
+path out2
+
+echo ""
+echo "=== Test 11: Write Enable Pulse ==="
+echo "Short write pulse"
+l in
+l w
+s
+h in
+h w
+s
+l w
+s
+h r1
+s
+assert out1 1
+
+echo ""
+echo "=== Test 12: Alternating Reads ==="
+echo "Write 1, then alternate between read ports"
+h in
+h w
+s
+l w
+s
+
+h r1
+l r2
+s
+assert out1 1
+
+l r1
+h r2
+s
+assert out2 1
+
+h r1
+l r2
+s
+assert out1 1
+
+l r1
+h r2
+s
+assert out2 1
+
+echo ""
+echo "=== All Register Tests Complete ==="
+ana in w r1 r2 out1 out2

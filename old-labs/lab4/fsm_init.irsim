@@ -1,0 +1,30 @@
+h Vdd!
+l GND!
+
+
+s
+
+vector CLOCK phi0 phi1
+clock CLOCK 00 10 00 01
+vector H h1 h2 h3 h4 h5 h6
+vector N nh1 nh2 nh3 nh4 nh5 nh6
+vector I ih1 ih2 ih3 ih4 ih5 ih6
+vector INPUT reset load iter
+setvector INPUT 000
+
+echo "=== Initialized clock ==="
+
+c
+p
+
+echo "=== Resetting ==="
+h reset
+c
+l reset
+c
+
+assert H 100000
+assert N 100000
+
+h load
+p

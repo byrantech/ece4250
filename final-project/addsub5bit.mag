@@ -1,0 +1,157 @@
+magic
+tech scmos
+timestamp 1765589256
+<< nwell >>
+rect -5 179 41 909
+<< pwell >>
+rect -28 161 -5 909
+<< metal1 >>
+rect -24 903 -19 909
+rect -25 895 -19 903
+rect -20 890 -19 895
+rect -25 872 -19 890
+rect -20 867 -19 872
+rect -25 801 -19 867
+rect -20 796 -19 801
+rect -25 778 -19 796
+rect -20 773 -19 778
+rect -25 707 -19 773
+rect -20 702 -19 707
+rect -25 684 -19 702
+rect -20 679 -19 684
+rect -25 162 -19 679
+rect 15 172 21 907
+rect -24 161 -19 162
+<< m2contact >>
+rect -2 834 3 839
+rect -2 740 3 745
+rect -2 646 3 651
+rect -2 552 3 557
+rect -2 458 3 463
+rect -2 364 3 369
+rect -2 270 3 275
+rect -2 176 3 181
+<< metal2 >>
+rect -4 847 2 852
+rect 7 847 9 852
+rect 3 834 21 839
+rect -4 753 1 758
+rect 6 753 9 758
+rect 16 745 21 834
+rect 3 740 21 745
+rect -4 659 -1 664
+rect 4 659 9 664
+rect 16 651 21 740
+rect 3 646 21 651
+rect -4 565 9 570
+rect 16 557 21 646
+rect 3 552 21 557
+rect -4 471 9 476
+rect 16 463 21 552
+rect 3 458 21 463
+rect -4 377 9 382
+rect 16 369 21 458
+rect 3 364 21 369
+rect -4 283 9 288
+rect 16 275 21 364
+rect 3 270 21 275
+rect -15 226 -10 236
+rect -4 189 9 194
+rect 16 181 21 270
+rect 3 176 21 181
+rect 16 171 21 176
+<< m3contact >>
+rect 2 847 7 852
+rect 1 753 6 758
+rect -1 659 4 664
+rect 16 166 21 171
+<< m123contact >>
+rect -25 890 -20 895
+rect -6 872 -1 877
+rect -25 867 -20 872
+rect -25 796 -20 801
+rect -6 778 -1 783
+rect -25 773 -20 778
+rect -25 702 -20 707
+rect -6 684 -1 689
+rect -25 679 -20 684
+rect -6 590 -1 595
+rect -6 496 -1 501
+rect -6 402 -1 407
+rect -6 308 -1 313
+rect -6 214 -1 219
+rect 56 166 61 171
+<< metal3 >>
+rect -20 890 38 894
+rect -25 889 38 890
+rect -1 872 21 877
+rect 128 867 133 911
+rect -25 852 -20 867
+rect -25 847 2 852
+rect 65 851 141 856
+rect -20 796 38 800
+rect -25 795 38 796
+rect -1 778 21 783
+rect -25 758 -20 773
+rect -25 753 1 758
+rect 65 757 141 762
+rect -20 702 38 706
+rect -25 701 38 702
+rect -1 684 21 689
+rect -25 664 -20 679
+rect -25 659 -1 664
+rect 65 663 141 668
+rect 16 607 38 612
+rect -1 590 21 595
+rect 65 569 141 574
+rect 16 513 38 518
+rect -1 496 21 501
+rect 65 475 141 480
+rect 16 419 38 424
+rect -1 402 21 407
+rect 65 381 141 386
+rect 16 325 38 330
+rect -1 308 21 313
+rect 65 287 141 292
+rect 16 231 38 236
+rect -1 214 21 219
+rect 65 193 141 198
+rect 21 166 56 171
+rect 61 166 118 171
+use xor2  xor2_0 ~/Downloads/vlsi-files/final-project
+array 0 7 94 0 0 51
+timestamp 1765589256
+transform 0 1 35 1 0 37
+box 124 -63 214 -12
+use fulladder  fulladder_0
+timestamp 1765589256
+transform 1 0 0 0 1 0
+box 13 159 145 911
+<< labels >>
+flabel metal2 -3 190 -3 190 1 FreeSans 24 0 0 0 b0
+flabel metal2 -3 284 -3 284 1 FreeSans 24 0 0 0 b1
+flabel metal2 -3 378 -3 378 1 FreeSans 24 0 0 0 b2
+flabel metal2 -3 472 -3 472 1 FreeSans 24 0 0 0 b3
+flabel metal2 -3 566 -3 566 1 FreeSans 24 0 0 0 b4
+flabel metal2 -3 660 -3 660 1 FreeSans 24 0 0 0 b5
+flabel metal2 -3 754 -3 754 1 FreeSans 24 0 0 0 b6
+flabel metal2 -3 848 -3 848 1 FreeSans 24 0 0 0 b7
+flabel metal3 23 234 23 234 1 FreeSans 24 0 0 0 a0
+flabel metal3 23 328 23 328 1 FreeSans 24 0 0 0 a1
+flabel metal3 23 422 23 422 1 FreeSans 24 0 0 0 a2
+flabel metal3 23 516 23 516 1 FreeSans 24 0 0 0 a3
+flabel metal3 23 610 23 610 1 FreeSans 24 0 0 0 a4
+flabel metal3 23 704 23 704 1 FreeSans 24 0 0 0 a5
+flabel metal3 23 798 23 798 1 FreeSans 24 0 0 0 a6
+flabel metal3 23 892 23 892 1 FreeSans 24 0 0 0 a7
+flabel metal3 135 196 135 196 1 FreeSans 24 0 0 0 s0
+flabel metal3 135 290 135 290 1 FreeSans 24 0 0 0 s1
+flabel metal3 135 384 135 384 1 FreeSans 24 0 0 0 s2
+flabel metal3 135 478 135 478 1 FreeSans 24 0 0 0 s3
+flabel metal3 135 572 135 572 1 FreeSans 24 0 0 0 s4
+flabel metal3 135 666 135 666 1 FreeSans 24 0 0 0 s5
+flabel metal3 135 760 135 760 1 FreeSans 24 0 0 0 s6
+flabel metal3 135 854 135 854 1 FreeSans 24 0 0 0 s7
+flabel metal3 23 168 23 168 1 FreeSans 24 0 0 0 cin
+flabel metal3 129 909 129 909 5 FreeSans 24 0 0 0 cout
+<< end >>

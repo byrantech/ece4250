@@ -1,0 +1,21 @@
+magic
+tech scmos
+timestamp 1763172005
+<< metal1 >>
+rect 29 30 37 35
+rect 34 19 37 30
+rect 68 30 78 35
+rect 68 24 71 30
+use nor2  nor2_0
+timestamp 1762922985
+transform 1 0 5 0 1 -5
+box -3 5 32 57
+use nor2  nor2_2
+timestamp 1762922985
+transform -1 0 99 0 1 -5
+box -3 5 32 57
+use nand2  nand2_0 ~/Downloads/vlsi-files/lab2
+timestamp 1760631809
+transform 1 0 41 0 1 0
+box -7 -2 29 54
+<< end >>

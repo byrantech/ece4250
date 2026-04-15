@@ -1,0 +1,48 @@
+h Vdd!
+l GND!
+
+s
+
+vector q q7 q6 q5 q4 q3 q2 q1 q0
+
+vector CLOCK CLK
+clock CLOCK 0 1
+
+h seed_en seed
+ana clk q
+c
+d q
+c
+d q
+c
+c
+c
+c
+c
+c
+d q
+l seed_en
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c

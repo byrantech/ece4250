@@ -1,0 +1,61 @@
+magic
+tech scmos
+timestamp 1763055005
+<< metal1 >>
+rect 213 122 218 127
+rect 249 122 254 127
+rect 213 50 218 55
+rect 249 50 254 55
+rect 213 33 218 38
+rect 249 33 254 38
+<< m2contact >>
+rect 254 123 259 128
+rect 240 87 245 92
+rect 254 49 259 54
+rect 208 33 213 38
+rect 254 33 259 38
+<< metal2 >>
+rect 222 130 227 134
+rect 227 125 254 130
+rect 222 87 236 92
+rect 231 40 236 87
+rect 249 69 254 74
+rect 259 49 269 54
+rect 213 33 227 38
+rect 231 35 254 40
+rect 222 26 227 33
+rect 264 29 269 49
+rect 236 26 269 29
+<< m3contact >>
+rect 222 125 227 130
+rect 231 26 236 31
+<< m123contact >>
+rect 208 122 213 127
+rect 208 49 213 54
+<< metal3 >>
+rect 199 54 204 134
+rect 213 122 218 134
+rect 222 115 227 125
+rect 217 110 227 115
+rect 199 49 208 54
+rect 199 26 204 49
+rect 217 45 222 110
+rect 213 40 222 45
+rect 213 26 218 40
+rect 231 31 236 134
+use mux2  mux2_0
+timestamp 1763054869
+transform 0 -1 234 1 0 107
+box -81 -5 27 46
+use mux2  mux2_1
+timestamp 1763054869
+transform 0 1 233 1 0 107
+box -81 -5 27 46
+<< labels >>
+flabel metal1 215 126 215 126 1 FreeSans 40 0 0 0 ad
+flabel m2contact 244 89 244 89 1 FreeSans 40 0 0 0 o
+flabel metal1 250 52 250 52 1 FreeSans 40 0 0 0 s
+flabel metal1 217 52 217 52 1 FreeSans 40 0 0 0 u
+flabel metal1 215 36 215 36 1 FreeSans 40 0 0 0 au
+flabel metal1 251 126 251 126 1 FreeSans 40 0 0 0 A
+<< end >>

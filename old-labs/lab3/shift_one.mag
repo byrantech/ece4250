@@ -1,0 +1,36 @@
+magic
+tech scmos
+timestamp 1761006476
+<< metal1 >>
+rect 44 161 49 172
+rect 89 161 94 172
+rect 2 156 8 161
+rect 133 126 146 131
+rect 2 120 8 125
+rect 89 90 95 92
+rect 2 83 5 88
+rect 2 72 16 77
+rect 44 70 49 88
+rect 67 83 72 88
+rect 89 71 94 90
+rect 2 36 7 41
+rect 2 -1 7 4
+<< metal2 >>
+rect 67 83 132 88
+rect 127 42 132 83
+use mux2  mux2_0
+timestamp 1760917918
+transform -1 0 264 0 -1 73
+box 126 -4 261 74
+use mux2  mux2_1
+timestamp 1760917918
+transform -1 0 264 0 -1 157
+box 126 -4 261 74
+<< labels >>
+rlabel metal1 143 129 143 129 7 o
+rlabel metal1 5 158 5 158 4 a
+rlabel metal1 5 122 5 122 3 s
+rlabel metal1 4 74 4 74 3 ad
+rlabel metal1 4 38 4 38 3 u
+rlabel metal1 4 2 4 2 2 au
+<< end >>

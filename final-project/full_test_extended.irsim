@@ -1,0 +1,3525 @@
+logfile full_test.tcl
+h Vdd!
+l GND!
+s
+
+vector CLOCK phi0 phi1
+clock CLOCK 00 10 00 01
+
+l reset
+
+s
+
+vector clt_out clt_out7 clt_out6 clt_out5 clt_out4 clt_out3 clt_out2 clt_out1 clt_out0
+vector lfsr_out lfsr_out7 lfsr_out6 lfsr_out5 lfsr_out4 lfsr_out3 lfsr_out2 lfsr_out1 lfsr_out0
+vector log_out log_out7 log_out6 log_out5 log_out4 log_out3 log_out2 log_out1 log_out0
+vector sqrt_out sqrt_out7 sqrt_out6 sqrt_out5 sqrt_out4 sqrt_out3 sqrt_out2 sqrt_out1 sqrt_out0
+vector mux_out out7 out6 out5 out4 out3 out2 out1 out0
+vector log_lfsr_out log_lfsr_out7 log_lfsr_out6 log_lfsr_out5 log_lfsr_out4 log_lfsr_out3 log_lfsr_out2 log_lfsr_out1 log_lfsr_out0
+vector sqrt_latch_out sqrt_latch_out7 sqrt_latch_out6 sqrt_latch_out5 sqrt_latch_out4 sqrt_latch_out3 sqrt_latch_out2 sqrt_latch_out1 sqrt_latch_out0
+vector result right_0 right_1 right_2 right_3 right_4 right_5 right_6 right_7
+vector config left_5 left_4
+
+| top_3 = lfsr_data_in
+| top_4 = sqrt_data_in
+| top_5 = log_data_in
+| bottom_4 = clt_data_in_4
+| bottom_3 = clt_data_in_3
+| bottom_2 = clt_data_in_2
+| bottom_1 = clt_data_in_1
+| bottom_0 = clt_data_in_0
+| left_3 = seed_en
+| 00 = uniform = q0
+| 01 = sqrt = q1
+| 10 = clt = q2
+| 11 = log = q3
+
+ana phi0_in phi1_in
+
+echo "Enabling seed generation"
+h left_3
+
+s
+
+h top_3 top_4 top_5 bottom_4 bottom_3 bottom_2 bottom_1 bottom_0
+
+c
+
+l bottom_1 bottom_0
+
+c
+
+h bottom_1
+
+c
+
+l top_4
+
+c
+
+h bottom_0 top_4
+
+c
+
+l bottom_2 bottom_0 bottom_1
+
+c
+
+h bottom_2
+
+c
+
+h bottom_1 bottom_2
+
+c
+
+
+l left_3
+
+echo "Completed seeding"
+
+echo "=== START UNIFORM DISTRIBUTION ==="
+setvector config 00
+
+c
+echo "uniform_sample_0"
+d result
+c
+echo "uniform_sample_1"
+d result
+c
+echo "uniform_sample_2"
+d result
+c
+echo "uniform_sample_3"
+d result
+c
+echo "uniform_sample_4"
+d result
+c
+echo "uniform_sample_5"
+d result
+c
+echo "uniform_sample_6"
+d result
+c
+echo "uniform_sample_7"
+d result
+c
+echo "uniform_sample_8"
+d result
+c
+echo "uniform_sample_9"
+d result
+c
+echo "uniform_sample_10"
+d result
+c
+echo "uniform_sample_11"
+d result
+c
+echo "uniform_sample_12"
+d result
+c
+echo "uniform_sample_13"
+d result
+c
+echo "uniform_sample_14"
+d result
+c
+echo "uniform_sample_15"
+d result
+c
+echo "uniform_sample_16"
+d result
+c
+echo "uniform_sample_17"
+d result
+c
+echo "uniform_sample_18"
+d result
+c
+echo "uniform_sample_19"
+d result
+c
+echo "uniform_sample_20"
+d result
+c
+echo "uniform_sample_21"
+d result
+c
+echo "uniform_sample_22"
+d result
+c
+echo "uniform_sample_23"
+d result
+c
+echo "uniform_sample_24"
+d result
+c
+echo "uniform_sample_25"
+d result
+c
+echo "uniform_sample_26"
+d result
+c
+echo "uniform_sample_27"
+d result
+c
+echo "uniform_sample_28"
+d result
+c
+echo "uniform_sample_29"
+d result
+c
+echo "uniform_sample_30"
+d result
+c
+echo "uniform_sample_31"
+d result
+c
+echo "uniform_sample_32"
+d result
+c
+echo "uniform_sample_33"
+d result
+c
+echo "uniform_sample_34"
+d result
+c
+echo "uniform_sample_35"
+d result
+c
+echo "uniform_sample_36"
+d result
+c
+echo "uniform_sample_37"
+d result
+c
+echo "uniform_sample_38"
+d result
+c
+echo "uniform_sample_39"
+d result
+c
+echo "uniform_sample_40"
+d result
+c
+echo "uniform_sample_41"
+d result
+c
+echo "uniform_sample_42"
+d result
+c
+echo "uniform_sample_43"
+d result
+c
+echo "uniform_sample_44"
+d result
+c
+echo "uniform_sample_45"
+d result
+c
+echo "uniform_sample_46"
+d result
+c
+echo "uniform_sample_47"
+d result
+c
+echo "uniform_sample_48"
+d result
+c
+echo "uniform_sample_49"
+d result
+c
+echo "uniform_sample_50"
+d result
+c
+echo "uniform_sample_51"
+d result
+c
+echo "uniform_sample_52"
+d result
+c
+echo "uniform_sample_53"
+d result
+c
+echo "uniform_sample_54"
+d result
+c
+echo "uniform_sample_55"
+d result
+c
+echo "uniform_sample_56"
+d result
+c
+echo "uniform_sample_57"
+d result
+c
+echo "uniform_sample_58"
+d result
+c
+echo "uniform_sample_59"
+d result
+c
+echo "uniform_sample_60"
+d result
+c
+echo "uniform_sample_61"
+d result
+c
+echo "uniform_sample_62"
+d result
+c
+echo "uniform_sample_63"
+d result
+c
+echo "uniform_sample_64"
+d result
+c
+echo "uniform_sample_65"
+d result
+c
+echo "uniform_sample_66"
+d result
+c
+echo "uniform_sample_67"
+d result
+c
+echo "uniform_sample_68"
+d result
+c
+echo "uniform_sample_69"
+d result
+c
+echo "uniform_sample_70"
+d result
+c
+echo "uniform_sample_71"
+d result
+c
+echo "uniform_sample_72"
+d result
+c
+echo "uniform_sample_73"
+d result
+c
+echo "uniform_sample_74"
+d result
+c
+echo "uniform_sample_75"
+d result
+c
+echo "uniform_sample_76"
+d result
+c
+echo "uniform_sample_77"
+d result
+c
+echo "uniform_sample_78"
+d result
+c
+echo "uniform_sample_79"
+d result
+c
+echo "uniform_sample_80"
+d result
+c
+echo "uniform_sample_81"
+d result
+c
+echo "uniform_sample_82"
+d result
+c
+echo "uniform_sample_83"
+d result
+c
+echo "uniform_sample_84"
+d result
+c
+echo "uniform_sample_85"
+d result
+c
+echo "uniform_sample_86"
+d result
+c
+echo "uniform_sample_87"
+d result
+c
+echo "uniform_sample_88"
+d result
+c
+echo "uniform_sample_89"
+d result
+c
+echo "uniform_sample_90"
+d result
+c
+echo "uniform_sample_91"
+d result
+c
+echo "uniform_sample_92"
+d result
+c
+echo "uniform_sample_93"
+d result
+c
+echo "uniform_sample_94"
+d result
+c
+echo "uniform_sample_95"
+d result
+c
+echo "uniform_sample_96"
+d result
+c
+echo "uniform_sample_97"
+d result
+c
+echo "uniform_sample_98"
+d result
+c
+echo "uniform_sample_99"
+d result
+c
+echo "uniform_sample_100"
+d result
+c
+echo "uniform_sample_101"
+d result
+c
+echo "uniform_sample_102"
+d result
+c
+echo "uniform_sample_103"
+d result
+c
+echo "uniform_sample_104"
+d result
+c
+echo "uniform_sample_105"
+d result
+c
+echo "uniform_sample_106"
+d result
+c
+echo "uniform_sample_107"
+d result
+c
+echo "uniform_sample_108"
+d result
+c
+echo "uniform_sample_109"
+d result
+c
+echo "uniform_sample_110"
+d result
+c
+echo "uniform_sample_111"
+d result
+c
+echo "uniform_sample_112"
+d result
+c
+echo "uniform_sample_113"
+d result
+c
+echo "uniform_sample_114"
+d result
+c
+echo "uniform_sample_115"
+d result
+c
+echo "uniform_sample_116"
+d result
+c
+echo "uniform_sample_117"
+d result
+c
+echo "uniform_sample_118"
+d result
+c
+echo "uniform_sample_119"
+d result
+c
+echo "uniform_sample_120"
+d result
+c
+echo "uniform_sample_121"
+d result
+c
+echo "uniform_sample_122"
+d result
+c
+echo "uniform_sample_123"
+d result
+c
+echo "uniform_sample_124"
+d result
+c
+echo "uniform_sample_125"
+d result
+c
+echo "uniform_sample_126"
+d result
+c
+echo "uniform_sample_127"
+d result
+c
+echo "uniform_sample_128"
+d result
+c
+echo "uniform_sample_129"
+d result
+c
+echo "uniform_sample_130"
+d result
+c
+echo "uniform_sample_131"
+d result
+c
+echo "uniform_sample_132"
+d result
+c
+echo "uniform_sample_133"
+d result
+c
+echo "uniform_sample_134"
+d result
+c
+echo "uniform_sample_135"
+d result
+c
+echo "uniform_sample_136"
+d result
+c
+echo "uniform_sample_137"
+d result
+c
+echo "uniform_sample_138"
+d result
+c
+echo "uniform_sample_139"
+d result
+c
+echo "uniform_sample_140"
+d result
+c
+echo "uniform_sample_141"
+d result
+c
+echo "uniform_sample_142"
+d result
+c
+echo "uniform_sample_143"
+d result
+c
+echo "uniform_sample_144"
+d result
+c
+echo "uniform_sample_145"
+d result
+c
+echo "uniform_sample_146"
+d result
+c
+echo "uniform_sample_147"
+d result
+c
+echo "uniform_sample_148"
+d result
+c
+echo "uniform_sample_149"
+d result
+c
+echo "uniform_sample_150"
+d result
+c
+echo "uniform_sample_151"
+d result
+c
+echo "uniform_sample_152"
+d result
+c
+echo "uniform_sample_153"
+d result
+c
+echo "uniform_sample_154"
+d result
+c
+echo "uniform_sample_155"
+d result
+c
+echo "uniform_sample_156"
+d result
+c
+echo "uniform_sample_157"
+d result
+c
+echo "uniform_sample_158"
+d result
+c
+echo "uniform_sample_159"
+d result
+c
+echo "uniform_sample_160"
+d result
+c
+echo "uniform_sample_161"
+d result
+c
+echo "uniform_sample_162"
+d result
+c
+echo "uniform_sample_163"
+d result
+c
+echo "uniform_sample_164"
+d result
+c
+echo "uniform_sample_165"
+d result
+c
+echo "uniform_sample_166"
+d result
+c
+echo "uniform_sample_167"
+d result
+c
+echo "uniform_sample_168"
+d result
+c
+echo "uniform_sample_169"
+d result
+c
+echo "uniform_sample_170"
+d result
+c
+echo "uniform_sample_171"
+d result
+c
+echo "uniform_sample_172"
+d result
+c
+echo "uniform_sample_173"
+d result
+c
+echo "uniform_sample_174"
+d result
+c
+echo "uniform_sample_175"
+d result
+c
+echo "uniform_sample_176"
+d result
+c
+echo "uniform_sample_177"
+d result
+c
+echo "uniform_sample_178"
+d result
+c
+echo "uniform_sample_179"
+d result
+c
+echo "uniform_sample_180"
+d result
+c
+echo "uniform_sample_181"
+d result
+c
+echo "uniform_sample_182"
+d result
+c
+echo "uniform_sample_183"
+d result
+c
+echo "uniform_sample_184"
+d result
+c
+echo "uniform_sample_185"
+d result
+c
+echo "uniform_sample_186"
+d result
+c
+echo "uniform_sample_187"
+d result
+c
+echo "uniform_sample_188"
+d result
+c
+echo "uniform_sample_189"
+d result
+c
+echo "uniform_sample_190"
+d result
+c
+echo "uniform_sample_191"
+d result
+c
+echo "uniform_sample_192"
+d result
+c
+echo "uniform_sample_193"
+d result
+c
+echo "uniform_sample_194"
+d result
+c
+echo "uniform_sample_195"
+d result
+c
+echo "uniform_sample_196"
+d result
+c
+echo "uniform_sample_197"
+d result
+c
+echo "uniform_sample_198"
+d result
+c
+echo "uniform_sample_199"
+d result
+c
+echo "uniform_sample_200"
+d result
+c
+echo "uniform_sample_201"
+d result
+c
+echo "uniform_sample_202"
+d result
+c
+echo "uniform_sample_203"
+d result
+c
+echo "uniform_sample_204"
+d result
+c
+echo "uniform_sample_205"
+d result
+c
+echo "uniform_sample_206"
+d result
+c
+echo "uniform_sample_207"
+d result
+c
+echo "uniform_sample_208"
+d result
+c
+echo "uniform_sample_209"
+d result
+c
+echo "uniform_sample_210"
+d result
+c
+echo "uniform_sample_211"
+d result
+c
+echo "uniform_sample_212"
+d result
+c
+echo "uniform_sample_213"
+d result
+c
+echo "uniform_sample_214"
+d result
+c
+echo "uniform_sample_215"
+d result
+c
+echo "uniform_sample_216"
+d result
+c
+echo "uniform_sample_217"
+d result
+c
+echo "uniform_sample_218"
+d result
+c
+echo "uniform_sample_219"
+d result
+c
+echo "uniform_sample_220"
+d result
+c
+echo "uniform_sample_221"
+d result
+c
+echo "uniform_sample_222"
+d result
+c
+echo "uniform_sample_223"
+d result
+c
+echo "uniform_sample_224"
+d result
+c
+echo "uniform_sample_225"
+d result
+c
+echo "uniform_sample_226"
+d result
+c
+echo "uniform_sample_227"
+d result
+c
+echo "uniform_sample_228"
+d result
+c
+echo "uniform_sample_229"
+d result
+c
+echo "uniform_sample_230"
+d result
+c
+echo "uniform_sample_231"
+d result
+c
+echo "uniform_sample_232"
+d result
+c
+echo "uniform_sample_233"
+d result
+c
+echo "uniform_sample_234"
+d result
+c
+echo "uniform_sample_235"
+d result
+c
+echo "uniform_sample_236"
+d result
+c
+echo "uniform_sample_237"
+d result
+c
+echo "uniform_sample_238"
+d result
+c
+echo "uniform_sample_239"
+d result
+c
+echo "uniform_sample_240"
+d result
+c
+echo "uniform_sample_241"
+d result
+c
+echo "uniform_sample_242"
+d result
+c
+echo "uniform_sample_243"
+d result
+c
+echo "uniform_sample_244"
+d result
+c
+echo "uniform_sample_245"
+d result
+c
+echo "uniform_sample_246"
+d result
+c
+echo "uniform_sample_247"
+d result
+c
+echo "uniform_sample_248"
+d result
+c
+echo "uniform_sample_249"
+d result
+c
+echo "uniform_sample_250"
+d result
+c
+echo "uniform_sample_251"
+d result
+c
+echo "uniform_sample_252"
+d result
+c
+echo "uniform_sample_253"
+d result
+c
+echo "uniform_sample_254"
+d result
+c
+echo "uniform_sample_255"
+d result
+c
+echo "uniform_sample_256"
+d result
+c
+echo "uniform_sample_257"
+d result
+c
+echo "uniform_sample_258"
+d result
+c
+echo "uniform_sample_259"
+d result
+c
+echo "uniform_sample_260"
+d result
+c
+echo "uniform_sample_261"
+d result
+c
+echo "uniform_sample_262"
+d result
+c
+echo "uniform_sample_263"
+d result
+c
+echo "uniform_sample_264"
+d result
+c
+echo "uniform_sample_265"
+d result
+c
+echo "uniform_sample_266"
+d result
+c
+echo "uniform_sample_267"
+d result
+c
+echo "uniform_sample_268"
+d result
+c
+echo "uniform_sample_269"
+d result
+c
+echo "uniform_sample_270"
+d result
+c
+echo "uniform_sample_271"
+d result
+c
+echo "uniform_sample_272"
+d result
+c
+echo "uniform_sample_273"
+d result
+c
+echo "uniform_sample_274"
+d result
+c
+echo "uniform_sample_275"
+d result
+c
+echo "uniform_sample_276"
+d result
+c
+echo "uniform_sample_277"
+d result
+c
+echo "uniform_sample_278"
+d result
+c
+echo "uniform_sample_279"
+d result
+c
+echo "uniform_sample_280"
+d result
+c
+echo "uniform_sample_281"
+d result
+c
+echo "uniform_sample_282"
+d result
+c
+echo "uniform_sample_283"
+d result
+c
+echo "uniform_sample_284"
+d result
+c
+echo "uniform_sample_285"
+d result
+c
+echo "uniform_sample_286"
+d result
+c
+echo "uniform_sample_287"
+d result
+c
+echo "uniform_sample_288"
+d result
+c
+echo "uniform_sample_289"
+d result
+c
+echo "uniform_sample_290"
+d result
+c
+echo "uniform_sample_291"
+d result
+c
+echo "uniform_sample_292"
+d result
+c
+echo "uniform_sample_293"
+d result
+c
+echo "uniform_sample_294"
+d result
+c
+echo "uniform_sample_295"
+d result
+c
+echo "uniform_sample_296"
+d result
+c
+echo "uniform_sample_297"
+d result
+c
+echo "uniform_sample_298"
+d result
+c
+echo "uniform_sample_299"
+d result
+
+echo "=== END UNIFORM DISTRIBUTION ==="
+
+echo "=== START SQRT DISTRIBUTION ==="
+setvector config 01
+
+c
+echo "sqrt_sample_0"
+d result
+c
+echo "sqrt_sample_1"
+d result
+c
+echo "sqrt_sample_2"
+d result
+c
+echo "sqrt_sample_3"
+d result
+c
+echo "sqrt_sample_4"
+d result
+c
+echo "sqrt_sample_5"
+d result
+c
+echo "sqrt_sample_6"
+d result
+c
+echo "sqrt_sample_7"
+d result
+c
+echo "sqrt_sample_8"
+d result
+c
+echo "sqrt_sample_9"
+d result
+c
+echo "sqrt_sample_10"
+d result
+c
+echo "sqrt_sample_11"
+d result
+c
+echo "sqrt_sample_12"
+d result
+c
+echo "sqrt_sample_13"
+d result
+c
+echo "sqrt_sample_14"
+d result
+c
+echo "sqrt_sample_15"
+d result
+c
+echo "sqrt_sample_16"
+d result
+c
+echo "sqrt_sample_17"
+d result
+c
+echo "sqrt_sample_18"
+d result
+c
+echo "sqrt_sample_19"
+d result
+c
+echo "sqrt_sample_20"
+d result
+c
+echo "sqrt_sample_21"
+d result
+c
+echo "sqrt_sample_22"
+d result
+c
+echo "sqrt_sample_23"
+d result
+c
+echo "sqrt_sample_24"
+d result
+c
+echo "sqrt_sample_25"
+d result
+c
+echo "sqrt_sample_26"
+d result
+c
+echo "sqrt_sample_27"
+d result
+c
+echo "sqrt_sample_28"
+d result
+c
+echo "sqrt_sample_29"
+d result
+c
+echo "sqrt_sample_30"
+d result
+c
+echo "sqrt_sample_31"
+d result
+c
+echo "sqrt_sample_32"
+d result
+c
+echo "sqrt_sample_33"
+d result
+c
+echo "sqrt_sample_34"
+d result
+c
+echo "sqrt_sample_35"
+d result
+c
+echo "sqrt_sample_36"
+d result
+c
+echo "sqrt_sample_37"
+d result
+c
+echo "sqrt_sample_38"
+d result
+c
+echo "sqrt_sample_39"
+d result
+c
+echo "sqrt_sample_40"
+d result
+c
+echo "sqrt_sample_41"
+d result
+c
+echo "sqrt_sample_42"
+d result
+c
+echo "sqrt_sample_43"
+d result
+c
+echo "sqrt_sample_44"
+d result
+c
+echo "sqrt_sample_45"
+d result
+c
+echo "sqrt_sample_46"
+d result
+c
+echo "sqrt_sample_47"
+d result
+c
+echo "sqrt_sample_48"
+d result
+c
+echo "sqrt_sample_49"
+d result
+c
+echo "sqrt_sample_50"
+d result
+c
+echo "sqrt_sample_51"
+d result
+c
+echo "sqrt_sample_52"
+d result
+c
+echo "sqrt_sample_53"
+d result
+c
+echo "sqrt_sample_54"
+d result
+c
+echo "sqrt_sample_55"
+d result
+c
+echo "sqrt_sample_56"
+d result
+c
+echo "sqrt_sample_57"
+d result
+c
+echo "sqrt_sample_58"
+d result
+c
+echo "sqrt_sample_59"
+d result
+c
+echo "sqrt_sample_60"
+d result
+c
+echo "sqrt_sample_61"
+d result
+c
+echo "sqrt_sample_62"
+d result
+c
+echo "sqrt_sample_63"
+d result
+c
+echo "sqrt_sample_64"
+d result
+c
+echo "sqrt_sample_65"
+d result
+c
+echo "sqrt_sample_66"
+d result
+c
+echo "sqrt_sample_67"
+d result
+c
+echo "sqrt_sample_68"
+d result
+c
+echo "sqrt_sample_69"
+d result
+c
+echo "sqrt_sample_70"
+d result
+c
+echo "sqrt_sample_71"
+d result
+c
+echo "sqrt_sample_72"
+d result
+c
+echo "sqrt_sample_73"
+d result
+c
+echo "sqrt_sample_74"
+d result
+c
+echo "sqrt_sample_75"
+d result
+c
+echo "sqrt_sample_76"
+d result
+c
+echo "sqrt_sample_77"
+d result
+c
+echo "sqrt_sample_78"
+d result
+c
+echo "sqrt_sample_79"
+d result
+c
+echo "sqrt_sample_80"
+d result
+c
+echo "sqrt_sample_81"
+d result
+c
+echo "sqrt_sample_82"
+d result
+c
+echo "sqrt_sample_83"
+d result
+c
+echo "sqrt_sample_84"
+d result
+c
+echo "sqrt_sample_85"
+d result
+c
+echo "sqrt_sample_86"
+d result
+c
+echo "sqrt_sample_87"
+d result
+c
+echo "sqrt_sample_88"
+d result
+c
+echo "sqrt_sample_89"
+d result
+c
+echo "sqrt_sample_90"
+d result
+c
+echo "sqrt_sample_91"
+d result
+c
+echo "sqrt_sample_92"
+d result
+c
+echo "sqrt_sample_93"
+d result
+c
+echo "sqrt_sample_94"
+d result
+c
+echo "sqrt_sample_95"
+d result
+c
+echo "sqrt_sample_96"
+d result
+c
+echo "sqrt_sample_97"
+d result
+c
+echo "sqrt_sample_98"
+d result
+c
+echo "sqrt_sample_99"
+d result
+c
+echo "sqrt_sample_100"
+d result
+c
+echo "sqrt_sample_101"
+d result
+c
+echo "sqrt_sample_102"
+d result
+c
+echo "sqrt_sample_103"
+d result
+c
+echo "sqrt_sample_104"
+d result
+c
+echo "sqrt_sample_105"
+d result
+c
+echo "sqrt_sample_106"
+d result
+c
+echo "sqrt_sample_107"
+d result
+c
+echo "sqrt_sample_108"
+d result
+c
+echo "sqrt_sample_109"
+d result
+c
+echo "sqrt_sample_110"
+d result
+c
+echo "sqrt_sample_111"
+d result
+c
+echo "sqrt_sample_112"
+d result
+c
+echo "sqrt_sample_113"
+d result
+c
+echo "sqrt_sample_114"
+d result
+c
+echo "sqrt_sample_115"
+d result
+c
+echo "sqrt_sample_116"
+d result
+c
+echo "sqrt_sample_117"
+d result
+c
+echo "sqrt_sample_118"
+d result
+c
+echo "sqrt_sample_119"
+d result
+c
+echo "sqrt_sample_120"
+d result
+c
+echo "sqrt_sample_121"
+d result
+c
+echo "sqrt_sample_122"
+d result
+c
+echo "sqrt_sample_123"
+d result
+c
+echo "sqrt_sample_124"
+d result
+c
+echo "sqrt_sample_125"
+d result
+c
+echo "sqrt_sample_126"
+d result
+c
+echo "sqrt_sample_127"
+d result
+c
+echo "sqrt_sample_128"
+d result
+c
+echo "sqrt_sample_129"
+d result
+c
+echo "sqrt_sample_130"
+d result
+c
+echo "sqrt_sample_131"
+d result
+c
+echo "sqrt_sample_132"
+d result
+c
+echo "sqrt_sample_133"
+d result
+c
+echo "sqrt_sample_134"
+d result
+c
+echo "sqrt_sample_135"
+d result
+c
+echo "sqrt_sample_136"
+d result
+c
+echo "sqrt_sample_137"
+d result
+c
+echo "sqrt_sample_138"
+d result
+c
+echo "sqrt_sample_139"
+d result
+c
+echo "sqrt_sample_140"
+d result
+c
+echo "sqrt_sample_141"
+d result
+c
+echo "sqrt_sample_142"
+d result
+c
+echo "sqrt_sample_143"
+d result
+c
+echo "sqrt_sample_144"
+d result
+c
+echo "sqrt_sample_145"
+d result
+c
+echo "sqrt_sample_146"
+d result
+c
+echo "sqrt_sample_147"
+d result
+c
+echo "sqrt_sample_148"
+d result
+c
+echo "sqrt_sample_149"
+d result
+c
+echo "sqrt_sample_150"
+d result
+c
+echo "sqrt_sample_151"
+d result
+c
+echo "sqrt_sample_152"
+d result
+c
+echo "sqrt_sample_153"
+d result
+c
+echo "sqrt_sample_154"
+d result
+c
+echo "sqrt_sample_155"
+d result
+c
+echo "sqrt_sample_156"
+d result
+c
+echo "sqrt_sample_157"
+d result
+c
+echo "sqrt_sample_158"
+d result
+c
+echo "sqrt_sample_159"
+d result
+c
+echo "sqrt_sample_160"
+d result
+c
+echo "sqrt_sample_161"
+d result
+c
+echo "sqrt_sample_162"
+d result
+c
+echo "sqrt_sample_163"
+d result
+c
+echo "sqrt_sample_164"
+d result
+c
+echo "sqrt_sample_165"
+d result
+c
+echo "sqrt_sample_166"
+d result
+c
+echo "sqrt_sample_167"
+d result
+c
+echo "sqrt_sample_168"
+d result
+c
+echo "sqrt_sample_169"
+d result
+
+echo "=== END SQRT DISTRIBUTION ==="
+
+echo "=== START CLT DISTRIBUTION ==="
+setvector config 10
+
+c
+echo "clt_sample_0"
+d result
+c
+echo "clt_sample_1"
+d result
+c
+echo "clt_sample_2"
+d result
+c
+echo "clt_sample_3"
+d result
+c
+echo "clt_sample_4"
+d result
+c
+echo "clt_sample_5"
+d result
+c
+echo "clt_sample_6"
+d result
+c
+echo "clt_sample_7"
+d result
+c
+echo "clt_sample_8"
+d result
+c
+echo "clt_sample_9"
+d result
+c
+echo "clt_sample_10"
+d result
+c
+echo "clt_sample_11"
+d result
+c
+echo "clt_sample_12"
+d result
+c
+echo "clt_sample_13"
+d result
+c
+echo "clt_sample_14"
+d result
+c
+echo "clt_sample_15"
+d result
+c
+echo "clt_sample_16"
+d result
+c
+echo "clt_sample_17"
+d result
+c
+echo "clt_sample_18"
+d result
+c
+echo "clt_sample_19"
+d result
+c
+echo "clt_sample_20"
+d result
+c
+echo "clt_sample_21"
+d result
+c
+echo "clt_sample_22"
+d result
+c
+echo "clt_sample_23"
+d result
+c
+echo "clt_sample_24"
+d result
+c
+echo "clt_sample_25"
+d result
+c
+echo "clt_sample_26"
+d result
+c
+echo "clt_sample_27"
+d result
+c
+echo "clt_sample_28"
+d result
+c
+echo "clt_sample_29"
+d result
+c
+echo "clt_sample_30"
+d result
+c
+echo "clt_sample_31"
+d result
+c
+echo "clt_sample_32"
+d result
+c
+echo "clt_sample_33"
+d result
+c
+echo "clt_sample_34"
+d result
+c
+echo "clt_sample_35"
+d result
+c
+echo "clt_sample_36"
+d result
+c
+echo "clt_sample_37"
+d result
+c
+echo "clt_sample_38"
+d result
+c
+echo "clt_sample_39"
+d result
+c
+echo "clt_sample_40"
+d result
+c
+echo "clt_sample_41"
+d result
+c
+echo "clt_sample_42"
+d result
+c
+echo "clt_sample_43"
+d result
+c
+echo "clt_sample_44"
+d result
+c
+echo "clt_sample_45"
+d result
+c
+echo "clt_sample_46"
+d result
+c
+echo "clt_sample_47"
+d result
+c
+echo "clt_sample_48"
+d result
+c
+echo "clt_sample_49"
+d result
+c
+echo "clt_sample_50"
+d result
+c
+echo "clt_sample_51"
+d result
+c
+echo "clt_sample_52"
+d result
+c
+echo "clt_sample_53"
+d result
+c
+echo "clt_sample_54"
+d result
+c
+echo "clt_sample_55"
+d result
+c
+echo "clt_sample_56"
+d result
+c
+echo "clt_sample_57"
+d result
+c
+echo "clt_sample_58"
+d result
+c
+echo "clt_sample_59"
+d result
+c
+echo "clt_sample_60"
+d result
+c
+echo "clt_sample_61"
+d result
+c
+echo "clt_sample_62"
+d result
+c
+echo "clt_sample_63"
+d result
+c
+echo "clt_sample_64"
+d result
+c
+echo "clt_sample_65"
+d result
+c
+echo "clt_sample_66"
+d result
+c
+echo "clt_sample_67"
+d result
+c
+echo "clt_sample_68"
+d result
+c
+echo "clt_sample_69"
+d result
+c
+echo "clt_sample_70"
+d result
+c
+echo "clt_sample_71"
+d result
+c
+echo "clt_sample_72"
+d result
+c
+echo "clt_sample_73"
+d result
+c
+echo "clt_sample_74"
+d result
+c
+echo "clt_sample_75"
+d result
+c
+echo "clt_sample_76"
+d result
+c
+echo "clt_sample_77"
+d result
+c
+echo "clt_sample_78"
+d result
+c
+echo "clt_sample_79"
+d result
+c
+echo "clt_sample_80"
+d result
+c
+echo "clt_sample_81"
+d result
+c
+echo "clt_sample_82"
+d result
+c
+echo "clt_sample_83"
+d result
+c
+echo "clt_sample_84"
+d result
+c
+echo "clt_sample_85"
+d result
+c
+echo "clt_sample_86"
+d result
+c
+echo "clt_sample_87"
+d result
+c
+echo "clt_sample_88"
+d result
+c
+echo "clt_sample_89"
+d result
+c
+echo "clt_sample_90"
+d result
+c
+echo "clt_sample_91"
+d result
+c
+echo "clt_sample_92"
+d result
+c
+echo "clt_sample_93"
+d result
+c
+echo "clt_sample_94"
+d result
+c
+echo "clt_sample_95"
+d result
+c
+echo "clt_sample_96"
+d result
+c
+echo "clt_sample_97"
+d result
+c
+echo "clt_sample_98"
+d result
+c
+echo "clt_sample_99"
+d result
+c
+echo "clt_sample_100"
+d result
+c
+echo "clt_sample_101"
+d result
+c
+echo "clt_sample_102"
+d result
+c
+echo "clt_sample_103"
+d result
+c
+echo "clt_sample_104"
+d result
+c
+echo "clt_sample_105"
+d result
+c
+echo "clt_sample_106"
+d result
+c
+echo "clt_sample_107"
+d result
+c
+echo "clt_sample_108"
+d result
+c
+echo "clt_sample_109"
+d result
+c
+echo "clt_sample_110"
+d result
+c
+echo "clt_sample_111"
+d result
+c
+echo "clt_sample_112"
+d result
+c
+echo "clt_sample_113"
+d result
+c
+echo "clt_sample_114"
+d result
+c
+echo "clt_sample_115"
+d result
+c
+echo "clt_sample_116"
+d result
+c
+echo "clt_sample_117"
+d result
+c
+echo "clt_sample_118"
+d result
+c
+echo "clt_sample_119"
+d result
+c
+echo "clt_sample_120"
+d result
+c
+echo "clt_sample_121"
+d result
+c
+echo "clt_sample_122"
+d result
+c
+echo "clt_sample_123"
+d result
+c
+echo "clt_sample_124"
+d result
+c
+echo "clt_sample_125"
+d result
+c
+echo "clt_sample_126"
+d result
+c
+echo "clt_sample_127"
+d result
+c
+echo "clt_sample_128"
+d result
+c
+echo "clt_sample_129"
+d result
+c
+echo "clt_sample_130"
+d result
+c
+echo "clt_sample_131"
+d result
+c
+echo "clt_sample_132"
+d result
+c
+echo "clt_sample_133"
+d result
+c
+echo "clt_sample_134"
+d result
+c
+echo "clt_sample_135"
+d result
+c
+echo "clt_sample_136"
+d result
+c
+echo "clt_sample_137"
+d result
+c
+echo "clt_sample_138"
+d result
+c
+echo "clt_sample_139"
+d result
+c
+echo "clt_sample_140"
+d result
+c
+echo "clt_sample_141"
+d result
+c
+echo "clt_sample_142"
+d result
+c
+echo "clt_sample_143"
+d result
+c
+echo "clt_sample_144"
+d result
+c
+echo "clt_sample_145"
+d result
+c
+echo "clt_sample_146"
+d result
+c
+echo "clt_sample_147"
+d result
+c
+echo "clt_sample_148"
+d result
+c
+echo "clt_sample_149"
+d result
+c
+echo "clt_sample_150"
+d result
+c
+echo "clt_sample_151"
+d result
+c
+echo "clt_sample_152"
+d result
+c
+echo "clt_sample_153"
+d result
+c
+echo "clt_sample_154"
+d result
+c
+echo "clt_sample_155"
+d result
+c
+echo "clt_sample_156"
+d result
+c
+echo "clt_sample_157"
+d result
+c
+echo "clt_sample_158"
+d result
+c
+echo "clt_sample_159"
+d result
+c
+echo "clt_sample_160"
+d result
+c
+echo "clt_sample_161"
+d result
+c
+echo "clt_sample_162"
+d result
+c
+echo "clt_sample_163"
+d result
+c
+echo "clt_sample_164"
+d result
+c
+echo "clt_sample_165"
+d result
+c
+echo "clt_sample_166"
+d result
+c
+echo "clt_sample_167"
+d result
+c
+echo "clt_sample_168"
+d result
+c
+echo "clt_sample_169"
+d result
+c
+echo "clt_sample_170"
+d result
+c
+echo "clt_sample_171"
+d result
+c
+echo "clt_sample_172"
+d result
+c
+echo "clt_sample_173"
+d result
+c
+echo "clt_sample_174"
+d result
+c
+echo "clt_sample_175"
+d result
+c
+echo "clt_sample_176"
+d result
+c
+echo "clt_sample_177"
+d result
+c
+echo "clt_sample_178"
+d result
+c
+echo "clt_sample_179"
+d result
+c
+echo "clt_sample_180"
+d result
+c
+echo "clt_sample_181"
+d result
+c
+echo "clt_sample_182"
+d result
+c
+echo "clt_sample_183"
+d result
+c
+echo "clt_sample_184"
+d result
+c
+echo "clt_sample_185"
+d result
+c
+echo "clt_sample_186"
+d result
+c
+echo "clt_sample_187"
+d result
+c
+echo "clt_sample_188"
+d result
+c
+echo "clt_sample_189"
+d result
+c
+echo "clt_sample_190"
+d result
+c
+echo "clt_sample_191"
+d result
+c
+echo "clt_sample_192"
+d result
+c
+echo "clt_sample_193"
+d result
+c
+echo "clt_sample_194"
+d result
+c
+echo "clt_sample_195"
+d result
+c
+echo "clt_sample_196"
+d result
+c
+echo "clt_sample_197"
+d result
+c
+echo "clt_sample_198"
+d result
+c
+echo "clt_sample_199"
+d result
+c
+echo "clt_sample_200"
+d result
+c
+echo "clt_sample_201"
+d result
+c
+echo "clt_sample_202"
+d result
+c
+echo "clt_sample_203"
+d result
+c
+echo "clt_sample_204"
+d result
+c
+echo "clt_sample_205"
+d result
+c
+echo "clt_sample_206"
+d result
+c
+echo "clt_sample_207"
+d result
+c
+echo "clt_sample_208"
+d result
+c
+echo "clt_sample_209"
+d result
+c
+echo "clt_sample_210"
+d result
+c
+echo "clt_sample_211"
+d result
+c
+echo "clt_sample_212"
+d result
+c
+echo "clt_sample_213"
+d result
+c
+echo "clt_sample_214"
+d result
+c
+echo "clt_sample_215"
+d result
+c
+echo "clt_sample_216"
+d result
+c
+echo "clt_sample_217"
+d result
+c
+echo "clt_sample_218"
+d result
+c
+echo "clt_sample_219"
+d result
+c
+echo "clt_sample_220"
+d result
+c
+echo "clt_sample_221"
+d result
+c
+echo "clt_sample_222"
+d result
+c
+echo "clt_sample_223"
+d result
+c
+echo "clt_sample_224"
+d result
+c
+echo "clt_sample_225"
+d result
+c
+echo "clt_sample_226"
+d result
+c
+echo "clt_sample_227"
+d result
+c
+echo "clt_sample_228"
+d result
+c
+echo "clt_sample_229"
+d result
+c
+echo "clt_sample_230"
+d result
+c
+echo "clt_sample_231"
+d result
+c
+echo "clt_sample_232"
+d result
+c
+echo "clt_sample_233"
+d result
+c
+echo "clt_sample_234"
+d result
+c
+echo "clt_sample_235"
+d result
+c
+echo "clt_sample_236"
+d result
+c
+echo "clt_sample_237"
+d result
+c
+echo "clt_sample_238"
+d result
+c
+echo "clt_sample_239"
+d result
+c
+echo "clt_sample_240"
+d result
+c
+echo "clt_sample_241"
+d result
+c
+echo "clt_sample_242"
+d result
+c
+echo "clt_sample_243"
+d result
+c
+echo "clt_sample_244"
+d result
+c
+echo "clt_sample_245"
+d result
+c
+echo "clt_sample_246"
+d result
+c
+echo "clt_sample_247"
+d result
+c
+echo "clt_sample_248"
+d result
+c
+echo "clt_sample_249"
+d result
+c
+echo "clt_sample_250"
+d result
+c
+echo "clt_sample_251"
+d result
+c
+echo "clt_sample_252"
+d result
+c
+echo "clt_sample_253"
+d result
+c
+echo "clt_sample_254"
+d result
+c
+echo "clt_sample_255"
+d result
+c
+echo "clt_sample_256"
+d result
+c
+echo "clt_sample_257"
+d result
+c
+echo "clt_sample_258"
+d result
+c
+echo "clt_sample_259"
+d result
+c
+echo "clt_sample_260"
+d result
+c
+echo "clt_sample_261"
+d result
+c
+echo "clt_sample_262"
+d result
+c
+echo "clt_sample_263"
+d result
+c
+echo "clt_sample_264"
+d result
+c
+echo "clt_sample_265"
+d result
+c
+echo "clt_sample_266"
+d result
+c
+echo "clt_sample_267"
+d result
+c
+echo "clt_sample_268"
+d result
+c
+echo "clt_sample_269"
+d result
+c
+echo "clt_sample_270"
+d result
+c
+echo "clt_sample_271"
+d result
+c
+echo "clt_sample_272"
+d result
+c
+echo "clt_sample_273"
+d result
+c
+echo "clt_sample_274"
+d result
+c
+echo "clt_sample_275"
+d result
+c
+echo "clt_sample_276"
+d result
+c
+echo "clt_sample_277"
+d result
+c
+echo "clt_sample_278"
+d result
+c
+echo "clt_sample_279"
+d result
+c
+echo "clt_sample_280"
+d result
+c
+echo "clt_sample_281"
+d result
+c
+echo "clt_sample_282"
+d result
+c
+echo "clt_sample_283"
+d result
+c
+echo "clt_sample_284"
+d result
+c
+echo "clt_sample_285"
+d result
+c
+echo "clt_sample_286"
+d result
+c
+echo "clt_sample_287"
+d result
+c
+echo "clt_sample_288"
+d result
+c
+echo "clt_sample_289"
+d result
+c
+echo "clt_sample_290"
+d result
+c
+echo "clt_sample_291"
+d result
+c
+echo "clt_sample_292"
+d result
+c
+echo "clt_sample_293"
+d result
+c
+echo "clt_sample_294"
+d result
+c
+echo "clt_sample_295"
+d result
+c
+echo "clt_sample_296"
+d result
+c
+echo "clt_sample_297"
+d result
+c
+echo "clt_sample_298"
+d result
+c
+echo "clt_sample_299"
+d result
+c
+echo "clt_sample_300"
+d result
+c
+echo "clt_sample_301"
+d result
+c
+echo "clt_sample_302"
+d result
+c
+echo "clt_sample_303"
+d result
+c
+echo "clt_sample_304"
+d result
+c
+echo "clt_sample_305"
+d result
+c
+echo "clt_sample_306"
+d result
+c
+echo "clt_sample_307"
+d result
+c
+echo "clt_sample_308"
+d result
+c
+echo "clt_sample_309"
+d result
+c
+echo "clt_sample_310"
+d result
+c
+echo "clt_sample_311"
+d result
+c
+echo "clt_sample_312"
+d result
+c
+echo "clt_sample_313"
+d result
+c
+echo "clt_sample_314"
+d result
+c
+echo "clt_sample_315"
+d result
+c
+echo "clt_sample_316"
+d result
+c
+echo "clt_sample_317"
+d result
+c
+echo "clt_sample_318"
+d result
+c
+echo "clt_sample_319"
+d result
+c
+echo "clt_sample_320"
+d result
+c
+echo "clt_sample_321"
+d result
+c
+echo "clt_sample_322"
+d result
+c
+echo "clt_sample_323"
+d result
+c
+echo "clt_sample_324"
+d result
+c
+echo "clt_sample_325"
+d result
+c
+echo "clt_sample_326"
+d result
+c
+echo "clt_sample_327"
+d result
+c
+echo "clt_sample_328"
+d result
+c
+echo "clt_sample_329"
+d result
+c
+echo "clt_sample_330"
+d result
+c
+echo "clt_sample_331"
+d result
+c
+echo "clt_sample_332"
+d result
+c
+echo "clt_sample_333"
+d result
+c
+echo "clt_sample_334"
+d result
+c
+echo "clt_sample_335"
+d result
+c
+echo "clt_sample_336"
+d result
+c
+echo "clt_sample_337"
+d result
+c
+echo "clt_sample_338"
+d result
+c
+echo "clt_sample_339"
+d result
+c
+echo "clt_sample_340"
+d result
+c
+echo "clt_sample_341"
+d result
+c
+echo "clt_sample_342"
+d result
+c
+echo "clt_sample_343"
+d result
+c
+echo "clt_sample_344"
+d result
+c
+echo "clt_sample_345"
+d result
+c
+echo "clt_sample_346"
+d result
+c
+echo "clt_sample_347"
+d result
+c
+echo "clt_sample_348"
+d result
+c
+echo "clt_sample_349"
+d result
+c
+echo "clt_sample_350"
+d result
+c
+echo "clt_sample_351"
+d result
+c
+echo "clt_sample_352"
+d result
+c
+echo "clt_sample_353"
+d result
+c
+echo "clt_sample_354"
+d result
+c
+echo "clt_sample_355"
+d result
+c
+echo "clt_sample_356"
+d result
+c
+echo "clt_sample_357"
+d result
+c
+echo "clt_sample_358"
+d result
+c
+echo "clt_sample_359"
+d result
+c
+echo "clt_sample_360"
+d result
+c
+echo "clt_sample_361"
+d result
+c
+echo "clt_sample_362"
+d result
+c
+echo "clt_sample_363"
+d result
+c
+echo "clt_sample_364"
+d result
+c
+echo "clt_sample_365"
+d result
+c
+echo "clt_sample_366"
+d result
+c
+echo "clt_sample_367"
+d result
+c
+echo "clt_sample_368"
+d result
+c
+echo "clt_sample_369"
+d result
+c
+echo "clt_sample_370"
+d result
+c
+echo "clt_sample_371"
+d result
+c
+echo "clt_sample_372"
+d result
+c
+echo "clt_sample_373"
+d result
+c
+echo "clt_sample_374"
+d result
+c
+echo "clt_sample_375"
+d result
+c
+echo "clt_sample_376"
+d result
+c
+echo "clt_sample_377"
+d result
+c
+echo "clt_sample_378"
+d result
+c
+echo "clt_sample_379"
+d result
+c
+echo "clt_sample_380"
+d result
+c
+echo "clt_sample_381"
+d result
+c
+echo "clt_sample_382"
+d result
+c
+echo "clt_sample_383"
+d result
+c
+echo "clt_sample_384"
+d result
+c
+echo "clt_sample_385"
+d result
+c
+echo "clt_sample_386"
+d result
+c
+echo "clt_sample_387"
+d result
+c
+echo "clt_sample_388"
+d result
+c
+echo "clt_sample_389"
+d result
+c
+echo "clt_sample_390"
+d result
+c
+echo "clt_sample_391"
+d result
+c
+echo "clt_sample_392"
+d result
+c
+echo "clt_sample_393"
+d result
+c
+echo "clt_sample_394"
+d result
+c
+echo "clt_sample_395"
+d result
+c
+echo "clt_sample_396"
+d result
+c
+echo "clt_sample_397"
+d result
+c
+echo "clt_sample_398"
+d result
+c
+echo "clt_sample_399"
+d result
+c
+echo "clt_sample_400"
+d result
+c
+echo "clt_sample_401"
+d result
+c
+echo "clt_sample_402"
+d result
+c
+echo "clt_sample_403"
+d result
+c
+echo "clt_sample_404"
+d result
+c
+echo "clt_sample_405"
+d result
+c
+echo "clt_sample_406"
+d result
+c
+echo "clt_sample_407"
+d result
+c
+echo "clt_sample_408"
+d result
+c
+echo "clt_sample_409"
+d result
+c
+echo "clt_sample_410"
+d result
+c
+echo "clt_sample_411"
+d result
+c
+echo "clt_sample_412"
+d result
+c
+echo "clt_sample_413"
+d result
+c
+echo "clt_sample_414"
+d result
+c
+echo "clt_sample_415"
+d result
+c
+echo "clt_sample_416"
+d result
+c
+echo "clt_sample_417"
+d result
+c
+echo "clt_sample_418"
+d result
+c
+echo "clt_sample_419"
+d result
+c
+echo "clt_sample_420"
+d result
+c
+echo "clt_sample_421"
+d result
+c
+echo "clt_sample_422"
+d result
+c
+echo "clt_sample_423"
+d result
+c
+echo "clt_sample_424"
+d result
+c
+echo "clt_sample_425"
+d result
+c
+echo "clt_sample_426"
+d result
+c
+echo "clt_sample_427"
+d result
+c
+echo "clt_sample_428"
+d result
+c
+echo "clt_sample_429"
+d result
+c
+echo "clt_sample_430"
+d result
+c
+echo "clt_sample_431"
+d result
+c
+echo "clt_sample_432"
+d result
+c
+echo "clt_sample_433"
+d result
+c
+echo "clt_sample_434"
+d result
+c
+echo "clt_sample_435"
+d result
+c
+echo "clt_sample_436"
+d result
+c
+echo "clt_sample_437"
+d result
+c
+echo "clt_sample_438"
+d result
+c
+echo "clt_sample_439"
+d result
+c
+echo "clt_sample_440"
+d result
+c
+echo "clt_sample_441"
+d result
+c
+echo "clt_sample_442"
+d result
+c
+echo "clt_sample_443"
+d result
+c
+echo "clt_sample_444"
+d result
+c
+echo "clt_sample_445"
+d result
+c
+echo "clt_sample_446"
+d result
+c
+echo "clt_sample_447"
+d result
+c
+echo "clt_sample_448"
+d result
+c
+echo "clt_sample_449"
+d result
+c
+echo "clt_sample_450"
+d result
+c
+echo "clt_sample_451"
+d result
+c
+echo "clt_sample_452"
+d result
+c
+echo "clt_sample_453"
+d result
+c
+echo "clt_sample_454"
+d result
+c
+echo "clt_sample_455"
+d result
+c
+echo "clt_sample_456"
+d result
+c
+echo "clt_sample_457"
+d result
+c
+echo "clt_sample_458"
+d result
+c
+echo "clt_sample_459"
+d result
+c
+echo "clt_sample_460"
+d result
+c
+echo "clt_sample_461"
+d result
+c
+echo "clt_sample_462"
+d result
+c
+echo "clt_sample_463"
+d result
+c
+echo "clt_sample_464"
+d result
+c
+echo "clt_sample_465"
+d result
+c
+echo "clt_sample_466"
+d result
+c
+echo "clt_sample_467"
+d result
+c
+echo "clt_sample_468"
+d result
+c
+echo "clt_sample_469"
+d result
+c
+echo "clt_sample_470"
+d result
+c
+echo "clt_sample_471"
+d result
+c
+echo "clt_sample_472"
+d result
+c
+echo "clt_sample_473"
+d result
+c
+echo "clt_sample_474"
+d result
+c
+echo "clt_sample_475"
+d result
+c
+echo "clt_sample_476"
+d result
+c
+echo "clt_sample_477"
+d result
+c
+echo "clt_sample_478"
+d result
+c
+echo "clt_sample_479"
+d result
+c
+echo "clt_sample_480"
+d result
+c
+echo "clt_sample_481"
+d result
+c
+echo "clt_sample_482"
+d result
+c
+echo "clt_sample_483"
+d result
+c
+echo "clt_sample_484"
+d result
+c
+echo "clt_sample_485"
+d result
+c
+echo "clt_sample_486"
+d result
+c
+echo "clt_sample_487"
+d result
+c
+echo "clt_sample_488"
+d result
+c
+echo "clt_sample_489"
+d result
+c
+echo "clt_sample_490"
+d result
+c
+echo "clt_sample_491"
+d result
+c
+echo "clt_sample_492"
+d result
+c
+echo "clt_sample_493"
+d result
+c
+echo "clt_sample_494"
+d result
+c
+echo "clt_sample_495"
+d result
+c
+echo "clt_sample_496"
+d result
+c
+echo "clt_sample_497"
+d result
+c
+echo "clt_sample_498"
+d result
+c
+echo "clt_sample_499"
+d result
+
+echo "=== END CLT DISTRIBUTION ==="
+
+echo "=== START LOG DISTRIBUTION ==="
+setvector config 11
+
+c
+echo "log_sample_0"
+d result
+c
+echo "log_sample_1"
+d result
+c
+echo "log_sample_2"
+d result
+c
+echo "log_sample_3"
+d result
+c
+echo "log_sample_4"
+d result
+c
+echo "log_sample_5"
+d result
+c
+echo "log_sample_6"
+d result
+c
+echo "log_sample_7"
+d result
+c
+echo "log_sample_8"
+d result
+c
+echo "log_sample_9"
+d result
+c
+echo "log_sample_10"
+d result
+c
+echo "log_sample_11"
+d result
+c
+echo "log_sample_12"
+d result
+c
+echo "log_sample_13"
+d result
+c
+echo "log_sample_14"
+d result
+c
+echo "log_sample_15"
+d result
+c
+echo "log_sample_16"
+d result
+c
+echo "log_sample_17"
+d result
+c
+echo "log_sample_18"
+d result
+c
+echo "log_sample_19"
+d result
+c
+echo "log_sample_20"
+d result
+c
+echo "log_sample_21"
+d result
+c
+echo "log_sample_22"
+d result
+c
+echo "log_sample_23"
+d result
+c
+echo "log_sample_24"
+d result
+c
+echo "log_sample_25"
+d result
+c
+echo "log_sample_26"
+d result
+c
+echo "log_sample_27"
+d result
+c
+echo "log_sample_28"
+d result
+c
+echo "log_sample_29"
+d result
+c
+echo "log_sample_30"
+d result
+c
+echo "log_sample_31"
+d result
+c
+echo "log_sample_32"
+d result
+c
+echo "log_sample_33"
+d result
+c
+echo "log_sample_34"
+d result
+c
+echo "log_sample_35"
+d result
+c
+echo "log_sample_36"
+d result
+c
+echo "log_sample_37"
+d result
+c
+echo "log_sample_38"
+d result
+c
+echo "log_sample_39"
+d result
+c
+echo "log_sample_40"
+d result
+c
+echo "log_sample_41"
+d result
+c
+echo "log_sample_42"
+d result
+c
+echo "log_sample_43"
+d result
+c
+echo "log_sample_44"
+d result
+c
+echo "log_sample_45"
+d result
+c
+echo "log_sample_46"
+d result
+c
+echo "log_sample_47"
+d result
+c
+echo "log_sample_48"
+d result
+c
+echo "log_sample_49"
+d result
+c
+echo "log_sample_50"
+d result
+c
+echo "log_sample_51"
+d result
+c
+echo "log_sample_52"
+d result
+c
+echo "log_sample_53"
+d result
+c
+echo "log_sample_54"
+d result
+c
+echo "log_sample_55"
+d result
+c
+echo "log_sample_56"
+d result
+c
+echo "log_sample_57"
+d result
+c
+echo "log_sample_58"
+d result
+c
+echo "log_sample_59"
+d result
+c
+echo "log_sample_60"
+d result
+c
+echo "log_sample_61"
+d result
+c
+echo "log_sample_62"
+d result
+c
+echo "log_sample_63"
+d result
+c
+echo "log_sample_64"
+d result
+c
+echo "log_sample_65"
+d result
+c
+echo "log_sample_66"
+d result
+c
+echo "log_sample_67"
+d result
+c
+echo "log_sample_68"
+d result
+c
+echo "log_sample_69"
+d result
+c
+echo "log_sample_70"
+d result
+c
+echo "log_sample_71"
+d result
+c
+echo "log_sample_72"
+d result
+c
+echo "log_sample_73"
+d result
+c
+echo "log_sample_74"
+d result
+c
+echo "log_sample_75"
+d result
+c
+echo "log_sample_76"
+d result
+c
+echo "log_sample_77"
+d result
+c
+echo "log_sample_78"
+d result
+c
+echo "log_sample_79"
+d result
+c
+echo "log_sample_80"
+d result
+c
+echo "log_sample_81"
+d result
+c
+echo "log_sample_82"
+d result
+c
+echo "log_sample_83"
+d result
+c
+echo "log_sample_84"
+d result
+c
+echo "log_sample_85"
+d result
+c
+echo "log_sample_86"
+d result
+c
+echo "log_sample_87"
+d result
+c
+echo "log_sample_88"
+d result
+c
+echo "log_sample_89"
+d result
+c
+echo "log_sample_90"
+d result
+c
+echo "log_sample_91"
+d result
+c
+echo "log_sample_92"
+d result
+c
+echo "log_sample_93"
+d result
+c
+echo "log_sample_94"
+d result
+c
+echo "log_sample_95"
+d result
+c
+echo "log_sample_96"
+d result
+c
+echo "log_sample_97"
+d result
+c
+echo "log_sample_98"
+d result
+c
+echo "log_sample_99"
+d result
+c
+echo "log_sample_100"
+d result
+c
+echo "log_sample_101"
+d result
+c
+echo "log_sample_102"
+d result
+c
+echo "log_sample_103"
+d result
+c
+echo "log_sample_104"
+d result
+c
+echo "log_sample_105"
+d result
+c
+echo "log_sample_106"
+d result
+c
+echo "log_sample_107"
+d result
+c
+echo "log_sample_108"
+d result
+c
+echo "log_sample_109"
+d result
+c
+echo "log_sample_110"
+d result
+c
+echo "log_sample_111"
+d result
+c
+echo "log_sample_112"
+d result
+c
+echo "log_sample_113"
+d result
+c
+echo "log_sample_114"
+d result
+c
+echo "log_sample_115"
+d result
+c
+echo "log_sample_116"
+d result
+c
+echo "log_sample_117"
+d result
+c
+echo "log_sample_118"
+d result
+c
+echo "log_sample_119"
+d result
+c
+echo "log_sample_120"
+d result
+c
+echo "log_sample_121"
+d result
+c
+echo "log_sample_122"
+d result
+c
+echo "log_sample_123"
+d result
+c
+echo "log_sample_124"
+d result
+c
+echo "log_sample_125"
+d result
+c
+echo "log_sample_126"
+d result
+c
+echo "log_sample_127"
+d result
+c
+echo "log_sample_128"
+d result
+c
+echo "log_sample_129"
+d result
+c
+echo "log_sample_130"
+d result
+c
+echo "log_sample_131"
+d result
+c
+echo "log_sample_132"
+d result
+c
+echo "log_sample_133"
+d result
+c
+echo "log_sample_134"
+d result
+c
+echo "log_sample_135"
+d result
+c
+echo "log_sample_136"
+d result
+c
+echo "log_sample_137"
+d result
+c
+echo "log_sample_138"
+d result
+c
+echo "log_sample_139"
+d result
+c
+echo "log_sample_140"
+d result
+c
+echo "log_sample_141"
+d result
+c
+echo "log_sample_142"
+d result
+c
+echo "log_sample_143"
+d result
+c
+echo "log_sample_144"
+d result
+c
+echo "log_sample_145"
+d result
+c
+echo "log_sample_146"
+d result
+c
+echo "log_sample_147"
+d result
+c
+echo "log_sample_148"
+d result
+c
+echo "log_sample_149"
+d result
+c
+echo "log_sample_150"
+d result
+c
+echo "log_sample_151"
+d result
+c
+echo "log_sample_152"
+d result
+c
+echo "log_sample_153"
+d result
+c
+echo "log_sample_154"
+d result
+c
+echo "log_sample_155"
+d result
+c
+echo "log_sample_156"
+d result
+c
+echo "log_sample_157"
+d result
+c
+echo "log_sample_158"
+d result
+c
+echo "log_sample_159"
+d result
+c
+echo "log_sample_160"
+d result
+c
+echo "log_sample_161"
+d result
+c
+echo "log_sample_162"
+d result
+c
+echo "log_sample_163"
+d result
+c
+echo "log_sample_164"
+d result
+c
+echo "log_sample_165"
+d result
+c
+echo "log_sample_166"
+d result
+c
+echo "log_sample_167"
+d result
+c
+echo "log_sample_168"
+d result
+c
+echo "log_sample_169"
+d result
+
+echo "=== END LOG DISTRIBUTION ==="
+
+echo "=== ALL TESTS COMPLETE ==="

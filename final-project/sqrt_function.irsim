@@ -1,0 +1,556 @@
+h Vdd!
+l GND!
+
+s
+
+vector b b7 b6 b5 b4 b3 b2 b1 b0
+vector s s7 s6 s5 s4 s3 s2 s1 s0
+
+vector CLOCK CLK
+clock CLOCK 0 1
+
+h seed_en seed en
+s
+ana clk b
+c
+d b
+c
+d b
+c
+c
+c
+c
+c
+c
+d b
+l seed_en
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s
+
+c
+d b s

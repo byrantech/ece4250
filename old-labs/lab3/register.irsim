@@ -1,0 +1,423 @@
+| 8-bit Register Test File for IRSIM
+| Tests register with: in0-in7 (data inputs), w (write enable),
+| r1, r2 (read enables), out0-out7 (port 1), outt0-outt7 (port 2)
+
+h Vdd!
+l GND!
+s
+
+| Define vectors for easier manipulation
+vector inputs in7 in6 in5 in4 in3 in2 in1 in0
+vector outputs_p1 out7 out6 out5 out4 out3 out2 out1 out0
+vector outputs_p2 outt7 outt6 outt5 outt4 outt3 outt2 outt1 outt0
+
+echo "=== 8-bit Dual-Port Register Functional Tests ==="
+echo ""
+
+echo "=== Test 1: Basic Write and Read Operations ==="
+echo "Initialize: all inputs low, w=0, r1=0, r2=0"
+setvector inputs 00000000
+l w
+l r1
+l r2
+s
+
+echo "Write 11111111: w=1"
+setvector inputs 11111111
+h w
+s
+l w
+s
+
+echo "Read port 1: r1=1, should output 11111111"
+h r1
+s
+assert outputs_p1 11111111
+
+echo "Read port 2: r2=1, should output 11111111"
+l r1
+h r2
+s
+assert outputs_p2 11111111
+
+echo ""
+echo "=== Test 2: Write Different Pattern ==="
+echo "Write 10101010"
+setvector inputs 10101010
+h w
+s
+l w
+s
+
+echo "Read port 1"
+h r1
+l r2
+s
+assert outputs_p1 10101010
+
+echo "Read port 2"
+l r1
+h r2
+s
+assert outputs_p2 10101010
+
+echo ""
+echo "=== Test 3: Write 01010101 ==="
+setvector inputs 01010101
+h w
+s
+l w
+s
+
+h r1
+l r2
+s
+assert outputs_p1 01010101
+
+l r1
+h r2
+s
+assert outputs_p2 01010101
+
+echo ""
+echo "=== Test 4: Write Disabled (Data Retention) ==="
+echo "Current value: 01010101, try to write 11111111 with w=0"
+setvector inputs 11111111
+l w
+s
+
+echo "Read port 1, should still be 01010101"
+h r1
+l r2
+s
+assert outputs_p1 01010101
+
+echo "Read port 2, should still be 01010101"
+l r1
+h r2
+s
+assert outputs_p2 01010101
+
+echo ""
+echo "=== Test 5: Simultaneous Dual Read ==="
+echo "Write 11110000"
+setvector inputs 11110000
+h w
+s
+l w
+s
+
+echo "Enable both read ports: r1=1, r2=1"
+h r1
+h r2
+s
+assert outputs_p1 11110000
+assert outputs_p2 11110000
+echo "Both ports reading same value simultaneously"
+
+echo ""
+echo "=== Test 6: Write All Zeros ==="
+setvector inputs 00000000
+h w
+s
+l w
+s
+
+h r1
+l r2
+s
+assert outputs_p1 00000000
+
+l r1
+h r2
+s
+assert outputs_p2 00000000
+
+echo ""
+echo "=== Test 7: Individual Bit Tests ==="
+echo "Write 00000001 (bit 0 only)"
+setvector inputs 00000001
+h w
+s
+l w
+s
+h r1
+l r2
+s
+assert outputs_p1 00000001
+
+echo "Write 10000000 (bit 7 only)"
+setvector inputs 10000000
+h w
+s
+l w
+s
+assert outputs_p1 10000000
+
+echo "Write 00010000 (bit 4 only)"
+setvector inputs 00010000
+h w
+s
+l w
+s
+assert outputs_p1 00010000
+
+echo ""
+echo "=== Test 8: Sequential Write Operations ==="
+echo "Write sequence: 11111111, 00000000, 10101010, 01010101"
+
+setvector inputs 11111111
+h w
+s
+l w
+h r1
+s
+assert outputs_p1 11111111
+
+setvector inputs 00000000
+h w
+s
+l w
+s
+assert outputs_p1 00000000
+
+setvector inputs 10101010
+h w
+s
+l w
+s
+assert outputs_p1 10101010
+
+setvector inputs 01010101
+h w
+s
+l w
+s
+assert outputs_p1 01010101
+
+echo ""
+echo "=== Test 9: Read Port Independence ==="
+echo "Write 11001100"
+setvector inputs 11001100
+h w
+s
+l w
+s
+
+echo "Toggle between read ports"
+h r1
+l r2
+s
+assert outputs_p1 11001100
+
+l r1
+h r2
+s
+assert outputs_p2 11001100
+
+h r1
+l r2
+s
+assert outputs_p1 11001100
+
+l r1
+h r2
+s
+assert outputs_p2 11001100
+
+echo ""
+echo "=== Test 10: Data Persistence Test ==="
+echo "Write 10011001, then change input without write enable"
+setvector inputs 10011001
+h w
+s
+l w
+s
+
+echo "Change input to 01100110 (w=0)"
+setvector inputs 01100110
+s
+
+echo "Read port 1, should still be 10011001"
+h r1
+l r2
+s
+assert outputs_p1 10011001
+
+echo "Read port 2, should still be 10011001"
+l r1
+h r2
+s
+assert outputs_p2 10011001
+
+echo ""
+echo "=== Test 11: Alternating Patterns ==="
+echo "Write and verify alternating patterns"
+
+setvector inputs 11110000
+h w
+s
+l w
+h r1
+h r2
+s
+assert outputs_p1 11110000
+assert outputs_p2 11110000
+
+setvector inputs 00001111
+h w
+s
+l w
+s
+assert outputs_p1 00001111
+assert outputs_p2 00001111
+
+setvector inputs 10100101
+h w
+s
+l w
+s
+assert outputs_p1 10100101
+assert outputs_p2 10100101
+
+echo ""
+echo "=== Test 12: Write with Both Reads Enabled ==="
+echo "Both read ports active during write"
+h r1
+h r2
+setvector inputs 11011011
+h w
+s
+l w
+s
+assert outputs_p1 11011011
+assert outputs_p2 11011011
+
+echo ""
+echo "=== Test 13: Random Patterns ==="
+setvector inputs 11010011
+h w
+s
+l w
+h r1
+l r2
+s
+assert outputs_p1 11010011
+
+setvector inputs 00110110
+h w
+s
+l w
+l r1
+h r2
+s
+assert outputs_p2 00110110
+
+setvector inputs 10110001
+h w
+s
+l w
+h r1
+l r2
+s
+assert outputs_p1 10110001
+
+echo ""
+echo "=== Test 14: Timing Analysis ==="
+echo "Test propagation delays for write and read operations"
+
+setvector inputs 00000000
+h w
+s
+l w
+s
+
+setvector inputs 11111111
+h w
+s
+path out0
+path out7
+path outt0
+path outt7
+
+l w
+h r1
+h r2
+s
+
+l r1
+s
+h r1
+s
+path out0
+path out7
+
+l r2
+s
+h r2
+s
+path outt0
+path outt7
+
+echo ""
+echo "=== Test 15: Read Enable Timing ==="
+echo "Write 10101010"
+setvector inputs 10101010
+h w
+s
+l w
+s
+
+echo "Test r1 enable/disable timing"
+l r1
+s
+h r1
+s
+l r1
+s
+h r1
+s
+
+echo "Test r2 enable/disable timing"
+l r2
+s
+h r2
+s
+l r2
+s
+h r2
+s
+
+echo ""
+echo "=== Test 16: Comprehensive Pattern Test ==="
+echo "Write various bit patterns and verify both ports"
+
+setvector inputs 11100111
+h w
+s
+l w
+h r1
+h r2
+s
+assert outputs_p1 11100111
+assert outputs_p2 11100111
+
+setvector inputs 00011000
+h w
+s
+l w
+s
+assert outputs_p1 00011000
+assert outputs_p2 00011000
+
+setvector inputs 10000001
+h w
+s
+l w
+s
+assert outputs_p1 10000001
+assert outputs_p2 10000001
+
+echo ""
+echo "=== All 8-bit Register Tests Complete ==="
+ana in0 in1 in2 in3 in4 in5 in6 in7 w r1 r2 out0 out1 out2 out3 out4 out5 out6 out7 outt0 outt1 outt2 outt3 outt4 outt5 outt6 outt7

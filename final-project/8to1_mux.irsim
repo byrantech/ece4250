@@ -1,0 +1,402 @@
+h Vdd!
+l Gnd!
+s
+
+vector inputs in7 in6 in5 in4 in3 in2 in1 in0
+vector select s2 s1 s0
+
+echo "=== 8-TO-1 MULTIPLEXER TEST ==="
+
+echo "Testing input pattern: 00000000"
+setvector inputs 00000000
+s
+setvector select 000
+s
+assert out 0
+setvector select 001
+s
+assert out 0
+setvector select 010
+s
+assert out 0
+setvector select 011
+s
+assert out 0
+setvector select 100
+s
+assert out 0
+setvector select 101
+s
+assert out 0
+setvector select 110
+s
+assert out 0
+setvector select 111
+s
+assert out 0
+
+echo "Testing input pattern: 11111111"
+setvector inputs 11111111
+s
+setvector select 000
+s
+assert out 1
+setvector select 001
+s
+assert out 1
+setvector select 010
+s
+assert out 1
+setvector select 011
+s
+assert out 1
+setvector select 100
+s
+assert out 1
+setvector select 101
+s
+assert out 1
+setvector select 110
+s
+assert out 1
+setvector select 111
+s
+assert out 1
+
+echo "Testing input pattern: 10101010"
+setvector inputs 10101010
+s
+setvector select 000
+s
+assert out 0
+setvector select 001
+s
+assert out 1
+setvector select 010
+s
+assert out 0
+setvector select 011
+s
+assert out 1
+setvector select 100
+s
+assert out 0
+setvector select 101
+s
+assert out 1
+setvector select 110
+s
+assert out 0
+setvector select 111
+s
+assert out 1
+
+echo "Testing input pattern: 01010101"
+setvector inputs 01010101
+s
+setvector select 000
+s
+assert out 1
+setvector select 001
+s
+assert out 0
+setvector select 010
+s
+assert out 1
+setvector select 011
+s
+assert out 0
+setvector select 100
+s
+assert out 1
+setvector select 101
+s
+assert out 0
+setvector select 110
+s
+assert out 1
+setvector select 111
+s
+assert out 0
+
+echo "Testing input pattern: 11110000"
+setvector inputs 11110000
+s
+setvector select 000
+s
+assert out 0
+setvector select 001
+s
+assert out 0
+setvector select 010
+s
+assert out 0
+setvector select 011
+s
+assert out 0
+setvector select 100
+s
+assert out 1
+setvector select 101
+s
+assert out 1
+setvector select 110
+s
+assert out 1
+setvector select 111
+s
+assert out 1
+
+echo "Testing input pattern: 00001111"
+setvector inputs 00001111
+s
+setvector select 000
+s
+assert out 1
+setvector select 001
+s
+assert out 1
+setvector select 010
+s
+assert out 1
+setvector select 011
+s
+assert out 1
+setvector select 100
+s
+assert out 0
+setvector select 101
+s
+assert out 0
+setvector select 110
+s
+assert out 0
+setvector select 111
+s
+assert out 0
+
+echo "Testing input pattern: 10000000"
+setvector inputs 10000000
+s
+setvector select 000
+s
+assert out 0
+setvector select 001
+s
+assert out 0
+setvector select 010
+s
+assert out 0
+setvector select 011
+s
+assert out 0
+setvector select 100
+s
+assert out 0
+setvector select 101
+s
+assert out 0
+setvector select 110
+s
+assert out 0
+setvector select 111
+s
+assert out 1
+
+echo "Testing input pattern: 01000000"
+setvector inputs 01000000
+s
+setvector select 000
+s
+assert out 0
+setvector select 001
+s
+assert out 0
+setvector select 010
+s
+assert out 0
+setvector select 011
+s
+assert out 0
+setvector select 100
+s
+assert out 0
+setvector select 101
+s
+assert out 0
+setvector select 110
+s
+assert out 1
+setvector select 111
+s
+assert out 0
+
+echo "Testing input pattern: 00100000"
+setvector inputs 00100000
+s
+setvector select 000
+s
+assert out 0
+setvector select 001
+s
+assert out 0
+setvector select 010
+s
+assert out 0
+setvector select 011
+s
+assert out 0
+setvector select 100
+s
+assert out 0
+setvector select 101
+s
+assert out 1
+setvector select 110
+s
+assert out 0
+setvector select 111
+s
+assert out 0
+
+echo "Testing input pattern: 00010000"
+setvector inputs 00010000
+s
+setvector select 000
+s
+assert out 0
+setvector select 001
+s
+assert out 0
+setvector select 010
+s
+assert out 0
+setvector select 011
+s
+assert out 0
+setvector select 100
+s
+assert out 1
+setvector select 101
+s
+assert out 0
+setvector select 110
+s
+assert out 0
+setvector select 111
+s
+assert out 0
+
+echo "Testing input pattern: 00001000"
+setvector inputs 00001000
+s
+setvector select 000
+s
+assert out 0
+setvector select 001
+s
+assert out 0
+setvector select 010
+s
+assert out 0
+setvector select 011
+s
+assert out 1
+setvector select 100
+s
+assert out 0
+setvector select 101
+s
+assert out 0
+setvector select 110
+s
+assert out 0
+setvector select 111
+s
+assert out 0
+
+echo "Testing input pattern: 00000100"
+setvector inputs 00000100
+s
+setvector select 000
+s
+assert out 0
+setvector select 001
+s
+assert out 0
+setvector select 010
+s
+assert out 1
+setvector select 011
+s
+assert out 0
+setvector select 100
+s
+assert out 0
+setvector select 101
+s
+assert out 0
+setvector select 110
+s
+assert out 0
+setvector select 111
+s
+assert out 0
+
+echo "Testing input pattern: 00000010"
+setvector inputs 00000010
+s
+setvector select 000
+s
+assert out 0
+setvector select 001
+s
+assert out 1
+setvector select 010
+s
+assert out 0
+setvector select 011
+s
+assert out 0
+setvector select 100
+s
+assert out 0
+setvector select 101
+s
+assert out 0
+setvector select 110
+s
+assert out 0
+setvector select 111
+s
+assert out 0
+
+echo "Testing input pattern: 00000001"
+setvector inputs 00000001
+s
+setvector select 000
+s
+assert out 1
+setvector select 001
+s
+assert out 0
+setvector select 010
+s
+assert out 0
+setvector select 011
+s
+assert out 0
+setvector select 100
+s
+assert out 0
+setvector select 101
+s
+assert out 0
+setvector select 110
+s
+assert out 0
+setvector select 111
+s
+assert out 0
+
+echo "=== ALL TESTS COMPLETE ==="

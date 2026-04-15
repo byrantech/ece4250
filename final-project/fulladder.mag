@@ -1,0 +1,71 @@
+magic
+tech scmos
+timestamp 1765589256
+<< nwell >>
+rect 13 161 41 909
+rect 76 161 104 909
+<< pwell >>
+rect 41 161 76 909
+<< metal1 >>
+rect 16 161 21 909
+rect 56 161 61 909
+<< metal3 >>
+rect 33 889 38 894
+rect 36 876 41 881
+rect 128 867 133 911
+rect 65 851 70 856
+rect 33 795 38 800
+rect 36 782 41 787
+rect 65 757 70 762
+rect 33 701 38 706
+rect 36 688 41 693
+rect 65 663 70 668
+rect 33 607 38 612
+rect 36 594 41 599
+rect 65 569 70 574
+rect 33 513 38 518
+rect 36 500 41 505
+rect 65 475 70 480
+rect 33 419 38 424
+rect 36 406 41 411
+rect 65 381 70 386
+rect 33 325 38 330
+rect 36 312 41 317
+rect 65 287 70 292
+rect 33 231 38 236
+rect 36 218 41 223
+rect 65 193 70 198
+rect 113 166 118 171
+use addsub_one  addsub_one_0
+array 0 0 131 0 7 94
+timestamp 1765589256
+transform 1 0 -379 0 1 163
+box 392 -4 524 90
+<< labels >>
+flabel metal3 67 195 67 195 1 FreeSans 24 0 0 0 s0
+flabel metal3 67 289 67 289 1 FreeSans 24 0 0 0 s1
+flabel metal3 67 383 67 383 1 FreeSans 24 0 0 0 s2
+flabel metal3 67 477 67 477 1 FreeSans 24 0 0 0 s3
+flabel metal3 67 571 67 571 1 FreeSans 24 0 0 0 s4
+flabel metal3 67 665 67 665 1 FreeSans 24 0 0 0 s5
+flabel metal3 67 759 67 759 1 FreeSans 24 0 0 0 s6
+flabel metal3 67 853 67 853 1 FreeSans 24 0 0 0 s7
+flabel metal3 38 219 38 219 1 FreeSans 24 0 0 0 b0
+flabel metal3 38 313 38 313 1 FreeSans 24 0 0 0 b1
+flabel metal3 38 407 38 407 1 FreeSans 24 0 0 0 b2
+flabel metal3 38 501 38 501 1 FreeSans 24 0 0 0 b3
+flabel metal3 38 595 38 595 1 FreeSans 24 0 0 0 b4
+flabel metal3 38 689 38 689 1 FreeSans 24 0 0 0 b5
+flabel metal3 38 783 38 783 1 FreeSans 24 0 0 0 b6
+flabel metal3 38 877 38 877 1 FreeSans 24 0 0 0 b7
+flabel metal3 35 234 35 234 1 FreeSans 24 0 0 0 a0
+flabel metal3 35 328 35 328 1 FreeSans 24 0 0 0 a1
+flabel metal3 35 422 35 422 1 FreeSans 24 0 0 0 a2
+flabel metal3 35 516 35 516 1 FreeSans 24 0 0 0 a3
+flabel metal3 35 610 35 610 1 FreeSans 24 0 0 0 a4
+flabel metal3 35 704 35 704 1 FreeSans 24 0 0 0 a5
+flabel metal3 35 798 35 798 1 FreeSans 24 0 0 0 a6
+flabel metal3 35 892 35 892 1 FreeSans 24 0 0 0 a7
+flabel metal3 116 167 116 167 1 FreeSans 24 0 0 0 cin
+flabel metal3 130 908 130 908 5 FreeSans 24 0 0 0 cout
+<< end >>

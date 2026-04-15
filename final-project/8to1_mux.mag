@@ -1,0 +1,85 @@
+magic
+tech scmos
+timestamp 1765589256
+<< pwell >>
+rect 89 300 94 305
+<< metal1 >>
+rect 80 362 85 367
+rect 80 223 85 239
+rect 80 146 85 151
+<< m2contact >>
+rect 80 337 85 342
+rect 80 121 85 126
+<< pm12contact >>
+rect 27 416 32 421
+rect 27 327 32 332
+rect 27 308 32 313
+rect 27 219 32 224
+rect 27 200 32 205
+rect 27 111 32 116
+rect 27 92 32 97
+rect 27 3 32 8
+<< metal2 >>
+rect 55 337 80 342
+rect 55 126 60 337
+rect 89 197 94 202
+rect 55 121 80 126
+<< m123contact >>
+rect 27 394 32 399
+rect 27 362 32 367
+rect 75 362 80 367
+rect 27 286 32 291
+rect 27 254 32 259
+rect 27 178 32 183
+rect 27 146 32 151
+rect 89 305 94 310
+rect 75 270 80 275
+rect 80 256 85 261
+rect 75 162 80 167
+rect 75 146 80 151
+rect 89 89 94 94
+rect 27 70 32 75
+rect 80 49 85 54
+rect 27 38 32 43
+<< metal3 >>
+rect 18 394 27 399
+rect 18 291 23 394
+rect 32 362 75 367
+rect 18 286 27 291
+rect 18 183 23 286
+rect 27 270 75 275
+rect 27 259 32 270
+rect 89 266 94 305
+rect 80 261 94 266
+rect 18 178 27 183
+rect 18 75 23 178
+rect 80 162 94 167
+rect 32 146 75 151
+rect 89 94 94 162
+rect 18 70 27 75
+rect 80 43 85 49
+rect 32 38 85 43
+use mux2  mux2_0
+array 0 3 -108 0 0 51
+timestamp 1765589256
+transform 0 1 11 -1 0 23
+box -81 -5 27 46
+use mux2  mux2_1
+array 0 2 -108 0 0 -51
+timestamp 1765589256
+transform 0 -1 101 -1 0 74
+box -81 -5 27 46
+<< labels >>
+flabel pm12contact 28 6 28 6 1 FreeSans 40 0 0 0 in0
+flabel pm12contact 29 95 29 95 1 FreeSans 40 0 0 0 in1
+flabel pm12contact 28 113 28 113 1 FreeSans 40 0 0 0 in2
+flabel pm12contact 29 202 29 202 1 FreeSans 40 0 0 0 in3
+flabel pm12contact 29 221 29 221 1 FreeSans 40 0 0 0 in4
+flabel pm12contact 29 310 29 310 1 FreeSans 40 0 0 0 in5
+flabel pm12contact 29 330 29 330 1 FreeSans 40 0 0 0 in6
+flabel pm12contact 29 418 29 418 1 FreeSans 40 0 0 0 in7
+flabel metal3 19 102 19 102 1 FreeSans 40 0 0 0 s0
+flabel metal2 56 156 56 156 1 FreeSans 40 0 0 0 s1
+flabel metal1 82 231 82 231 1 FreeSans 40 0 0 0 s2
+flabel metal2 93 199 93 199 1 FreeSans 40 0 0 0 out
+<< end >>

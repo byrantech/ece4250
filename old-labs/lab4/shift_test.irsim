@@ -1,0 +1,60 @@
+| Datapath Functional Test File for IRSIM
+| Tests complete datapath with all components
+| FIXED VERSION - Proper signal sequencing to avoid conflicts
+
+h Vdd!
+l GND!
+s
+
+| Initialize ALL control signals to known state (LOW)
+echo "=== Initializing all control signals ==="
+l ld rfb ros ras rd w1 w2 reg1r1 reg1r2 reg2r1 reg2r2 cin s u g0 g1 g2 g3
+s
+
+| Define vectors for easier manipulation
+vector inputs in7 in6 in5 in4 in3 in2 in1 in0
+vector outputs out7 out6 out5 out4 out3 out2 out1 out0
+vector wz_bus wz7 wz6 wz5 wz4 wz3 wz2 wz1 wz0
+vector fblock_ctrl g3 g2 g1 g0
+
+setvector inputs 00101010
+h ld
+s
+h w1
+s
+l w1
+l ld
+s
+
+# Read it back IMMEDIATELY (no other operations)
+h reg1r1
+s
+h rd
+s
+d outputs
+l reg1r1 rd
+s
+
+# Now try shift
+h s
+l u
+s
+h reg1r1
+s
+h ros
+s
+s
+s
+d outputs
+
+h s
+l u
+s
+s
+s
+d s u
+h reg1r1
+s
+d rx0 rx1 rx2 rx3 rx4 rx5 rx6 rx7
+d so0 so1 so2 so3 so4 so5 so6 so7
+d wz0 wz1 wz2 wz3 wz4 wz5 wz6 wz7

@@ -1,0 +1,38 @@
+n=3000
+
+string="""logfile clt_out.tcl
+h Vdd!
+l GND!
+vector b b7 b6 b5 b4 b3 b2 b1 b0
+vector o o7 o6 o5 o4 o3 o2 o1 o0
+vector CLOCK clk_all
+vector in in0 in1 in2 in3 in4
+clock CLOCK 0 1
+h en seed_en
+h seed0 seed1 seed2
+l seed3 seed4
+c
+l seed0
+h seed4
+c
+l seed1
+h seed3
+c
+l seed2
+h seed0
+c
+h seed1
+c
+c
+c
+c
+l seed_en
+"""
+
+addendum="""c
+d o
+"""*n
+
+#save the total script to a file
+with open("lfsr_test.irsim", "w") as f:
+    f.write(string + addendum)

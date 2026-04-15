@@ -1,0 +1,49 @@
+magic
+tech scmos
+timestamp 1765589256
+<< metal1 >>
+rect -80 38 27 43
+rect -74 16 -69 21
+rect -57 16 -41 21
+rect 15 16 20 21
+rect -80 -2 27 3
+<< m2contact >>
+rect -29 21 -24 26
+rect -11 21 -6 26
+rect -1 21 4 26
+rect -38 16 -33 21
+rect -62 7 -57 12
+rect -20 7 -15 12
+rect 7 7 12 12
+<< metal2 >>
+rect -38 30 4 35
+rect -38 21 -33 30
+rect -1 26 4 30
+rect -29 12 -24 21
+rect -11 12 -6 21
+rect -57 7 -24 12
+rect -11 7 7 12
+use inv  inv_0 ~/Downloads/vlsi-files/final-project
+timestamp 1765589256
+transform 1 0 -46 0 1 4
+box -8 -9 19 42
+use nand2  nand2_2
+timestamp 1765589256
+transform 1 0 -74 0 1 -6
+box -7 1 28 52
+use nand2  nand2_1
+timestamp 1765589256
+transform 1 0 -1 0 1 -6
+box -7 1 28 52
+use nand2  nand2_0
+timestamp 1765589256
+transform 1 0 -28 0 1 -6
+box -7 1 28 52
+<< labels >>
+flabel m2contact -18 9 -18 9 1 FreeSans 8 0 0 0 OUT
+flabel metal1 -18 0 -18 0 1 FreeSans 8 0 0 0 GND!
+flabel metal1 -18 40 -18 40 1 FreeSans 8 0 0 0 Vdd!
+flabel metal1 -55 19 -55 19 1 FreeSans 8 0 0 0 SEL
+flabel metal1 18 18 18 18 1 FreeSans 16 0 0 0 B
+flabel metal1 -72 18 -72 18 1 FreeSans 16 0 0 0 A
+<< end >>

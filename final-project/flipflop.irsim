@@ -1,0 +1,188 @@
+h Vdd!
+l GND!
+s
+
+ana D Q CLK
+
+echo "=== Test Case 1: Latch 0 on Rising Edge ==="
+l D
+l CLK
+s
+
+echo "CLK rising, D=0 -> Q=0"
+h CLK
+s
+l CLK
+s
+assert q L
+
+echo "=== Test Case 2: Latch 1 on Rising Edge ==="
+h D
+l CLK
+s
+
+echo "CLK rising, D=1 -> Q=1"
+h CLK
+s
+l CLK
+s
+assert q H
+
+echo "=== Test Case 3: Hold Value When CLK Low ==="
+echo "Set Q=1 as starting state"
+h D
+l CLK
+h CLK
+s
+assert q H
+
+echo "Change D while CLK low -> Q must stay same"
+l CLK
+l D
+s
+assert q H
+
+echo "=== Test Case 4: Toggle Back to 0 ==="
+l D
+l CLK
+s
+
+echo "CLK rising, D=0 -> Q=0"
+h CLK
+s
+l CLK
+s
+assert q L
+
+echo "=== Test Case 5: D Changes While CLK High ==="
+h D
+l CLK
+s
+
+echo "CLK rising, D=1 -> Q=1"
+h CLK
+s
+assert q H
+
+echo "D changes to 0 while CLK stays high -> Q should hold 1"
+l D
+s
+assert q H
+
+echo "CLK goes low -> Q should still hold 1"
+l CLK
+s
+assert q H
+
+echo "=== Test Case 6: Falling Edge Does NOT Trigger ==="
+echo "Set D=0, Q should still be 1 from previous"
+l D
+l CLK
+s
+assert q H
+
+echo "CLK rising to capture D=0 -> Q=0"
+h CLK
+s
+l CLK
+s
+assert q L
+
+echo "Now D=1, CLK goes high then low (falling edge)"
+h D
+h CLK
+s
+echo "Falling edge with D=1 -> Q should stay 0"
+l CLK
+s
+assert q L
+
+echo "=== Test Case 7: Multiple Consecutive Captures ==="
+echo "Capture D=1"
+h D
+l CLK
+s
+h CLK
+s
+l CLK
+s
+assert q H
+
+echo "Capture D=0"
+l D
+l CLK
+s
+h CLK
+s
+l CLK
+s
+assert q L
+
+echo "Capture D=1 again"
+h D
+l CLK
+s
+h CLK
+s
+l CLK
+s
+assert q H
+
+echo "=== Test Case 8: D Stable Before Rising Edge ==="
+echo "Setup: D=1 stable, then CLK rises"
+h D
+l CLK
+s
+s
+echo "CLK rising -> Q=1"
+h CLK
+s
+l CLK
+s
+assert q H
+
+echo "=== Test Case 9: Rapid D Changes Between Edges ==="
+echo "Q=1 from previous, CLK low"
+l CLK
+s
+assert q H
+
+echo "D toggles multiple times while CLK low"
+l D
+s
+h D
+s
+l D
+s
+h D
+s
+echo "Q should still be 1"
+assert q H
+
+echo "Rising edge with D=1 -> Q=1"
+h CLK
+s
+l CLK
+s
+assert q H
+
+echo "=== Test Case 10: Initial State After Power-Up ==="
+echo "Reset to known state: D=0, capture it"
+l D
+l CLK
+s
+h CLK
+s
+l CLK
+s
+assert q L
+
+echo "Verify Q stays low with D=0 and no clock transitions"
+l D
+l CLK
+s
+s
+s
+assert q L
+
+echo "=== All Tests Complete ==="

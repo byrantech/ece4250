@@ -1,0 +1,50 @@
+h Vdd!
+l Gnd!
+s
+
+vector inputs x y z
+vector outputs w7 w6 w5 w4 w3 w2 w1 w0
+
+echo "=== 3-TO-8 DECODER TEST ==="
+
+echo "xyz=000 -> w=00000001"
+setvector inputs 000
+s
+assert outputs 00000001
+
+echo "xyz=001 -> w=00000010"
+setvector inputs 001
+s
+assert outputs 00000010
+
+echo "xyz=010 -> w=00000100"
+setvector inputs 010
+s
+assert outputs 00000100
+
+echo "xyz=011 -> w=00001000"
+setvector inputs 011
+s
+assert outputs 00001000
+
+echo "xyz=100 -> w=00010000"
+setvector inputs 100
+s
+assert outputs 00010000
+
+echo "xyz=101 -> w=00100000"
+setvector inputs 101
+s
+assert outputs 00100000
+
+echo "xyz=110 -> w=01000000"
+setvector inputs 110
+s
+assert outputs 01000000
+
+echo "xyz=111 -> w=10000000"
+setvector inputs 111
+s
+assert outputs 10000000
+
+echo "=== ALL TESTS COMPLETE ==="

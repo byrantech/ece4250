@@ -1,0 +1,75 @@
+h Vdd!
+l Gnd!
+s
+
+echo "=== Test Case 1: No Shift (s=0) ==="
+l s
+
+echo "s=0, a=0 -> o=0"
+l u
+l au
+l ad
+l a
+s
+assert o L
+
+echo "s=0, a=1 -> o=1"
+h a
+s
+assert o H
+
+echo "s=0, a=1, others=H -> o=1 (u, au, ad ignored)"
+h u
+h au
+h ad
+h a
+s
+assert o H
+
+echo "=== Test Case 2: Shift Up (s=1, u=1) ==="
+h s
+h u
+
+echo "s=1, u=1, au=0 -> o=0"
+l a
+l au
+l ad
+s
+assert o L
+
+echo "s=1, u=1, au=1 -> o=1"
+h au
+s
+assert o H
+
+echo "s=1, u=1, au=1, a=0, ad=0 -> o=1 (a, ad ignored)"
+l a
+l ad
+h au
+s
+assert o H
+
+echo "=== Test Case 3: Shift Down (s=1, u=0) ==="
+h s
+l u
+
+echo "s=1, u=0, ad=0 -> o=0"
+l a
+l au
+l ad
+s
+assert o L
+
+echo "s=1, u=0, ad=1 -> o=1"
+h ad
+s
+assert o H
+
+echo "s=1, u=0, ad=1, a=0, au=0 -> o=1 (a, au ignored)"
+l a
+l au
+h ad
+s
+assert o H
+
+echo "=== All Tests Complete ==="

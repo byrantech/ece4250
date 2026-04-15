@@ -1,0 +1,30 @@
+magic
+tech scmos
+timestamp 1761167306
+<< checkpaint >>
+rect -72 -5 113 205
+<< metal1 >>
+rect -2 132 3 186
+rect 23 142 28 147
+rect 23 129 26 137
+rect 38 132 43 186
+rect -2 13 3 66
+rect 15 59 20 69
+rect 11 54 20 59
+rect 38 13 43 66
+<< m2contact >>
+rect 23 137 28 142
+rect 6 54 11 59
+<< metal2 >>
+rect 15 158 20 186
+rect 7 153 20 158
+rect 7 133 12 153
+rect 7 128 20 133
+rect 15 13 20 128
+<< m234contact >>
+rect 23 142 28 147
+use new_latch  new_latch_0
+timestamp 1761103337
+transform 1 0 -75 0 1 60
+box 70 2 121 78
+<< end >>

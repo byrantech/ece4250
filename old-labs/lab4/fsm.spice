@@ -1,0 +1,546 @@
+* SPICE3 file created from fsm.ext - technology: scmos
+
+.option scale=0.09u
+
+M1000 or4_0/nand2_0/A h3 or4_0/nor2_0/a_11_35# Vdd pfet w=18 l=2
++  ad=108 pd=48 as=126 ps=50
+M1001 or4_0/nand2_0/A h2 GND GND nfet w=12 l=2
++  ad=84 pd=38 as=3594 ps=2170
+M1002 GND h3 or4_0/nand2_0/A GND nfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 or4_0/nor2_0/a_11_35# h2 Vdd Vdd pfet w=18 l=2
++  ad=0 pd=0 as=8272 ps=3572
+M1004 or4_0/nand2_0/B h4 or4_0/nor2_2/a_11_35# Vdd pfet w=18 l=2
++  ad=108 pd=48 as=126 ps=50
+M1005 or4_0/nand2_0/B GND GND GND nfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1006 GND h4 or4_0/nand2_0/B GND nfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 or4_0/nor2_2/a_11_35# GND Vdd Vdd pfet w=18 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 or4_0/nand2_0/a_7_10# or4_0/nand2_0/A GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1009 or4_0/out or4_0/nand2_0/A Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1010 or4_0/out or4_0/nand2_0/B or4_0/nand2_0/a_7_10# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1011 Vdd or4_0/nand2_0/B or4_0/out Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 or4_1/nand2_0/A h2 or4_1/nor2_0/a_11_35# Vdd pfet w=18 l=2
++  ad=108 pd=48 as=126 ps=50
+M1013 or4_1/nand2_0/A h4 GND GND nfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1014 GND h2 or4_1/nand2_0/A GND nfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1015 or4_1/nor2_0/a_11_35# h4 Vdd Vdd pfet w=18 l=2
++  ad=0 pd=0 as=0 ps=0
+M1016 inv_0/in h5 or4_1/nor2_2/a_11_35# Vdd pfet w=18 l=2
++  ad=108 pd=48 as=126 ps=50
+M1017 inv_0/in h6 GND GND nfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1018 GND h5 inv_0/in GND nfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1019 or4_1/nor2_2/a_11_35# h6 Vdd Vdd pfet w=18 l=2
++  ad=0 pd=0 as=0 ps=0
+M1020 or4_1/nand2_0/a_7_10# or4_1/nand2_0/A GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1021 and2_2/B or4_1/nand2_0/A Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1022 and2_2/B inv_0/in or4_1/nand2_0/a_7_10# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1023 Vdd inv_0/in and2_2/B Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1024 or4_2/nand2_0/A h4 or4_2/nor2_0/a_11_35# Vdd pfet w=18 l=2
++  ad=108 pd=48 as=126 ps=50
+M1025 or4_2/nand2_0/A h6 GND GND nfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1026 GND h4 or4_2/nand2_0/A GND nfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1027 or4_2/nor2_0/a_11_35# h6 Vdd Vdd pfet w=18 l=2
++  ad=0 pd=0 as=0 ps=0
+M1028 or4_2/nand2_0/B h2 or4_2/nor2_2/a_11_35# Vdd pfet w=18 l=2
++  ad=108 pd=48 as=126 ps=50
+M1029 or4_2/nand2_0/B GND GND GND nfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1030 GND h2 or4_2/nand2_0/B GND nfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1031 or4_2/nor2_2/a_11_35# GND Vdd Vdd pfet w=18 l=2
++  ad=0 pd=0 as=0 ps=0
+M1032 or4_2/nand2_0/a_7_10# or4_2/nand2_0/A GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1033 rd or4_2/nand2_0/A Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1034 rd or4_2/nand2_0/B or4_2/nand2_0/a_7_10# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1035 Vdd or4_2/nand2_0/B rd Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1036 fsm_states_0/or4_0/nand2_0/A h4 fsm_states_0/or4_0/nor2_0/a_11_35# Vdd pfet w=18 l=2
++  ad=108 pd=48 as=126 ps=50
+M1037 fsm_states_0/or4_0/nand2_0/A h6 GND GND nfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1038 GND h4 fsm_states_0/or4_0/nand2_0/A GND nfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1039 fsm_states_0/or4_0/nor2_0/a_11_35# h6 Vdd Vdd pfet w=18 l=2
++  ad=0 pd=0 as=0 ps=0
+M1040 fsm_states_0/or4_0/nand2_0/B fsm_states_0/or4_0/c fsm_states_0/or4_0/nor2_2/a_11_35# Vdd pfet w=18 l=2
++  ad=108 pd=48 as=126 ps=50
+M1041 fsm_states_0/or4_0/nand2_0/B h2 GND GND nfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1042 GND fsm_states_0/or4_0/c fsm_states_0/or4_0/nand2_0/B GND nfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1043 fsm_states_0/or4_0/nor2_2/a_11_35# h2 Vdd Vdd pfet w=18 l=2
++  ad=0 pd=0 as=0 ps=0
+M1044 fsm_states_0/or4_0/nand2_0/a_7_10# fsm_states_0/or4_0/nand2_0/A GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1045 fsm_states_0/and2_0/B fsm_states_0/or4_0/nand2_0/A Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1046 fsm_states_0/and2_0/B fsm_states_0/or4_0/nand2_0/B fsm_states_0/or4_0/nand2_0/a_7_10# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1047 Vdd fsm_states_0/or4_0/nand2_0/B fsm_states_0/and2_0/B Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1048 fsm_states_0/_reset nh2 GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1049 fsm_states_0/_reset nh2 Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1050 fsm_states_0/and2_2/A LOAD GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1051 fsm_states_0/and2_2/A LOAD Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1052 fsm_states_0/_iter ITER GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1053 fsm_states_0/_iter ITER Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1054 GND fsm_states_0/and2_0/a_1_6# nh1 GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1055 fsm_states_0/and2_0/a_1_6# fsm_states_0/_reset Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1056 fsm_states_0/and2_0/a_14_9# fsm_states_0/_reset GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1057 Vdd fsm_states_0/and2_0/a_1_6# nh1 Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1058 Vdd fsm_states_0/and2_0/B fsm_states_0/and2_0/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1059 fsm_states_0/and2_0/a_1_6# fsm_states_0/and2_0/B fsm_states_0/and2_0/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1060 GND fsm_states_0/and2_1/a_1_6# fsm_states_0/or4_0/c GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1061 fsm_states_0/and2_1/a_1_6# h1 Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1062 fsm_states_0/and2_1/a_14_9# h1 GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1063 Vdd fsm_states_0/and2_1/a_1_6# fsm_states_0/or4_0/c Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1064 Vdd fsm_states_0/and2_1/B fsm_states_0/and2_1/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1065 fsm_states_0/and2_1/a_1_6# fsm_states_0/and2_1/B fsm_states_0/and2_1/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1066 GND fsm_states_0/and2_2/a_1_6# fsm_states_0/and2_1/B GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1067 fsm_states_0/and2_2/a_1_6# fsm_states_0/and2_2/A Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1068 fsm_states_0/and2_2/a_14_9# fsm_states_0/and2_2/A GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1069 Vdd fsm_states_0/and2_2/a_1_6# fsm_states_0/and2_1/B Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1070 Vdd fsm_states_0/_iter fsm_states_0/and2_2/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1071 fsm_states_0/and2_2/a_1_6# fsm_states_0/_iter fsm_states_0/and2_2/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1072 GND fsm_states_0/and2_3/a_1_6# nh3 GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1073 fsm_states_0/and2_3/a_1_6# fsm_states_0/_reset Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1074 fsm_states_0/and2_3/a_14_9# fsm_states_0/_reset GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1075 Vdd fsm_states_0/and2_3/a_1_6# nh3 Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1076 Vdd h1 fsm_states_0/and2_3/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1077 fsm_states_0/and2_3/a_1_6# h1 fsm_states_0/and2_3/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1078 GND fsm_states_0/and2_4/a_1_6# h1 GND nfet w=6 l=2
++  ad=0 pd=0 as=72 ps=48
+M1079 fsm_states_0/and2_4/a_1_6# h1 Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1080 fsm_states_0/and2_4/a_14_9# h1 GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1081 Vdd fsm_states_0/and2_4/a_1_6# h1 Vdd pfet w=12 l=2
++  ad=0 pd=0 as=144 ps=70
+M1082 Vdd LOAD fsm_states_0/and2_4/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1083 fsm_states_0/and2_4/a_1_6# LOAD fsm_states_0/and2_4/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1084 GND PHI1 fsm_states_0/new_latch_0[0]/a_82_52# GND nfet w=5 l=2
++  ad=0 pd=0 as=30 ps=22
+M1085 fsm_states_0/new_latch_0[0]/a_99_34# fsm_states_0/new_latch_0[0]/a_79_32# Vdd Vdd pfet w=10 l=2
++  ad=40 pd=28 as=0 ps=0
+M1086 fsm_states_0/new_latch_0[0]/a_79_32# fsm_states_0/new_latch_0[0]/in Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1087 h6 fsm_states_0/new_latch_0[0]/a_82_52# fsm_states_0/new_latch_0[0]/a_99_34# Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1088 fsm_states_0/new_latch_0[0]/a_82_34# fsm_states_0/new_latch_0[0]/a_79_32# GND GND nfet w=5 l=2
++  ad=20 pd=18 as=0 ps=0
+M1089 fsm_states_0/new_latch_0[0]/a_79_32# fsm_states_0/new_latch_0[0]/in GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1090 h6 PHI1 fsm_states_0/new_latch_0[0]/a_82_34# GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1091 Vdd PHI1 fsm_states_0/new_latch_0[0]/a_82_52# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=60 ps=32
+M1092 GND PHI1 fsm_states_0/new_latch_0[1]/a_82_52# GND nfet w=5 l=2
++  ad=0 pd=0 as=30 ps=22
+M1093 fsm_states_0/new_latch_0[1]/a_99_34# fsm_states_0/new_latch_0[1]/a_79_32# Vdd Vdd pfet w=10 l=2
++  ad=40 pd=28 as=0 ps=0
+M1094 fsm_states_0/new_latch_0[1]/a_79_32# fsm_states_0/new_latch_0[1]/in Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1095 h5 fsm_states_0/new_latch_0[1]/a_82_52# fsm_states_0/new_latch_0[1]/a_99_34# Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1096 fsm_states_0/new_latch_0[1]/a_82_34# fsm_states_0/new_latch_0[1]/a_79_32# GND GND nfet w=5 l=2
++  ad=20 pd=18 as=0 ps=0
+M1097 fsm_states_0/new_latch_0[1]/a_79_32# fsm_states_0/new_latch_0[1]/in GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1098 h5 PHI1 fsm_states_0/new_latch_0[1]/a_82_34# GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1099 Vdd PHI1 fsm_states_0/new_latch_0[1]/a_82_52# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=60 ps=32
+M1100 GND PHI1 fsm_states_0/new_latch_0[2]/a_82_52# GND nfet w=5 l=2
++  ad=0 pd=0 as=30 ps=22
+M1101 fsm_states_0/new_latch_0[2]/a_99_34# fsm_states_0/new_latch_0[2]/a_79_32# Vdd Vdd pfet w=10 l=2
++  ad=40 pd=28 as=0 ps=0
+M1102 fsm_states_0/new_latch_0[2]/a_79_32# fsm_states_0/new_latch_0[2]/in Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1103 h4 fsm_states_0/new_latch_0[2]/a_82_52# fsm_states_0/new_latch_0[2]/a_99_34# Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1104 fsm_states_0/new_latch_0[2]/a_82_34# fsm_states_0/new_latch_0[2]/a_79_32# GND GND nfet w=5 l=2
++  ad=20 pd=18 as=0 ps=0
+M1105 fsm_states_0/new_latch_0[2]/a_79_32# fsm_states_0/new_latch_0[2]/in GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1106 h4 PHI1 fsm_states_0/new_latch_0[2]/a_82_34# GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1107 Vdd PHI1 fsm_states_0/new_latch_0[2]/a_82_52# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=60 ps=32
+M1108 GND PHI1 fsm_states_0/new_latch_0[3]/a_82_52# GND nfet w=5 l=2
++  ad=0 pd=0 as=30 ps=22
+M1109 fsm_states_0/new_latch_0[3]/a_99_34# fsm_states_0/new_latch_0[3]/a_79_32# Vdd Vdd pfet w=10 l=2
++  ad=40 pd=28 as=0 ps=0
+M1110 fsm_states_0/new_latch_0[3]/a_79_32# fsm_states_0/new_latch_0[3]/in Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1111 h3 fsm_states_0/new_latch_0[3]/a_82_52# fsm_states_0/new_latch_0[3]/a_99_34# Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1112 fsm_states_0/new_latch_0[3]/a_82_34# fsm_states_0/new_latch_0[3]/a_79_32# GND GND nfet w=5 l=2
++  ad=20 pd=18 as=0 ps=0
+M1113 fsm_states_0/new_latch_0[3]/a_79_32# fsm_states_0/new_latch_0[3]/in GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1114 h3 PHI1 fsm_states_0/new_latch_0[3]/a_82_34# GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1115 Vdd PHI1 fsm_states_0/new_latch_0[3]/a_82_52# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=60 ps=32
+M1116 GND PHI1 fsm_states_0/new_latch_0[4]/a_82_52# GND nfet w=5 l=2
++  ad=0 pd=0 as=30 ps=22
+M1117 fsm_states_0/new_latch_0[4]/a_99_34# fsm_states_0/new_latch_0[4]/a_79_32# Vdd Vdd pfet w=10 l=2
++  ad=40 pd=28 as=0 ps=0
+M1118 fsm_states_0/new_latch_0[4]/a_79_32# fsm_states_0/new_latch_0[4]/in Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1119 h2 fsm_states_0/new_latch_0[4]/a_82_52# fsm_states_0/new_latch_0[4]/a_99_34# Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1120 fsm_states_0/new_latch_0[4]/a_82_34# fsm_states_0/new_latch_0[4]/a_79_32# GND GND nfet w=5 l=2
++  ad=20 pd=18 as=0 ps=0
+M1121 fsm_states_0/new_latch_0[4]/a_79_32# fsm_states_0/new_latch_0[4]/in GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1122 h2 PHI1 fsm_states_0/new_latch_0[4]/a_82_34# GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1123 Vdd PHI1 fsm_states_0/new_latch_0[4]/a_82_52# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=60 ps=32
+M1124 GND PHI1 fsm_states_0/new_latch_0[5]/a_82_52# GND nfet w=5 l=2
++  ad=0 pd=0 as=30 ps=22
+M1125 fsm_states_0/new_latch_0[5]/a_99_34# fsm_states_0/new_latch_0[5]/a_79_32# Vdd Vdd pfet w=10 l=2
++  ad=40 pd=28 as=0 ps=0
+M1126 fsm_states_0/new_latch_0[5]/a_79_32# fsm_states_0/new_latch_0[5]/in Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1127 h1 fsm_states_0/new_latch_0[5]/a_82_52# fsm_states_0/new_latch_0[5]/a_99_34# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1128 fsm_states_0/new_latch_0[5]/a_82_34# fsm_states_0/new_latch_0[5]/a_79_32# GND GND nfet w=5 l=2
++  ad=20 pd=18 as=0 ps=0
+M1129 fsm_states_0/new_latch_0[5]/a_79_32# fsm_states_0/new_latch_0[5]/in GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1130 h1 PHI1 fsm_states_0/new_latch_0[5]/a_82_34# GND nfet w=5 l=2
++  ad=0 pd=0 as=0 ps=0
+M1131 Vdd PHI1 fsm_states_0/new_latch_0[5]/a_82_52# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=60 ps=32
+M1132 GND fsm_states_0/and2_5/a_1_6# nh4 GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1133 fsm_states_0/and2_5/a_1_6# fsm_states_0/_reset Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1134 fsm_states_0/and2_5/a_14_9# fsm_states_0/_reset GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1135 Vdd fsm_states_0/and2_5/a_1_6# nh4 Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1136 Vdd h3 fsm_states_0/and2_5/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1137 fsm_states_0/and2_5/a_1_6# h3 fsm_states_0/and2_5/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1138 GND PHI0 fsm_states_0/new_latch_1[0]/a_82_52# GND nfet w=5 l=2
++  ad=0 pd=0 as=30 ps=22
+M1139 fsm_states_0/new_latch_1[0]/a_99_34# fsm_states_0/new_latch_1[0]/a_79_32# Vdd Vdd pfet w=10 l=2
++  ad=40 pd=28 as=0 ps=0
+M1140 fsm_states_0/new_latch_1[0]/a_79_32# nh1 Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1141 fsm_states_0/new_latch_0[5]/in fsm_states_0/new_latch_1[0]/a_82_52# fsm_states_0/new_latch_1[0]/a_99_34# Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1142 fsm_states_0/new_latch_1[0]/a_82_34# fsm_states_0/new_latch_1[0]/a_79_32# GND GND nfet w=5 l=2
++  ad=20 pd=18 as=0 ps=0
+M1143 fsm_states_0/new_latch_1[0]/a_79_32# nh1 GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1144 fsm_states_0/new_latch_0[5]/in PHI0 fsm_states_0/new_latch_1[0]/a_82_34# GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1145 Vdd PHI0 fsm_states_0/new_latch_1[0]/a_82_52# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=60 ps=32
+M1146 GND PHI0 fsm_states_0/new_latch_1[1]/a_82_52# GND nfet w=5 l=2
++  ad=0 pd=0 as=30 ps=22
+M1147 fsm_states_0/new_latch_1[1]/a_99_34# fsm_states_0/new_latch_1[1]/a_79_32# Vdd Vdd pfet w=10 l=2
++  ad=40 pd=28 as=0 ps=0
+M1148 fsm_states_0/new_latch_1[1]/a_79_32# nh2 Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1149 fsm_states_0/new_latch_0[4]/in fsm_states_0/new_latch_1[1]/a_82_52# fsm_states_0/new_latch_1[1]/a_99_34# Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1150 fsm_states_0/new_latch_1[1]/a_82_34# fsm_states_0/new_latch_1[1]/a_79_32# GND GND nfet w=5 l=2
++  ad=20 pd=18 as=0 ps=0
+M1151 fsm_states_0/new_latch_1[1]/a_79_32# nh2 GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1152 fsm_states_0/new_latch_0[4]/in PHI0 fsm_states_0/new_latch_1[1]/a_82_34# GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1153 Vdd PHI0 fsm_states_0/new_latch_1[1]/a_82_52# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=60 ps=32
+M1154 GND PHI0 fsm_states_0/new_latch_1[2]/a_82_52# GND nfet w=5 l=2
++  ad=0 pd=0 as=30 ps=22
+M1155 fsm_states_0/new_latch_1[2]/a_99_34# fsm_states_0/new_latch_1[2]/a_79_32# Vdd Vdd pfet w=10 l=2
++  ad=40 pd=28 as=0 ps=0
+M1156 fsm_states_0/new_latch_1[2]/a_79_32# nh3 Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1157 fsm_states_0/new_latch_0[3]/in fsm_states_0/new_latch_1[2]/a_82_52# fsm_states_0/new_latch_1[2]/a_99_34# Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1158 fsm_states_0/new_latch_1[2]/a_82_34# fsm_states_0/new_latch_1[2]/a_79_32# GND GND nfet w=5 l=2
++  ad=20 pd=18 as=0 ps=0
+M1159 fsm_states_0/new_latch_1[2]/a_79_32# nh3 GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1160 fsm_states_0/new_latch_0[3]/in PHI0 fsm_states_0/new_latch_1[2]/a_82_34# GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1161 Vdd PHI0 fsm_states_0/new_latch_1[2]/a_82_52# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=60 ps=32
+M1162 GND PHI0 fsm_states_0/new_latch_1[3]/a_82_52# GND nfet w=5 l=2
++  ad=0 pd=0 as=30 ps=22
+M1163 fsm_states_0/new_latch_1[3]/a_99_34# fsm_states_0/new_latch_1[3]/a_79_32# Vdd Vdd pfet w=10 l=2
++  ad=40 pd=28 as=0 ps=0
+M1164 fsm_states_0/new_latch_1[3]/a_79_32# nh4 Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1165 fsm_states_0/new_latch_0[2]/in fsm_states_0/new_latch_1[3]/a_82_52# fsm_states_0/new_latch_1[3]/a_99_34# Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1166 fsm_states_0/new_latch_1[3]/a_82_34# fsm_states_0/new_latch_1[3]/a_79_32# GND GND nfet w=5 l=2
++  ad=20 pd=18 as=0 ps=0
+M1167 fsm_states_0/new_latch_1[3]/a_79_32# nh4 GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1168 fsm_states_0/new_latch_0[2]/in PHI0 fsm_states_0/new_latch_1[3]/a_82_34# GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1169 Vdd PHI0 fsm_states_0/new_latch_1[3]/a_82_52# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=60 ps=32
+M1170 GND PHI0 fsm_states_0/new_latch_1[4]/a_82_52# GND nfet w=5 l=2
++  ad=0 pd=0 as=30 ps=22
+M1171 fsm_states_0/new_latch_1[4]/a_99_34# fsm_states_0/new_latch_1[4]/a_79_32# Vdd Vdd pfet w=10 l=2
++  ad=40 pd=28 as=0 ps=0
+M1172 fsm_states_0/new_latch_1[4]/a_79_32# nh5 Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1173 fsm_states_0/new_latch_0[1]/in fsm_states_0/new_latch_1[4]/a_82_52# fsm_states_0/new_latch_1[4]/a_99_34# Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1174 fsm_states_0/new_latch_1[4]/a_82_34# fsm_states_0/new_latch_1[4]/a_79_32# GND GND nfet w=5 l=2
++  ad=20 pd=18 as=0 ps=0
+M1175 fsm_states_0/new_latch_1[4]/a_79_32# nh5 GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1176 fsm_states_0/new_latch_0[1]/in PHI0 fsm_states_0/new_latch_1[4]/a_82_34# GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1177 Vdd PHI0 fsm_states_0/new_latch_1[4]/a_82_52# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=60 ps=32
+M1178 GND PHI0 fsm_states_0/new_latch_1[5]/a_82_52# GND nfet w=5 l=2
++  ad=0 pd=0 as=30 ps=22
+M1179 fsm_states_0/new_latch_1[5]/a_99_34# fsm_states_0/new_latch_1[5]/a_79_32# Vdd Vdd pfet w=10 l=2
++  ad=40 pd=28 as=0 ps=0
+M1180 fsm_states_0/new_latch_1[5]/a_79_32# nh6 Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1181 fsm_states_0/new_latch_0[0]/in fsm_states_0/new_latch_1[5]/a_82_52# fsm_states_0/new_latch_1[5]/a_99_34# Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1182 fsm_states_0/new_latch_1[5]/a_82_34# fsm_states_0/new_latch_1[5]/a_79_32# GND GND nfet w=5 l=2
++  ad=20 pd=18 as=0 ps=0
+M1183 fsm_states_0/new_latch_1[5]/a_79_32# nh6 GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1184 fsm_states_0/new_latch_0[0]/in PHI0 fsm_states_0/new_latch_1[5]/a_82_34# GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1185 Vdd PHI0 fsm_states_0/new_latch_1[5]/a_82_52# Vdd pfet w=10 l=2
++  ad=0 pd=0 as=60 ps=32
+M1186 GND fsm_states_0/and2_6/a_1_6# nh5 GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1187 fsm_states_0/and2_6/a_1_6# fsm_states_0/_reset Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1188 fsm_states_0/and2_6/a_14_9# fsm_states_0/_reset GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1189 Vdd fsm_states_0/and2_6/a_1_6# nh5 Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1190 Vdd fsm_states_0/and2_6/B fsm_states_0/and2_6/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1191 fsm_states_0/and2_6/a_1_6# fsm_states_0/and2_6/B fsm_states_0/and2_6/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1192 GND fsm_states_0/and2_7/a_1_6# nh6 GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1193 fsm_states_0/and2_7/a_1_6# fsm_states_0/_reset Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1194 fsm_states_0/and2_7/a_14_9# fsm_states_0/_reset GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1195 Vdd fsm_states_0/and2_7/a_1_6# nh6 Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1196 Vdd h5 fsm_states_0/and2_7/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1197 fsm_states_0/and2_7/a_1_6# h5 fsm_states_0/and2_7/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1198 GND fsm_states_0/and2_8/a_1_6# fsm_states_0/and2_6/B GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1199 fsm_states_0/and2_8/a_1_6# ITER Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1200 fsm_states_0/and2_8/a_14_9# ITER GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1201 Vdd fsm_states_0/and2_8/a_1_6# fsm_states_0/and2_6/B Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1202 Vdd h1 fsm_states_0/and2_8/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1203 fsm_states_0/and2_8/a_1_6# h1 fsm_states_0/and2_8/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1204 or2_0/a_2_9# h3 GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1205 or2_0/a_2_9# h2 or2_0/a_15_37# Vdd pfet w=12 l=2
++  ad=72 pd=36 as=84 ps=38
+M1206 GND or2_0/a_2_9# and2_0/B GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1207 or2_0/a_15_37# h3 Vdd Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1208 GND h2 or2_0/a_2_9# GND nfet w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1209 Vdd or2_0/a_2_9# and2_0/B Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1210 or2_1/a_2_9# rd GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1211 or2_1/a_2_9# reg0r0phi1 or2_1/a_15_37# Vdd pfet w=12 l=2
++  ad=72 pd=36 as=84 ps=38
+M1212 GND or2_1/a_2_9# or2_1/out GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1213 or2_1/a_15_37# rd Vdd Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1214 GND reg0r0phi1 or2_1/a_2_9# GND nfet w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1215 Vdd or2_1/a_2_9# or2_1/out Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1216 and2_1/A inv_0/in GND GND nfet w=5 l=2
++  ad=30 pd=22 as=0 ps=0
+M1217 and2_1/A inv_0/in Vdd Vdd pfet w=10 l=2
++  ad=60 pd=32 as=0 ps=0
+M1218 GND and2_modified_0/a_1_6# and2_modified_0/out GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1219 and2_modified_0/a_1_6# or4_0/out Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1220 and2_modified_0/a_14_9# or4_0/out GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1221 Vdd and2_modified_0/a_1_6# and2_modified_0/out Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1222 Vdd PHI1 and2_modified_0/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1223 and2_modified_0/a_1_6# PHI1 and2_modified_0/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1224 GND and2_0/a_1_6# and2_0/out GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1225 and2_0/a_1_6# PHI0 Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1226 and2_0/a_14_9# PHI0 GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1227 Vdd and2_0/a_1_6# and2_0/out Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1228 Vdd and2_0/B and2_0/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1229 and2_0/a_1_6# and2_0/B and2_0/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1230 GND and2_1/a_1_6# reg0r0phi1 GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1231 and2_1/a_1_6# and2_1/A Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1232 and2_1/a_14_9# and2_1/A GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1233 Vdd and2_1/a_1_6# reg0r0phi1 Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1234 Vdd PHI1 and2_1/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1235 and2_1/a_1_6# PHI1 and2_1/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1236 GND and2_2/a_1_6# and2_2/out GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1237 and2_2/a_1_6# PHI0 Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1238 and2_2/a_14_9# PHI0 GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1239 Vdd and2_2/a_1_6# and2_2/out Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1240 Vdd and2_2/B and2_2/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1241 and2_2/a_1_6# and2_2/B and2_2/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1242 GND and2_3/a_1_6# and2_3/out GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1243 and2_3/a_1_6# PHI1 Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1244 and2_3/a_14_9# PHI1 GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1245 Vdd and2_3/a_1_6# and2_3/out Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1246 Vdd h3 and2_3/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1247 and2_3/a_1_6# h3 and2_3/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1248 GND m1_568_227# and2_4/out GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1249 m1_568_227# PHI1 Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1250 and2_4/a_14_9# PHI1 GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1251 Vdd m1_568_227# and2_4/out Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1252 Vdd h6 m1_568_227# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1253 m1_568_227# h6 and2_4/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1254 GND and2_5/a_1_6# and2_5/out GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1255 and2_5/a_1_6# PHI1 Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1256 and2_5/a_14_9# PHI1 GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1257 Vdd and2_5/a_1_6# and2_5/out Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1258 Vdd h6 and2_5/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1259 and2_5/a_1_6# h6 and2_5/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1260 GND and2_6/a_1_6# and2_6/out GND nfet w=6 l=2
++  ad=0 pd=0 as=42 ps=26
+M1261 and2_6/a_1_6# h5 Vdd Vdd pfet w=12 l=2
++  ad=84 pd=38 as=0 ps=0
+M1262 and2_6/a_14_9# h5 GND GND nfet w=6 l=2
++  ad=42 pd=26 as=0 ps=0
+M1263 Vdd and2_6/a_1_6# and2_6/out Vdd pfet w=12 l=2
++  ad=0 pd=0 as=84 ps=38
+M1264 Vdd PHI1 and2_6/a_1_6# Vdd pfet w=12 l=2
++  ad=0 pd=0 as=0 ps=0
+M1265 and2_6/a_1_6# PHI1 and2_6/a_14_9# GND nfet w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+C0 fsm_states_0/_reset nh2 3.50fF
+C1 h2 h4 2.72fF
+C2 fsm_states_0/_iter GND 2.09fF
+C3 Vdd PHI1 2.09fF
+C4 PHI0 GND 3.39fF
+C5 h2 Vdd 2.29fF
+C6 h6 h4 2.50fF
+C7 h2 h6 2.31fF
+C8 PHI1 GND 3.97fF
+C9 Vdd 0 50.01fF

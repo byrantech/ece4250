@@ -1,0 +1,163 @@
+| Staticizer (1-bit register with tri-state input) Test
+| Tests a single bit storage cell with feedback inverters and gated input
+| W=high -> latch disabled (tri-state off), W=low -> latch enabled (tri-state on)
+| Write to IN (input pin)
+| internal is debug/monitoring pin
+
+h Vdd!
+l GND!
+s
+
+echo "=== Staticizer Bit Cell Test ==="
+echo ""
+
+| Initialize control signals
+echo "Initialize: W=1 (latch disabled), IN=0"
+h W
+l IN
+s
+s
+
+echo "Check initial state"
+d IN internal
+echo ""
+
+echo "=== Test 1: Write 1 to cell ==="
+echo "Set IN=1"
+h IN
+s
+d IN
+
+echo "Enable write (W=0 to enable tri-state buffer)"
+l W
+s
+s
+echo "Internal node should change based on input"
+d IN internal
+
+echo "Disable write (W=1 to tri-state buffer off)"
+h W
+s
+s
+echo "Internal should hold value (feedback inverters maintain state)"
+d IN internal
+echo ""
+
+echo "=== Test 2: Verify data holds when input changes ==="
+echo "Change IN=0 (but W=1 so latch disabled, shouldn't affect storage)"
+l IN
+s
+s
+echo "Internal should still hold previous value (held by feedback)"
+d IN internal
+echo ""
+
+echo "=== Test 3: Write 0 to cell ==="
+echo "Keep IN=0, enable write (W=0)"
+l W
+s
+s
+echo "Internal node should update"
+d IN internal
+
+echo "Disable write (W=1)"
+h W
+s
+s
+echo "Internal should hold new value"
+d IN internal
+echo ""
+
+echo "=== Test 4: Verify data holds with input high ==="
+echo "Change IN=1 (but W=1 so latch disabled, shouldn't affect storage)"
+h IN
+s
+s
+echo "Internal should still hold previous value (held by feedback)"
+d IN internal
+echo ""
+
+echo "=== Test 5: Toggle sequence ==="
+echo "Write 1"
+h IN
+l W
+s
+s
+d IN internal
+h W
+s
+
+echo "Write 0"
+l IN
+l W
+s
+s
+d IN internal
+h W
+s
+
+echo "Write 1 again"
+h IN
+l W
+s
+s
+d IN internal
+h W
+s
+echo ""
+
+echo "=== Test 6: Timing - verify hold time ==="
+echo "Write 1, W=0 (enable)"
+h IN
+l W
+s
+s
+echo "Internal after enable"
+d IN internal
+
+echo "Disable immediately (W=1)"
+h W
+s
+echo "Internal should still hold value"
+d IN internal
+
+echo "Wait multiple cycles"
+s
+s
+s
+echo "Internal should still hold value"
+d IN internal
+echo ""
+
+echo "=== Test 7: Rapid write sequence ==="
+echo "Write 1"
+h IN
+l W
+s
+s
+h W
+s
+
+echo "Write 0"
+l IN
+l W
+s
+s
+h W
+s
+
+echo "Write 1"
+h IN
+l W
+s
+s
+h W
+s
+
+echo "Verify final state holds"
+s
+s
+d IN internal
+echo ""
+
+echo "=== All Staticizer Tests Complete ==="

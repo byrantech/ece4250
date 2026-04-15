@@ -1,0 +1,3649 @@
+h Vdd!
+l Gnd!
+s
+
+vector a a7 a6 a5 a4 a3 a2 a1 a0
+vector b b7 b6 b5 b4 b3 b2 b1 b0
+vector c c7 c6 c5 c4 c3 c2 c1 c0
+vector d d7 d6 d5 d4 d3 d2 d1 d0
+vector out out7 out6 out5 out4 out3 out2 out1 out0
+vector sel s1 s0
+
+echo "=== 4-TO-1 8-BIT MULTIPLEXER TEST ==="
+
+echo "Testing: all zeros"
+setvector a 00000000
+setvector b 00000000
+setvector c 00000000
+setvector d 00000000
+h en
+s
+setvector sel 11
+s
+assert out 00000000
+setvector sel 10
+s
+assert out 00000000
+setvector sel 01
+s
+assert out 00000000
+setvector sel 00
+s
+assert out 00000000
+
+echo "Testing: all ones"
+setvector a 11111111
+setvector b 11111111
+setvector c 11111111
+setvector d 11111111
+s
+setvector sel 11
+s
+assert out 11111111
+setvector sel 10
+s
+assert out 11111111
+setvector sel 01
+s
+assert out 11111111
+setvector sel 00
+s
+assert out 11111111
+
+echo "Testing: unique values 0x11,0x22,0x33,0x44"
+setvector a 00010001
+setvector b 00100010
+setvector c 00110011
+setvector d 01000100
+s
+setvector sel 11
+s
+assert out 00010001
+setvector sel 10
+s
+assert out 00100010
+setvector sel 01
+s
+assert out 00110011
+setvector sel 00
+s
+assert out 01000100
+
+echo "Testing: alternating patterns"
+setvector a 10101010
+setvector b 01010101
+setvector c 11001100
+setvector d 00110011
+s
+setvector sel 11
+s
+assert out 10101010
+setvector sel 10
+s
+assert out 01010101
+setvector sel 01
+s
+assert out 11001100
+setvector sel 00
+s
+assert out 00110011
+
+echo "Testing: checkerboard a=0,b=FF,c=0,d=FF"
+setvector a 00000000
+setvector b 11111111
+setvector c 00000000
+setvector d 11111111
+s
+setvector sel 11
+s
+assert out 00000000
+setvector sel 10
+s
+assert out 11111111
+setvector sel 01
+s
+assert out 00000000
+setvector sel 00
+s
+assert out 11111111
+
+echo "Testing: checkerboard a=FF,b=0,c=FF,d=0"
+setvector a 11111111
+setvector b 00000000
+setvector c 11111111
+setvector d 00000000
+s
+setvector sel 11
+s
+assert out 11111111
+setvector sel 10
+s
+assert out 00000000
+setvector sel 01
+s
+assert out 11111111
+setvector sel 00
+s
+assert out 00000000
+
+echo "Testing: single bits low nibble"
+setvector a 00000001
+setvector b 00000010
+setvector c 00000100
+setvector d 00001000
+s
+setvector sel 11
+s
+assert out 00000001
+setvector sel 10
+s
+assert out 00000010
+setvector sel 01
+s
+assert out 00000100
+setvector sel 00
+s
+assert out 00001000
+
+echo "Testing: single bits high nibble"
+setvector a 00010000
+setvector b 00100000
+setvector c 01000000
+setvector d 10000000
+s
+setvector sel 11
+s
+assert out 00010000
+setvector sel 10
+s
+assert out 00100000
+setvector sel 01
+s
+assert out 01000000
+setvector sel 00
+s
+assert out 10000000
+
+echo "Testing: walking 1 pos 0"
+setvector a 00000001
+setvector b 00000001
+setvector c 00000001
+setvector d 00000001
+s
+setvector sel 11
+s
+assert out 00000001
+setvector sel 10
+s
+assert out 00000001
+setvector sel 01
+s
+assert out 00000001
+setvector sel 00
+s
+assert out 00000001
+
+echo "Testing: walking 1 pos 1"
+setvector a 00000010
+setvector b 00000010
+setvector c 00000010
+setvector d 00000010
+s
+setvector sel 11
+s
+assert out 00000010
+setvector sel 10
+s
+assert out 00000010
+setvector sel 01
+s
+assert out 00000010
+setvector sel 00
+s
+assert out 00000010
+
+echo "Testing: walking 1 pos 2"
+setvector a 00000100
+setvector b 00000100
+setvector c 00000100
+setvector d 00000100
+s
+setvector sel 11
+s
+assert out 00000100
+setvector sel 10
+s
+assert out 00000100
+setvector sel 01
+s
+assert out 00000100
+setvector sel 00
+s
+assert out 00000100
+
+echo "Testing: walking 1 pos 3"
+setvector a 00001000
+setvector b 00001000
+setvector c 00001000
+setvector d 00001000
+s
+setvector sel 11
+s
+assert out 00001000
+setvector sel 10
+s
+assert out 00001000
+setvector sel 01
+s
+assert out 00001000
+setvector sel 00
+s
+assert out 00001000
+
+echo "Testing: walking 1 pos 4"
+setvector a 00010000
+setvector b 00010000
+setvector c 00010000
+setvector d 00010000
+s
+setvector sel 11
+s
+assert out 00010000
+setvector sel 10
+s
+assert out 00010000
+setvector sel 01
+s
+assert out 00010000
+setvector sel 00
+s
+assert out 00010000
+
+echo "Testing: walking 1 pos 5"
+setvector a 00100000
+setvector b 00100000
+setvector c 00100000
+setvector d 00100000
+s
+setvector sel 11
+s
+assert out 00100000
+setvector sel 10
+s
+assert out 00100000
+setvector sel 01
+s
+assert out 00100000
+setvector sel 00
+s
+assert out 00100000
+
+echo "Testing: walking 1 pos 6"
+setvector a 01000000
+setvector b 01000000
+setvector c 01000000
+setvector d 01000000
+s
+setvector sel 11
+s
+assert out 01000000
+setvector sel 10
+s
+assert out 01000000
+setvector sel 01
+s
+assert out 01000000
+setvector sel 00
+s
+assert out 01000000
+
+echo "Testing: walking 1 pos 7"
+setvector a 10000000
+setvector b 10000000
+setvector c 10000000
+setvector d 10000000
+s
+setvector sel 11
+s
+assert out 10000000
+setvector sel 10
+s
+assert out 10000000
+setvector sel 01
+s
+assert out 10000000
+setvector sel 00
+s
+assert out 10000000
+
+echo "Testing: distinct 0x12,0x34,0x56,0x78"
+setvector a 00010010
+setvector b 00110100
+setvector c 01010110
+setvector d 01111000
+s
+setvector sel 11
+s
+assert out 00010010
+setvector sel 10
+s
+assert out 00110100
+setvector sel 01
+s
+assert out 01010110
+setvector sel 00
+s
+assert out 01111000
+
+echo "Testing: distinct 0x9A,0xBC,0xDE,0xF0"
+setvector a 10011010
+setvector b 10111100
+setvector c 11011110
+setvector d 11110000
+s
+setvector sel 11
+s
+assert out 10011010
+setvector sel 10
+s
+assert out 10111100
+setvector sel 01
+s
+assert out 11011110
+setvector sel 00
+s
+assert out 11110000
+
+echo "Testing: distinct 0xFE,0xDC,0xBA,0x98"
+setvector a 11111110
+setvector b 11011100
+setvector c 10111010
+setvector d 10011000
+s
+setvector sel 11
+s
+assert out 11111110
+setvector sel 10
+s
+assert out 11011100
+setvector sel 01
+s
+assert out 10111010
+setvector sel 00
+s
+assert out 10011000
+
+echo "Testing: distinct 0x76,0x54,0x32,0x10"
+setvector a 01110110
+setvector b 01010100
+setvector c 00110010
+setvector d 00010000
+s
+setvector sel 11
+s
+assert out 01110110
+setvector sel 10
+s
+assert out 01010100
+setvector sel 01
+s
+assert out 00110010
+setvector sel 00
+s
+assert out 00010000
+
+echo "Testing: only d=FF"
+setvector a 00000000
+setvector b 00000000
+setvector c 00000000
+setvector d 11111111
+s
+setvector sel 11
+s
+assert out 00000000
+setvector sel 10
+s
+assert out 00000000
+setvector sel 01
+s
+assert out 00000000
+setvector sel 00
+s
+assert out 11111111
+
+echo "Testing: only c=FF"
+setvector a 00000000
+setvector b 00000000
+setvector c 11111111
+setvector d 00000000
+s
+setvector sel 11
+s
+assert out 00000000
+setvector sel 10
+s
+assert out 00000000
+setvector sel 01
+s
+assert out 11111111
+setvector sel 00
+s
+assert out 00000000
+
+echo "Testing: only b=FF"
+setvector a 00000000
+setvector b 11111111
+setvector c 00000000
+setvector d 00000000
+s
+setvector sel 11
+s
+assert out 00000000
+setvector sel 10
+s
+assert out 11111111
+setvector sel 01
+s
+assert out 00000000
+setvector sel 00
+s
+assert out 00000000
+
+echo "Testing: only a=FF"
+setvector a 11111111
+setvector b 00000000
+setvector c 00000000
+setvector d 00000000
+s
+setvector sel 11
+s
+assert out 11111111
+setvector sel 10
+s
+assert out 00000000
+setvector sel 01
+s
+assert out 00000000
+setvector sel 00
+s
+assert out 00000000
+
+echo "Testing: nibble patterns"
+setvector a 00001111
+setvector b 11110000
+setvector c 00001111
+setvector d 11110000
+s
+setvector sel 11
+s
+assert out 00001111
+setvector sel 10
+s
+assert out 11110000
+setvector sel 01
+s
+assert out 00001111
+setvector sel 00
+s
+assert out 11110000
+
+echo "Testing: nibble patterns inverted"
+setvector a 11110000
+setvector b 00001111
+setvector c 11110000
+setvector d 00001111
+s
+setvector sel 11
+s
+assert out 11110000
+setvector sel 10
+s
+assert out 00001111
+setvector sel 01
+s
+assert out 11110000
+setvector sel 00
+s
+assert out 00001111
+
+echo "Testing: 0xA5 0x5A pattern"
+setvector a 10100101
+setvector b 01011010
+setvector c 10100101
+setvector d 01011010
+s
+setvector sel 11
+s
+assert out 10100101
+setvector sel 10
+s
+assert out 01011010
+setvector sel 01
+s
+assert out 10100101
+setvector sel 00
+s
+assert out 01011010
+
+echo "Testing: 0x5A 0xA5 pattern"
+setvector a 01011010
+setvector b 10100101
+setvector c 01011010
+setvector d 10100101
+s
+setvector sel 11
+s
+assert out 01011010
+setvector sel 10
+s
+assert out 10100101
+setvector sel 01
+s
+assert out 01011010
+setvector sel 00
+s
+assert out 10100101
+
+echo "=== EXHAUSTIVE SINGLE INPUT TEST ==="
+
+echo "Testing all 256 values on input a (sel=11)"
+setvector b 00000000
+setvector c 00000000
+setvector d 00000000
+setvector sel 11
+s
+setvector a 00000000
+s
+assert out 00000000
+setvector a 00000001
+s
+assert out 00000001
+setvector a 00000010
+s
+assert out 00000010
+setvector a 00000011
+s
+assert out 00000011
+setvector a 00000100
+s
+assert out 00000100
+setvector a 00000101
+s
+assert out 00000101
+setvector a 00000110
+s
+assert out 00000110
+setvector a 00000111
+s
+assert out 00000111
+setvector a 00001000
+s
+assert out 00001000
+setvector a 00001001
+s
+assert out 00001001
+setvector a 00001010
+s
+assert out 00001010
+setvector a 00001011
+s
+assert out 00001011
+setvector a 00001100
+s
+assert out 00001100
+setvector a 00001101
+s
+assert out 00001101
+setvector a 00001110
+s
+assert out 00001110
+setvector a 00001111
+s
+assert out 00001111
+setvector a 00010000
+s
+assert out 00010000
+setvector a 00010001
+s
+assert out 00010001
+setvector a 00010010
+s
+assert out 00010010
+setvector a 00010011
+s
+assert out 00010011
+setvector a 00010100
+s
+assert out 00010100
+setvector a 00010101
+s
+assert out 00010101
+setvector a 00010110
+s
+assert out 00010110
+setvector a 00010111
+s
+assert out 00010111
+setvector a 00011000
+s
+assert out 00011000
+setvector a 00011001
+s
+assert out 00011001
+setvector a 00011010
+s
+assert out 00011010
+setvector a 00011011
+s
+assert out 00011011
+setvector a 00011100
+s
+assert out 00011100
+setvector a 00011101
+s
+assert out 00011101
+setvector a 00011110
+s
+assert out 00011110
+setvector a 00011111
+s
+assert out 00011111
+setvector a 00100000
+s
+assert out 00100000
+setvector a 00100001
+s
+assert out 00100001
+setvector a 00100010
+s
+assert out 00100010
+setvector a 00100011
+s
+assert out 00100011
+setvector a 00100100
+s
+assert out 00100100
+setvector a 00100101
+s
+assert out 00100101
+setvector a 00100110
+s
+assert out 00100110
+setvector a 00100111
+s
+assert out 00100111
+setvector a 00101000
+s
+assert out 00101000
+setvector a 00101001
+s
+assert out 00101001
+setvector a 00101010
+s
+assert out 00101010
+setvector a 00101011
+s
+assert out 00101011
+setvector a 00101100
+s
+assert out 00101100
+setvector a 00101101
+s
+assert out 00101101
+setvector a 00101110
+s
+assert out 00101110
+setvector a 00101111
+s
+assert out 00101111
+setvector a 00110000
+s
+assert out 00110000
+setvector a 00110001
+s
+assert out 00110001
+setvector a 00110010
+s
+assert out 00110010
+setvector a 00110011
+s
+assert out 00110011
+setvector a 00110100
+s
+assert out 00110100
+setvector a 00110101
+s
+assert out 00110101
+setvector a 00110110
+s
+assert out 00110110
+setvector a 00110111
+s
+assert out 00110111
+setvector a 00111000
+s
+assert out 00111000
+setvector a 00111001
+s
+assert out 00111001
+setvector a 00111010
+s
+assert out 00111010
+setvector a 00111011
+s
+assert out 00111011
+setvector a 00111100
+s
+assert out 00111100
+setvector a 00111101
+s
+assert out 00111101
+setvector a 00111110
+s
+assert out 00111110
+setvector a 00111111
+s
+assert out 00111111
+setvector a 01000000
+s
+assert out 01000000
+setvector a 01000001
+s
+assert out 01000001
+setvector a 01000010
+s
+assert out 01000010
+setvector a 01000011
+s
+assert out 01000011
+setvector a 01000100
+s
+assert out 01000100
+setvector a 01000101
+s
+assert out 01000101
+setvector a 01000110
+s
+assert out 01000110
+setvector a 01000111
+s
+assert out 01000111
+setvector a 01001000
+s
+assert out 01001000
+setvector a 01001001
+s
+assert out 01001001
+setvector a 01001010
+s
+assert out 01001010
+setvector a 01001011
+s
+assert out 01001011
+setvector a 01001100
+s
+assert out 01001100
+setvector a 01001101
+s
+assert out 01001101
+setvector a 01001110
+s
+assert out 01001110
+setvector a 01001111
+s
+assert out 01001111
+setvector a 01010000
+s
+assert out 01010000
+setvector a 01010001
+s
+assert out 01010001
+setvector a 01010010
+s
+assert out 01010010
+setvector a 01010011
+s
+assert out 01010011
+setvector a 01010100
+s
+assert out 01010100
+setvector a 01010101
+s
+assert out 01010101
+setvector a 01010110
+s
+assert out 01010110
+setvector a 01010111
+s
+assert out 01010111
+setvector a 01011000
+s
+assert out 01011000
+setvector a 01011001
+s
+assert out 01011001
+setvector a 01011010
+s
+assert out 01011010
+setvector a 01011011
+s
+assert out 01011011
+setvector a 01011100
+s
+assert out 01011100
+setvector a 01011101
+s
+assert out 01011101
+setvector a 01011110
+s
+assert out 01011110
+setvector a 01011111
+s
+assert out 01011111
+setvector a 01100000
+s
+assert out 01100000
+setvector a 01100001
+s
+assert out 01100001
+setvector a 01100010
+s
+assert out 01100010
+setvector a 01100011
+s
+assert out 01100011
+setvector a 01100100
+s
+assert out 01100100
+setvector a 01100101
+s
+assert out 01100101
+setvector a 01100110
+s
+assert out 01100110
+setvector a 01100111
+s
+assert out 01100111
+setvector a 01101000
+s
+assert out 01101000
+setvector a 01101001
+s
+assert out 01101001
+setvector a 01101010
+s
+assert out 01101010
+setvector a 01101011
+s
+assert out 01101011
+setvector a 01101100
+s
+assert out 01101100
+setvector a 01101101
+s
+assert out 01101101
+setvector a 01101110
+s
+assert out 01101110
+setvector a 01101111
+s
+assert out 01101111
+setvector a 01110000
+s
+assert out 01110000
+setvector a 01110001
+s
+assert out 01110001
+setvector a 01110010
+s
+assert out 01110010
+setvector a 01110011
+s
+assert out 01110011
+setvector a 01110100
+s
+assert out 01110100
+setvector a 01110101
+s
+assert out 01110101
+setvector a 01110110
+s
+assert out 01110110
+setvector a 01110111
+s
+assert out 01110111
+setvector a 01111000
+s
+assert out 01111000
+setvector a 01111001
+s
+assert out 01111001
+setvector a 01111010
+s
+assert out 01111010
+setvector a 01111011
+s
+assert out 01111011
+setvector a 01111100
+s
+assert out 01111100
+setvector a 01111101
+s
+assert out 01111101
+setvector a 01111110
+s
+assert out 01111110
+setvector a 01111111
+s
+assert out 01111111
+setvector a 10000000
+s
+assert out 10000000
+setvector a 10000001
+s
+assert out 10000001
+setvector a 10000010
+s
+assert out 10000010
+setvector a 10000011
+s
+assert out 10000011
+setvector a 10000100
+s
+assert out 10000100
+setvector a 10000101
+s
+assert out 10000101
+setvector a 10000110
+s
+assert out 10000110
+setvector a 10000111
+s
+assert out 10000111
+setvector a 10001000
+s
+assert out 10001000
+setvector a 10001001
+s
+assert out 10001001
+setvector a 10001010
+s
+assert out 10001010
+setvector a 10001011
+s
+assert out 10001011
+setvector a 10001100
+s
+assert out 10001100
+setvector a 10001101
+s
+assert out 10001101
+setvector a 10001110
+s
+assert out 10001110
+setvector a 10001111
+s
+assert out 10001111
+setvector a 10010000
+s
+assert out 10010000
+setvector a 10010001
+s
+assert out 10010001
+setvector a 10010010
+s
+assert out 10010010
+setvector a 10010011
+s
+assert out 10010011
+setvector a 10010100
+s
+assert out 10010100
+setvector a 10010101
+s
+assert out 10010101
+setvector a 10010110
+s
+assert out 10010110
+setvector a 10010111
+s
+assert out 10010111
+setvector a 10011000
+s
+assert out 10011000
+setvector a 10011001
+s
+assert out 10011001
+setvector a 10011010
+s
+assert out 10011010
+setvector a 10011011
+s
+assert out 10011011
+setvector a 10011100
+s
+assert out 10011100
+setvector a 10011101
+s
+assert out 10011101
+setvector a 10011110
+s
+assert out 10011110
+setvector a 10011111
+s
+assert out 10011111
+setvector a 10100000
+s
+assert out 10100000
+setvector a 10100001
+s
+assert out 10100001
+setvector a 10100010
+s
+assert out 10100010
+setvector a 10100011
+s
+assert out 10100011
+setvector a 10100100
+s
+assert out 10100100
+setvector a 10100101
+s
+assert out 10100101
+setvector a 10100110
+s
+assert out 10100110
+setvector a 10100111
+s
+assert out 10100111
+setvector a 10101000
+s
+assert out 10101000
+setvector a 10101001
+s
+assert out 10101001
+setvector a 10101010
+s
+assert out 10101010
+setvector a 10101011
+s
+assert out 10101011
+setvector a 10101100
+s
+assert out 10101100
+setvector a 10101101
+s
+assert out 10101101
+setvector a 10101110
+s
+assert out 10101110
+setvector a 10101111
+s
+assert out 10101111
+setvector a 10110000
+s
+assert out 10110000
+setvector a 10110001
+s
+assert out 10110001
+setvector a 10110010
+s
+assert out 10110010
+setvector a 10110011
+s
+assert out 10110011
+setvector a 10110100
+s
+assert out 10110100
+setvector a 10110101
+s
+assert out 10110101
+setvector a 10110110
+s
+assert out 10110110
+setvector a 10110111
+s
+assert out 10110111
+setvector a 10111000
+s
+assert out 10111000
+setvector a 10111001
+s
+assert out 10111001
+setvector a 10111010
+s
+assert out 10111010
+setvector a 10111011
+s
+assert out 10111011
+setvector a 10111100
+s
+assert out 10111100
+setvector a 10111101
+s
+assert out 10111101
+setvector a 10111110
+s
+assert out 10111110
+setvector a 10111111
+s
+assert out 10111111
+setvector a 11000000
+s
+assert out 11000000
+setvector a 11000001
+s
+assert out 11000001
+setvector a 11000010
+s
+assert out 11000010
+setvector a 11000011
+s
+assert out 11000011
+setvector a 11000100
+s
+assert out 11000100
+setvector a 11000101
+s
+assert out 11000101
+setvector a 11000110
+s
+assert out 11000110
+setvector a 11000111
+s
+assert out 11000111
+setvector a 11001000
+s
+assert out 11001000
+setvector a 11001001
+s
+assert out 11001001
+setvector a 11001010
+s
+assert out 11001010
+setvector a 11001011
+s
+assert out 11001011
+setvector a 11001100
+s
+assert out 11001100
+setvector a 11001101
+s
+assert out 11001101
+setvector a 11001110
+s
+assert out 11001110
+setvector a 11001111
+s
+assert out 11001111
+setvector a 11010000
+s
+assert out 11010000
+setvector a 11010001
+s
+assert out 11010001
+setvector a 11010010
+s
+assert out 11010010
+setvector a 11010011
+s
+assert out 11010011
+setvector a 11010100
+s
+assert out 11010100
+setvector a 11010101
+s
+assert out 11010101
+setvector a 11010110
+s
+assert out 11010110
+setvector a 11010111
+s
+assert out 11010111
+setvector a 11011000
+s
+assert out 11011000
+setvector a 11011001
+s
+assert out 11011001
+setvector a 11011010
+s
+assert out 11011010
+setvector a 11011011
+s
+assert out 11011011
+setvector a 11011100
+s
+assert out 11011100
+setvector a 11011101
+s
+assert out 11011101
+setvector a 11011110
+s
+assert out 11011110
+setvector a 11011111
+s
+assert out 11011111
+setvector a 11100000
+s
+assert out 11100000
+setvector a 11100001
+s
+assert out 11100001
+setvector a 11100010
+s
+assert out 11100010
+setvector a 11100011
+s
+assert out 11100011
+setvector a 11100100
+s
+assert out 11100100
+setvector a 11100101
+s
+assert out 11100101
+setvector a 11100110
+s
+assert out 11100110
+setvector a 11100111
+s
+assert out 11100111
+setvector a 11101000
+s
+assert out 11101000
+setvector a 11101001
+s
+assert out 11101001
+setvector a 11101010
+s
+assert out 11101010
+setvector a 11101011
+s
+assert out 11101011
+setvector a 11101100
+s
+assert out 11101100
+setvector a 11101101
+s
+assert out 11101101
+setvector a 11101110
+s
+assert out 11101110
+setvector a 11101111
+s
+assert out 11101111
+setvector a 11110000
+s
+assert out 11110000
+setvector a 11110001
+s
+assert out 11110001
+setvector a 11110010
+s
+assert out 11110010
+setvector a 11110011
+s
+assert out 11110011
+setvector a 11110100
+s
+assert out 11110100
+setvector a 11110101
+s
+assert out 11110101
+setvector a 11110110
+s
+assert out 11110110
+setvector a 11110111
+s
+assert out 11110111
+setvector a 11111000
+s
+assert out 11111000
+setvector a 11111001
+s
+assert out 11111001
+setvector a 11111010
+s
+assert out 11111010
+setvector a 11111011
+s
+assert out 11111011
+setvector a 11111100
+s
+assert out 11111100
+setvector a 11111101
+s
+assert out 11111101
+setvector a 11111110
+s
+assert out 11111110
+setvector a 11111111
+s
+assert out 11111111
+
+echo "Testing all 256 values on input b (sel=10)"
+setvector a 00000000
+setvector c 00000000
+setvector d 00000000
+setvector sel 10
+s
+setvector b 00000000
+s
+assert out 00000000
+setvector b 00000001
+s
+assert out 00000001
+setvector b 00000010
+s
+assert out 00000010
+setvector b 00000011
+s
+assert out 00000011
+setvector b 00000100
+s
+assert out 00000100
+setvector b 00000101
+s
+assert out 00000101
+setvector b 00000110
+s
+assert out 00000110
+setvector b 00000111
+s
+assert out 00000111
+setvector b 00001000
+s
+assert out 00001000
+setvector b 00001001
+s
+assert out 00001001
+setvector b 00001010
+s
+assert out 00001010
+setvector b 00001011
+s
+assert out 00001011
+setvector b 00001100
+s
+assert out 00001100
+setvector b 00001101
+s
+assert out 00001101
+setvector b 00001110
+s
+assert out 00001110
+setvector b 00001111
+s
+assert out 00001111
+setvector b 00010000
+s
+assert out 00010000
+setvector b 00010001
+s
+assert out 00010001
+setvector b 00010010
+s
+assert out 00010010
+setvector b 00010011
+s
+assert out 00010011
+setvector b 00010100
+s
+assert out 00010100
+setvector b 00010101
+s
+assert out 00010101
+setvector b 00010110
+s
+assert out 00010110
+setvector b 00010111
+s
+assert out 00010111
+setvector b 00011000
+s
+assert out 00011000
+setvector b 00011001
+s
+assert out 00011001
+setvector b 00011010
+s
+assert out 00011010
+setvector b 00011011
+s
+assert out 00011011
+setvector b 00011100
+s
+assert out 00011100
+setvector b 00011101
+s
+assert out 00011101
+setvector b 00011110
+s
+assert out 00011110
+setvector b 00011111
+s
+assert out 00011111
+setvector b 00100000
+s
+assert out 00100000
+setvector b 00100001
+s
+assert out 00100001
+setvector b 00100010
+s
+assert out 00100010
+setvector b 00100011
+s
+assert out 00100011
+setvector b 00100100
+s
+assert out 00100100
+setvector b 00100101
+s
+assert out 00100101
+setvector b 00100110
+s
+assert out 00100110
+setvector b 00100111
+s
+assert out 00100111
+setvector b 00101000
+s
+assert out 00101000
+setvector b 00101001
+s
+assert out 00101001
+setvector b 00101010
+s
+assert out 00101010
+setvector b 00101011
+s
+assert out 00101011
+setvector b 00101100
+s
+assert out 00101100
+setvector b 00101101
+s
+assert out 00101101
+setvector b 00101110
+s
+assert out 00101110
+setvector b 00101111
+s
+assert out 00101111
+setvector b 00110000
+s
+assert out 00110000
+setvector b 00110001
+s
+assert out 00110001
+setvector b 00110010
+s
+assert out 00110010
+setvector b 00110011
+s
+assert out 00110011
+setvector b 00110100
+s
+assert out 00110100
+setvector b 00110101
+s
+assert out 00110101
+setvector b 00110110
+s
+assert out 00110110
+setvector b 00110111
+s
+assert out 00110111
+setvector b 00111000
+s
+assert out 00111000
+setvector b 00111001
+s
+assert out 00111001
+setvector b 00111010
+s
+assert out 00111010
+setvector b 00111011
+s
+assert out 00111011
+setvector b 00111100
+s
+assert out 00111100
+setvector b 00111101
+s
+assert out 00111101
+setvector b 00111110
+s
+assert out 00111110
+setvector b 00111111
+s
+assert out 00111111
+setvector b 01000000
+s
+assert out 01000000
+setvector b 01000001
+s
+assert out 01000001
+setvector b 01000010
+s
+assert out 01000010
+setvector b 01000011
+s
+assert out 01000011
+setvector b 01000100
+s
+assert out 01000100
+setvector b 01000101
+s
+assert out 01000101
+setvector b 01000110
+s
+assert out 01000110
+setvector b 01000111
+s
+assert out 01000111
+setvector b 01001000
+s
+assert out 01001000
+setvector b 01001001
+s
+assert out 01001001
+setvector b 01001010
+s
+assert out 01001010
+setvector b 01001011
+s
+assert out 01001011
+setvector b 01001100
+s
+assert out 01001100
+setvector b 01001101
+s
+assert out 01001101
+setvector b 01001110
+s
+assert out 01001110
+setvector b 01001111
+s
+assert out 01001111
+setvector b 01010000
+s
+assert out 01010000
+setvector b 01010001
+s
+assert out 01010001
+setvector b 01010010
+s
+assert out 01010010
+setvector b 01010011
+s
+assert out 01010011
+setvector b 01010100
+s
+assert out 01010100
+setvector b 01010101
+s
+assert out 01010101
+setvector b 01010110
+s
+assert out 01010110
+setvector b 01010111
+s
+assert out 01010111
+setvector b 01011000
+s
+assert out 01011000
+setvector b 01011001
+s
+assert out 01011001
+setvector b 01011010
+s
+assert out 01011010
+setvector b 01011011
+s
+assert out 01011011
+setvector b 01011100
+s
+assert out 01011100
+setvector b 01011101
+s
+assert out 01011101
+setvector b 01011110
+s
+assert out 01011110
+setvector b 01011111
+s
+assert out 01011111
+setvector b 01100000
+s
+assert out 01100000
+setvector b 01100001
+s
+assert out 01100001
+setvector b 01100010
+s
+assert out 01100010
+setvector b 01100011
+s
+assert out 01100011
+setvector b 01100100
+s
+assert out 01100100
+setvector b 01100101
+s
+assert out 01100101
+setvector b 01100110
+s
+assert out 01100110
+setvector b 01100111
+s
+assert out 01100111
+setvector b 01101000
+s
+assert out 01101000
+setvector b 01101001
+s
+assert out 01101001
+setvector b 01101010
+s
+assert out 01101010
+setvector b 01101011
+s
+assert out 01101011
+setvector b 01101100
+s
+assert out 01101100
+setvector b 01101101
+s
+assert out 01101101
+setvector b 01101110
+s
+assert out 01101110
+setvector b 01101111
+s
+assert out 01101111
+setvector b 01110000
+s
+assert out 01110000
+setvector b 01110001
+s
+assert out 01110001
+setvector b 01110010
+s
+assert out 01110010
+setvector b 01110011
+s
+assert out 01110011
+setvector b 01110100
+s
+assert out 01110100
+setvector b 01110101
+s
+assert out 01110101
+setvector b 01110110
+s
+assert out 01110110
+setvector b 01110111
+s
+assert out 01110111
+setvector b 01111000
+s
+assert out 01111000
+setvector b 01111001
+s
+assert out 01111001
+setvector b 01111010
+s
+assert out 01111010
+setvector b 01111011
+s
+assert out 01111011
+setvector b 01111100
+s
+assert out 01111100
+setvector b 01111101
+s
+assert out 01111101
+setvector b 01111110
+s
+assert out 01111110
+setvector b 01111111
+s
+assert out 01111111
+setvector b 10000000
+s
+assert out 10000000
+setvector b 10000001
+s
+assert out 10000001
+setvector b 10000010
+s
+assert out 10000010
+setvector b 10000011
+s
+assert out 10000011
+setvector b 10000100
+s
+assert out 10000100
+setvector b 10000101
+s
+assert out 10000101
+setvector b 10000110
+s
+assert out 10000110
+setvector b 10000111
+s
+assert out 10000111
+setvector b 10001000
+s
+assert out 10001000
+setvector b 10001001
+s
+assert out 10001001
+setvector b 10001010
+s
+assert out 10001010
+setvector b 10001011
+s
+assert out 10001011
+setvector b 10001100
+s
+assert out 10001100
+setvector b 10001101
+s
+assert out 10001101
+setvector b 10001110
+s
+assert out 10001110
+setvector b 10001111
+s
+assert out 10001111
+setvector b 10010000
+s
+assert out 10010000
+setvector b 10010001
+s
+assert out 10010001
+setvector b 10010010
+s
+assert out 10010010
+setvector b 10010011
+s
+assert out 10010011
+setvector b 10010100
+s
+assert out 10010100
+setvector b 10010101
+s
+assert out 10010101
+setvector b 10010110
+s
+assert out 10010110
+setvector b 10010111
+s
+assert out 10010111
+setvector b 10011000
+s
+assert out 10011000
+setvector b 10011001
+s
+assert out 10011001
+setvector b 10011010
+s
+assert out 10011010
+setvector b 10011011
+s
+assert out 10011011
+setvector b 10011100
+s
+assert out 10011100
+setvector b 10011101
+s
+assert out 10011101
+setvector b 10011110
+s
+assert out 10011110
+setvector b 10011111
+s
+assert out 10011111
+setvector b 10100000
+s
+assert out 10100000
+setvector b 10100001
+s
+assert out 10100001
+setvector b 10100010
+s
+assert out 10100010
+setvector b 10100011
+s
+assert out 10100011
+setvector b 10100100
+s
+assert out 10100100
+setvector b 10100101
+s
+assert out 10100101
+setvector b 10100110
+s
+assert out 10100110
+setvector b 10100111
+s
+assert out 10100111
+setvector b 10101000
+s
+assert out 10101000
+setvector b 10101001
+s
+assert out 10101001
+setvector b 10101010
+s
+assert out 10101010
+setvector b 10101011
+s
+assert out 10101011
+setvector b 10101100
+s
+assert out 10101100
+setvector b 10101101
+s
+assert out 10101101
+setvector b 10101110
+s
+assert out 10101110
+setvector b 10101111
+s
+assert out 10101111
+setvector b 10110000
+s
+assert out 10110000
+setvector b 10110001
+s
+assert out 10110001
+setvector b 10110010
+s
+assert out 10110010
+setvector b 10110011
+s
+assert out 10110011
+setvector b 10110100
+s
+assert out 10110100
+setvector b 10110101
+s
+assert out 10110101
+setvector b 10110110
+s
+assert out 10110110
+setvector b 10110111
+s
+assert out 10110111
+setvector b 10111000
+s
+assert out 10111000
+setvector b 10111001
+s
+assert out 10111001
+setvector b 10111010
+s
+assert out 10111010
+setvector b 10111011
+s
+assert out 10111011
+setvector b 10111100
+s
+assert out 10111100
+setvector b 10111101
+s
+assert out 10111101
+setvector b 10111110
+s
+assert out 10111110
+setvector b 10111111
+s
+assert out 10111111
+setvector b 11000000
+s
+assert out 11000000
+setvector b 11000001
+s
+assert out 11000001
+setvector b 11000010
+s
+assert out 11000010
+setvector b 11000011
+s
+assert out 11000011
+setvector b 11000100
+s
+assert out 11000100
+setvector b 11000101
+s
+assert out 11000101
+setvector b 11000110
+s
+assert out 11000110
+setvector b 11000111
+s
+assert out 11000111
+setvector b 11001000
+s
+assert out 11001000
+setvector b 11001001
+s
+assert out 11001001
+setvector b 11001010
+s
+assert out 11001010
+setvector b 11001011
+s
+assert out 11001011
+setvector b 11001100
+s
+assert out 11001100
+setvector b 11001101
+s
+assert out 11001101
+setvector b 11001110
+s
+assert out 11001110
+setvector b 11001111
+s
+assert out 11001111
+setvector b 11010000
+s
+assert out 11010000
+setvector b 11010001
+s
+assert out 11010001
+setvector b 11010010
+s
+assert out 11010010
+setvector b 11010011
+s
+assert out 11010011
+setvector b 11010100
+s
+assert out 11010100
+setvector b 11010101
+s
+assert out 11010101
+setvector b 11010110
+s
+assert out 11010110
+setvector b 11010111
+s
+assert out 11010111
+setvector b 11011000
+s
+assert out 11011000
+setvector b 11011001
+s
+assert out 11011001
+setvector b 11011010
+s
+assert out 11011010
+setvector b 11011011
+s
+assert out 11011011
+setvector b 11011100
+s
+assert out 11011100
+setvector b 11011101
+s
+assert out 11011101
+setvector b 11011110
+s
+assert out 11011110
+setvector b 11011111
+s
+assert out 11011111
+setvector b 11100000
+s
+assert out 11100000
+setvector b 11100001
+s
+assert out 11100001
+setvector b 11100010
+s
+assert out 11100010
+setvector b 11100011
+s
+assert out 11100011
+setvector b 11100100
+s
+assert out 11100100
+setvector b 11100101
+s
+assert out 11100101
+setvector b 11100110
+s
+assert out 11100110
+setvector b 11100111
+s
+assert out 11100111
+setvector b 11101000
+s
+assert out 11101000
+setvector b 11101001
+s
+assert out 11101001
+setvector b 11101010
+s
+assert out 11101010
+setvector b 11101011
+s
+assert out 11101011
+setvector b 11101100
+s
+assert out 11101100
+setvector b 11101101
+s
+assert out 11101101
+setvector b 11101110
+s
+assert out 11101110
+setvector b 11101111
+s
+assert out 11101111
+setvector b 11110000
+s
+assert out 11110000
+setvector b 11110001
+s
+assert out 11110001
+setvector b 11110010
+s
+assert out 11110010
+setvector b 11110011
+s
+assert out 11110011
+setvector b 11110100
+s
+assert out 11110100
+setvector b 11110101
+s
+assert out 11110101
+setvector b 11110110
+s
+assert out 11110110
+setvector b 11110111
+s
+assert out 11110111
+setvector b 11111000
+s
+assert out 11111000
+setvector b 11111001
+s
+assert out 11111001
+setvector b 11111010
+s
+assert out 11111010
+setvector b 11111011
+s
+assert out 11111011
+setvector b 11111100
+s
+assert out 11111100
+setvector b 11111101
+s
+assert out 11111101
+setvector b 11111110
+s
+assert out 11111110
+setvector b 11111111
+s
+assert out 11111111
+
+echo "Testing all 256 values on input c (sel=01)"
+setvector a 00000000
+setvector b 00000000
+setvector d 00000000
+setvector sel 01
+s
+setvector c 00000000
+s
+assert out 00000000
+setvector c 00000001
+s
+assert out 00000001
+setvector c 00000010
+s
+assert out 00000010
+setvector c 00000011
+s
+assert out 00000011
+setvector c 00000100
+s
+assert out 00000100
+setvector c 00000101
+s
+assert out 00000101
+setvector c 00000110
+s
+assert out 00000110
+setvector c 00000111
+s
+assert out 00000111
+setvector c 00001000
+s
+assert out 00001000
+setvector c 00001001
+s
+assert out 00001001
+setvector c 00001010
+s
+assert out 00001010
+setvector c 00001011
+s
+assert out 00001011
+setvector c 00001100
+s
+assert out 00001100
+setvector c 00001101
+s
+assert out 00001101
+setvector c 00001110
+s
+assert out 00001110
+setvector c 00001111
+s
+assert out 00001111
+setvector c 00010000
+s
+assert out 00010000
+setvector c 00010001
+s
+assert out 00010001
+setvector c 00010010
+s
+assert out 00010010
+setvector c 00010011
+s
+assert out 00010011
+setvector c 00010100
+s
+assert out 00010100
+setvector c 00010101
+s
+assert out 00010101
+setvector c 00010110
+s
+assert out 00010110
+setvector c 00010111
+s
+assert out 00010111
+setvector c 00011000
+s
+assert out 00011000
+setvector c 00011001
+s
+assert out 00011001
+setvector c 00011010
+s
+assert out 00011010
+setvector c 00011011
+s
+assert out 00011011
+setvector c 00011100
+s
+assert out 00011100
+setvector c 00011101
+s
+assert out 00011101
+setvector c 00011110
+s
+assert out 00011110
+setvector c 00011111
+s
+assert out 00011111
+setvector c 00100000
+s
+assert out 00100000
+setvector c 00100001
+s
+assert out 00100001
+setvector c 00100010
+s
+assert out 00100010
+setvector c 00100011
+s
+assert out 00100011
+setvector c 00100100
+s
+assert out 00100100
+setvector c 00100101
+s
+assert out 00100101
+setvector c 00100110
+s
+assert out 00100110
+setvector c 00100111
+s
+assert out 00100111
+setvector c 00101000
+s
+assert out 00101000
+setvector c 00101001
+s
+assert out 00101001
+setvector c 00101010
+s
+assert out 00101010
+setvector c 00101011
+s
+assert out 00101011
+setvector c 00101100
+s
+assert out 00101100
+setvector c 00101101
+s
+assert out 00101101
+setvector c 00101110
+s
+assert out 00101110
+setvector c 00101111
+s
+assert out 00101111
+setvector c 00110000
+s
+assert out 00110000
+setvector c 00110001
+s
+assert out 00110001
+setvector c 00110010
+s
+assert out 00110010
+setvector c 00110011
+s
+assert out 00110011
+setvector c 00110100
+s
+assert out 00110100
+setvector c 00110101
+s
+assert out 00110101
+setvector c 00110110
+s
+assert out 00110110
+setvector c 00110111
+s
+assert out 00110111
+setvector c 00111000
+s
+assert out 00111000
+setvector c 00111001
+s
+assert out 00111001
+setvector c 00111010
+s
+assert out 00111010
+setvector c 00111011
+s
+assert out 00111011
+setvector c 00111100
+s
+assert out 00111100
+setvector c 00111101
+s
+assert out 00111101
+setvector c 00111110
+s
+assert out 00111110
+setvector c 00111111
+s
+assert out 00111111
+setvector c 01000000
+s
+assert out 01000000
+setvector c 01000001
+s
+assert out 01000001
+setvector c 01000010
+s
+assert out 01000010
+setvector c 01000011
+s
+assert out 01000011
+setvector c 01000100
+s
+assert out 01000100
+setvector c 01000101
+s
+assert out 01000101
+setvector c 01000110
+s
+assert out 01000110
+setvector c 01000111
+s
+assert out 01000111
+setvector c 01001000
+s
+assert out 01001000
+setvector c 01001001
+s
+assert out 01001001
+setvector c 01001010
+s
+assert out 01001010
+setvector c 01001011
+s
+assert out 01001011
+setvector c 01001100
+s
+assert out 01001100
+setvector c 01001101
+s
+assert out 01001101
+setvector c 01001110
+s
+assert out 01001110
+setvector c 01001111
+s
+assert out 01001111
+setvector c 01010000
+s
+assert out 01010000
+setvector c 01010001
+s
+assert out 01010001
+setvector c 01010010
+s
+assert out 01010010
+setvector c 01010011
+s
+assert out 01010011
+setvector c 01010100
+s
+assert out 01010100
+setvector c 01010101
+s
+assert out 01010101
+setvector c 01010110
+s
+assert out 01010110
+setvector c 01010111
+s
+assert out 01010111
+setvector c 01011000
+s
+assert out 01011000
+setvector c 01011001
+s
+assert out 01011001
+setvector c 01011010
+s
+assert out 01011010
+setvector c 01011011
+s
+assert out 01011011
+setvector c 01011100
+s
+assert out 01011100
+setvector c 01011101
+s
+assert out 01011101
+setvector c 01011110
+s
+assert out 01011110
+setvector c 01011111
+s
+assert out 01011111
+setvector c 01100000
+s
+assert out 01100000
+setvector c 01100001
+s
+assert out 01100001
+setvector c 01100010
+s
+assert out 01100010
+setvector c 01100011
+s
+assert out 01100011
+setvector c 01100100
+s
+assert out 01100100
+setvector c 01100101
+s
+assert out 01100101
+setvector c 01100110
+s
+assert out 01100110
+setvector c 01100111
+s
+assert out 01100111
+setvector c 01101000
+s
+assert out 01101000
+setvector c 01101001
+s
+assert out 01101001
+setvector c 01101010
+s
+assert out 01101010
+setvector c 01101011
+s
+assert out 01101011
+setvector c 01101100
+s
+assert out 01101100
+setvector c 01101101
+s
+assert out 01101101
+setvector c 01101110
+s
+assert out 01101110
+setvector c 01101111
+s
+assert out 01101111
+setvector c 01110000
+s
+assert out 01110000
+setvector c 01110001
+s
+assert out 01110001
+setvector c 01110010
+s
+assert out 01110010
+setvector c 01110011
+s
+assert out 01110011
+setvector c 01110100
+s
+assert out 01110100
+setvector c 01110101
+s
+assert out 01110101
+setvector c 01110110
+s
+assert out 01110110
+setvector c 01110111
+s
+assert out 01110111
+setvector c 01111000
+s
+assert out 01111000
+setvector c 01111001
+s
+assert out 01111001
+setvector c 01111010
+s
+assert out 01111010
+setvector c 01111011
+s
+assert out 01111011
+setvector c 01111100
+s
+assert out 01111100
+setvector c 01111101
+s
+assert out 01111101
+setvector c 01111110
+s
+assert out 01111110
+setvector c 01111111
+s
+assert out 01111111
+setvector c 10000000
+s
+assert out 10000000
+setvector c 10000001
+s
+assert out 10000001
+setvector c 10000010
+s
+assert out 10000010
+setvector c 10000011
+s
+assert out 10000011
+setvector c 10000100
+s
+assert out 10000100
+setvector c 10000101
+s
+assert out 10000101
+setvector c 10000110
+s
+assert out 10000110
+setvector c 10000111
+s
+assert out 10000111
+setvector c 10001000
+s
+assert out 10001000
+setvector c 10001001
+s
+assert out 10001001
+setvector c 10001010
+s
+assert out 10001010
+setvector c 10001011
+s
+assert out 10001011
+setvector c 10001100
+s
+assert out 10001100
+setvector c 10001101
+s
+assert out 10001101
+setvector c 10001110
+s
+assert out 10001110
+setvector c 10001111
+s
+assert out 10001111
+setvector c 10010000
+s
+assert out 10010000
+setvector c 10010001
+s
+assert out 10010001
+setvector c 10010010
+s
+assert out 10010010
+setvector c 10010011
+s
+assert out 10010011
+setvector c 10010100
+s
+assert out 10010100
+setvector c 10010101
+s
+assert out 10010101
+setvector c 10010110
+s
+assert out 10010110
+setvector c 10010111
+s
+assert out 10010111
+setvector c 10011000
+s
+assert out 10011000
+setvector c 10011001
+s
+assert out 10011001
+setvector c 10011010
+s
+assert out 10011010
+setvector c 10011011
+s
+assert out 10011011
+setvector c 10011100
+s
+assert out 10011100
+setvector c 10011101
+s
+assert out 10011101
+setvector c 10011110
+s
+assert out 10011110
+setvector c 10011111
+s
+assert out 10011111
+setvector c 10100000
+s
+assert out 10100000
+setvector c 10100001
+s
+assert out 10100001
+setvector c 10100010
+s
+assert out 10100010
+setvector c 10100011
+s
+assert out 10100011
+setvector c 10100100
+s
+assert out 10100100
+setvector c 10100101
+s
+assert out 10100101
+setvector c 10100110
+s
+assert out 10100110
+setvector c 10100111
+s
+assert out 10100111
+setvector c 10101000
+s
+assert out 10101000
+setvector c 10101001
+s
+assert out 10101001
+setvector c 10101010
+s
+assert out 10101010
+setvector c 10101011
+s
+assert out 10101011
+setvector c 10101100
+s
+assert out 10101100
+setvector c 10101101
+s
+assert out 10101101
+setvector c 10101110
+s
+assert out 10101110
+setvector c 10101111
+s
+assert out 10101111
+setvector c 10110000
+s
+assert out 10110000
+setvector c 10110001
+s
+assert out 10110001
+setvector c 10110010
+s
+assert out 10110010
+setvector c 10110011
+s
+assert out 10110011
+setvector c 10110100
+s
+assert out 10110100
+setvector c 10110101
+s
+assert out 10110101
+setvector c 10110110
+s
+assert out 10110110
+setvector c 10110111
+s
+assert out 10110111
+setvector c 10111000
+s
+assert out 10111000
+setvector c 10111001
+s
+assert out 10111001
+setvector c 10111010
+s
+assert out 10111010
+setvector c 10111011
+s
+assert out 10111011
+setvector c 10111100
+s
+assert out 10111100
+setvector c 10111101
+s
+assert out 10111101
+setvector c 10111110
+s
+assert out 10111110
+setvector c 10111111
+s
+assert out 10111111
+setvector c 11000000
+s
+assert out 11000000
+setvector c 11000001
+s
+assert out 11000001
+setvector c 11000010
+s
+assert out 11000010
+setvector c 11000011
+s
+assert out 11000011
+setvector c 11000100
+s
+assert out 11000100
+setvector c 11000101
+s
+assert out 11000101
+setvector c 11000110
+s
+assert out 11000110
+setvector c 11000111
+s
+assert out 11000111
+setvector c 11001000
+s
+assert out 11001000
+setvector c 11001001
+s
+assert out 11001001
+setvector c 11001010
+s
+assert out 11001010
+setvector c 11001011
+s
+assert out 11001011
+setvector c 11001100
+s
+assert out 11001100
+setvector c 11001101
+s
+assert out 11001101
+setvector c 11001110
+s
+assert out 11001110
+setvector c 11001111
+s
+assert out 11001111
+setvector c 11010000
+s
+assert out 11010000
+setvector c 11010001
+s
+assert out 11010001
+setvector c 11010010
+s
+assert out 11010010
+setvector c 11010011
+s
+assert out 11010011
+setvector c 11010100
+s
+assert out 11010100
+setvector c 11010101
+s
+assert out 11010101
+setvector c 11010110
+s
+assert out 11010110
+setvector c 11010111
+s
+assert out 11010111
+setvector c 11011000
+s
+assert out 11011000
+setvector c 11011001
+s
+assert out 11011001
+setvector c 11011010
+s
+assert out 11011010
+setvector c 11011011
+s
+assert out 11011011
+setvector c 11011100
+s
+assert out 11011100
+setvector c 11011101
+s
+assert out 11011101
+setvector c 11011110
+s
+assert out 11011110
+setvector c 11011111
+s
+assert out 11011111
+setvector c 11100000
+s
+assert out 11100000
+setvector c 11100001
+s
+assert out 11100001
+setvector c 11100010
+s
+assert out 11100010
+setvector c 11100011
+s
+assert out 11100011
+setvector c 11100100
+s
+assert out 11100100
+setvector c 11100101
+s
+assert out 11100101
+setvector c 11100110
+s
+assert out 11100110
+setvector c 11100111
+s
+assert out 11100111
+setvector c 11101000
+s
+assert out 11101000
+setvector c 11101001
+s
+assert out 11101001
+setvector c 11101010
+s
+assert out 11101010
+setvector c 11101011
+s
+assert out 11101011
+setvector c 11101100
+s
+assert out 11101100
+setvector c 11101101
+s
+assert out 11101101
+setvector c 11101110
+s
+assert out 11101110
+setvector c 11101111
+s
+assert out 11101111
+setvector c 11110000
+s
+assert out 11110000
+setvector c 11110001
+s
+assert out 11110001
+setvector c 11110010
+s
+assert out 11110010
+setvector c 11110011
+s
+assert out 11110011
+setvector c 11110100
+s
+assert out 11110100
+setvector c 11110101
+s
+assert out 11110101
+setvector c 11110110
+s
+assert out 11110110
+setvector c 11110111
+s
+assert out 11110111
+setvector c 11111000
+s
+assert out 11111000
+setvector c 11111001
+s
+assert out 11111001
+setvector c 11111010
+s
+assert out 11111010
+setvector c 11111011
+s
+assert out 11111011
+setvector c 11111100
+s
+assert out 11111100
+setvector c 11111101
+s
+assert out 11111101
+setvector c 11111110
+s
+assert out 11111110
+setvector c 11111111
+s
+assert out 11111111
+
+echo "Testing all 256 values on input d (sel=00)"
+setvector a 00000000
+setvector b 00000000
+setvector c 00000000
+setvector sel 00
+s
+setvector d 00000000
+s
+assert out 00000000
+setvector d 00000001
+s
+assert out 00000001
+setvector d 00000010
+s
+assert out 00000010
+setvector d 00000011
+s
+assert out 00000011
+setvector d 00000100
+s
+assert out 00000100
+setvector d 00000101
+s
+assert out 00000101
+setvector d 00000110
+s
+assert out 00000110
+setvector d 00000111
+s
+assert out 00000111
+setvector d 00001000
+s
+assert out 00001000
+setvector d 00001001
+s
+assert out 00001001
+setvector d 00001010
+s
+assert out 00001010
+setvector d 00001011
+s
+assert out 00001011
+setvector d 00001100
+s
+assert out 00001100
+setvector d 00001101
+s
+assert out 00001101
+setvector d 00001110
+s
+assert out 00001110
+setvector d 00001111
+s
+assert out 00001111
+setvector d 00010000
+s
+assert out 00010000
+setvector d 00010001
+s
+assert out 00010001
+setvector d 00010010
+s
+assert out 00010010
+setvector d 00010011
+s
+assert out 00010011
+setvector d 00010100
+s
+assert out 00010100
+setvector d 00010101
+s
+assert out 00010101
+setvector d 00010110
+s
+assert out 00010110
+setvector d 00010111
+s
+assert out 00010111
+setvector d 00011000
+s
+assert out 00011000
+setvector d 00011001
+s
+assert out 00011001
+setvector d 00011010
+s
+assert out 00011010
+setvector d 00011011
+s
+assert out 00011011
+setvector d 00011100
+s
+assert out 00011100
+setvector d 00011101
+s
+assert out 00011101
+setvector d 00011110
+s
+assert out 00011110
+setvector d 00011111
+s
+assert out 00011111
+setvector d 00100000
+s
+assert out 00100000
+setvector d 00100001
+s
+assert out 00100001
+setvector d 00100010
+s
+assert out 00100010
+setvector d 00100011
+s
+assert out 00100011
+setvector d 00100100
+s
+assert out 00100100
+setvector d 00100101
+s
+assert out 00100101
+setvector d 00100110
+s
+assert out 00100110
+setvector d 00100111
+s
+assert out 00100111
+setvector d 00101000
+s
+assert out 00101000
+setvector d 00101001
+s
+assert out 00101001
+setvector d 00101010
+s
+assert out 00101010
+setvector d 00101011
+s
+assert out 00101011
+setvector d 00101100
+s
+assert out 00101100
+setvector d 00101101
+s
+assert out 00101101
+setvector d 00101110
+s
+assert out 00101110
+setvector d 00101111
+s
+assert out 00101111
+setvector d 00110000
+s
+assert out 00110000
+setvector d 00110001
+s
+assert out 00110001
+setvector d 00110010
+s
+assert out 00110010
+setvector d 00110011
+s
+assert out 00110011
+setvector d 00110100
+s
+assert out 00110100
+setvector d 00110101
+s
+assert out 00110101
+setvector d 00110110
+s
+assert out 00110110
+setvector d 00110111
+s
+assert out 00110111
+setvector d 00111000
+s
+assert out 00111000
+setvector d 00111001
+s
+assert out 00111001
+setvector d 00111010
+s
+assert out 00111010
+setvector d 00111011
+s
+assert out 00111011
+setvector d 00111100
+s
+assert out 00111100
+setvector d 00111101
+s
+assert out 00111101
+setvector d 00111110
+s
+assert out 00111110
+setvector d 00111111
+s
+assert out 00111111
+setvector d 01000000
+s
+assert out 01000000
+setvector d 01000001
+s
+assert out 01000001
+setvector d 01000010
+s
+assert out 01000010
+setvector d 01000011
+s
+assert out 01000011
+setvector d 01000100
+s
+assert out 01000100
+setvector d 01000101
+s
+assert out 01000101
+setvector d 01000110
+s
+assert out 01000110
+setvector d 01000111
+s
+assert out 01000111
+setvector d 01001000
+s
+assert out 01001000
+setvector d 01001001
+s
+assert out 01001001
+setvector d 01001010
+s
+assert out 01001010
+setvector d 01001011
+s
+assert out 01001011
+setvector d 01001100
+s
+assert out 01001100
+setvector d 01001101
+s
+assert out 01001101
+setvector d 01001110
+s
+assert out 01001110
+setvector d 01001111
+s
+assert out 01001111
+setvector d 01010000
+s
+assert out 01010000
+setvector d 01010001
+s
+assert out 01010001
+setvector d 01010010
+s
+assert out 01010010
+setvector d 01010011
+s
+assert out 01010011
+setvector d 01010100
+s
+assert out 01010100
+setvector d 01010101
+s
+assert out 01010101
+setvector d 01010110
+s
+assert out 01010110
+setvector d 01010111
+s
+assert out 01010111
+setvector d 01011000
+s
+assert out 01011000
+setvector d 01011001
+s
+assert out 01011001
+setvector d 01011010
+s
+assert out 01011010
+setvector d 01011011
+s
+assert out 01011011
+setvector d 01011100
+s
+assert out 01011100
+setvector d 01011101
+s
+assert out 01011101
+setvector d 01011110
+s
+assert out 01011110
+setvector d 01011111
+s
+assert out 01011111
+setvector d 01100000
+s
+assert out 01100000
+setvector d 01100001
+s
+assert out 01100001
+setvector d 01100010
+s
+assert out 01100010
+setvector d 01100011
+s
+assert out 01100011
+setvector d 01100100
+s
+assert out 01100100
+setvector d 01100101
+s
+assert out 01100101
+setvector d 01100110
+s
+assert out 01100110
+setvector d 01100111
+s
+assert out 01100111
+setvector d 01101000
+s
+assert out 01101000
+setvector d 01101001
+s
+assert out 01101001
+setvector d 01101010
+s
+assert out 01101010
+setvector d 01101011
+s
+assert out 01101011
+setvector d 01101100
+s
+assert out 01101100
+setvector d 01101101
+s
+assert out 01101101
+setvector d 01101110
+s
+assert out 01101110
+setvector d 01101111
+s
+assert out 01101111
+setvector d 01110000
+s
+assert out 01110000
+setvector d 01110001
+s
+assert out 01110001
+setvector d 01110010
+s
+assert out 01110010
+setvector d 01110011
+s
+assert out 01110011
+setvector d 01110100
+s
+assert out 01110100
+setvector d 01110101
+s
+assert out 01110101
+setvector d 01110110
+s
+assert out 01110110
+setvector d 01110111
+s
+assert out 01110111
+setvector d 01111000
+s
+assert out 01111000
+setvector d 01111001
+s
+assert out 01111001
+setvector d 01111010
+s
+assert out 01111010
+setvector d 01111011
+s
+assert out 01111011
+setvector d 01111100
+s
+assert out 01111100
+setvector d 01111101
+s
+assert out 01111101
+setvector d 01111110
+s
+assert out 01111110
+setvector d 01111111
+s
+assert out 01111111
+setvector d 10000000
+s
+assert out 10000000
+setvector d 10000001
+s
+assert out 10000001
+setvector d 10000010
+s
+assert out 10000010
+setvector d 10000011
+s
+assert out 10000011
+setvector d 10000100
+s
+assert out 10000100
+setvector d 10000101
+s
+assert out 10000101
+setvector d 10000110
+s
+assert out 10000110
+setvector d 10000111
+s
+assert out 10000111
+setvector d 10001000
+s
+assert out 10001000
+setvector d 10001001
+s
+assert out 10001001
+setvector d 10001010
+s
+assert out 10001010
+setvector d 10001011
+s
+assert out 10001011
+setvector d 10001100
+s
+assert out 10001100
+setvector d 10001101
+s
+assert out 10001101
+setvector d 10001110
+s
+assert out 10001110
+setvector d 10001111
+s
+assert out 10001111
+setvector d 10010000
+s
+assert out 10010000
+setvector d 10010001
+s
+assert out 10010001
+setvector d 10010010
+s
+assert out 10010010
+setvector d 10010011
+s
+assert out 10010011
+setvector d 10010100
+s
+assert out 10010100
+setvector d 10010101
+s
+assert out 10010101
+setvector d 10010110
+s
+assert out 10010110
+setvector d 10010111
+s
+assert out 10010111
+setvector d 10011000
+s
+assert out 10011000
+setvector d 10011001
+s
+assert out 10011001
+setvector d 10011010
+s
+assert out 10011010
+setvector d 10011011
+s
+assert out 10011011
+setvector d 10011100
+s
+assert out 10011100
+setvector d 10011101
+s
+assert out 10011101
+setvector d 10011110
+s
+assert out 10011110
+setvector d 10011111
+s
+assert out 10011111
+setvector d 10100000
+s
+assert out 10100000
+setvector d 10100001
+s
+assert out 10100001
+setvector d 10100010
+s
+assert out 10100010
+setvector d 10100011
+s
+assert out 10100011
+setvector d 10100100
+s
+assert out 10100100
+setvector d 10100101
+s
+assert out 10100101
+setvector d 10100110
+s
+assert out 10100110
+setvector d 10100111
+s
+assert out 10100111
+setvector d 10101000
+s
+assert out 10101000
+setvector d 10101001
+s
+assert out 10101001
+setvector d 10101010
+s
+assert out 10101010
+setvector d 10101011
+s
+assert out 10101011
+setvector d 10101100
+s
+assert out 10101100
+setvector d 10101101
+s
+assert out 10101101
+setvector d 10101110
+s
+assert out 10101110
+setvector d 10101111
+s
+assert out 10101111
+setvector d 10110000
+s
+assert out 10110000
+setvector d 10110001
+s
+assert out 10110001
+setvector d 10110010
+s
+assert out 10110010
+setvector d 10110011
+s
+assert out 10110011
+setvector d 10110100
+s
+assert out 10110100
+setvector d 10110101
+s
+assert out 10110101
+setvector d 10110110
+s
+assert out 10110110
+setvector d 10110111
+s
+assert out 10110111
+setvector d 10111000
+s
+assert out 10111000
+setvector d 10111001
+s
+assert out 10111001
+setvector d 10111010
+s
+assert out 10111010
+setvector d 10111011
+s
+assert out 10111011
+setvector d 10111100
+s
+assert out 10111100
+setvector d 10111101
+s
+assert out 10111101
+setvector d 10111110
+s
+assert out 10111110
+setvector d 10111111
+s
+assert out 10111111
+setvector d 11000000
+s
+assert out 11000000
+setvector d 11000001
+s
+assert out 11000001
+setvector d 11000010
+s
+assert out 11000010
+setvector d 11000011
+s
+assert out 11000011
+setvector d 11000100
+s
+assert out 11000100
+setvector d 11000101
+s
+assert out 11000101
+setvector d 11000110
+s
+assert out 11000110
+setvector d 11000111
+s
+assert out 11000111
+setvector d 11001000
+s
+assert out 11001000
+setvector d 11001001
+s
+assert out 11001001
+setvector d 11001010
+s
+assert out 11001010
+setvector d 11001011
+s
+assert out 11001011
+setvector d 11001100
+s
+assert out 11001100
+setvector d 11001101
+s
+assert out 11001101
+setvector d 11001110
+s
+assert out 11001110
+setvector d 11001111
+s
+assert out 11001111
+setvector d 11010000
+s
+assert out 11010000
+setvector d 11010001
+s
+assert out 11010001
+setvector d 11010010
+s
+assert out 11010010
+setvector d 11010011
+s
+assert out 11010011
+setvector d 11010100
+s
+assert out 11010100
+setvector d 11010101
+s
+assert out 11010101
+setvector d 11010110
+s
+assert out 11010110
+setvector d 11010111
+s
+assert out 11010111
+setvector d 11011000
+s
+assert out 11011000
+setvector d 11011001
+s
+assert out 11011001
+setvector d 11011010
+s
+assert out 11011010
+setvector d 11011011
+s
+assert out 11011011
+setvector d 11011100
+s
+assert out 11011100
+setvector d 11011101
+s
+assert out 11011101
+setvector d 11011110
+s
+assert out 11011110
+setvector d 11011111
+s
+assert out 11011111
+setvector d 11100000
+s
+assert out 11100000
+setvector d 11100001
+s
+assert out 11100001
+setvector d 11100010
+s
+assert out 11100010
+setvector d 11100011
+s
+assert out 11100011
+setvector d 11100100
+s
+assert out 11100100
+setvector d 11100101
+s
+assert out 11100101
+setvector d 11100110
+s
+assert out 11100110
+setvector d 11100111
+s
+assert out 11100111
+setvector d 11101000
+s
+assert out 11101000
+setvector d 11101001
+s
+assert out 11101001
+setvector d 11101010
+s
+assert out 11101010
+setvector d 11101011
+s
+assert out 11101011
+setvector d 11101100
+s
+assert out 11101100
+setvector d 11101101
+s
+assert out 11101101
+setvector d 11101110
+s
+assert out 11101110
+setvector d 11101111
+s
+assert out 11101111
+setvector d 11110000
+s
+assert out 11110000
+setvector d 11110001
+s
+assert out 11110001
+setvector d 11110010
+s
+assert out 11110010
+setvector d 11110011
+s
+assert out 11110011
+setvector d 11110100
+s
+assert out 11110100
+setvector d 11110101
+s
+assert out 11110101
+setvector d 11110110
+s
+assert out 11110110
+setvector d 11110111
+s
+assert out 11110111
+setvector d 11111000
+s
+assert out 11111000
+setvector d 11111001
+s
+assert out 11111001
+setvector d 11111010
+s
+assert out 11111010
+setvector d 11111011
+s
+assert out 11111011
+setvector d 11111100
+s
+assert out 11111100
+setvector d 11111101
+s
+assert out 11111101
+setvector d 11111110
+s
+assert out 11111110
+setvector d 11111111
+s
+assert out 11111111
+
+echo "=== ALL TESTS COMPLETE ==="

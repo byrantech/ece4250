@@ -1,0 +1,57 @@
+magic
+tech scmos
+timestamp 1761107567
+<< metal1 >>
+rect 22 1255 31 1260
+rect 22 1082 31 1087
+rect 22 909 31 914
+rect 22 736 31 741
+rect 22 563 31 568
+rect 22 390 31 395
+rect 22 217 31 222
+rect 22 44 31 49
+<< m2contact >>
+rect 26 1326 31 1331
+rect 26 1153 31 1158
+rect 26 980 31 985
+rect 26 807 31 812
+rect 26 634 31 639
+rect 26 461 31 466
+rect 26 288 31 293
+rect 26 115 31 120
+<< metal2 >>
+rect 26 120 31 123
+rect 26 3 31 115
+<< metal4 >>
+rect 34 1343 39 1348
+rect 34 1170 39 1175
+rect 34 997 39 1002
+rect 34 824 39 829
+rect 34 651 39 656
+rect 34 478 39 483
+rect 34 305 39 310
+rect 34 132 39 137
+use latch_one  latch_one_0
+array 0 0 51 0 7 173
+timestamp 1761106813
+transform 1 0 11 0 1 -10
+box -5 13 46 186
+<< labels >>
+flabel metal1 23 46 23 46 1 FreeSans 40 0 0 0 in0
+flabel metal1 23 219 23 219 1 FreeSans 40 0 0 0 in1
+flabel metal1 23 392 23 392 1 FreeSans 40 0 0 0 in2
+flabel metal1 23 565 23 565 1 FreeSans 40 0 0 0 in3
+flabel metal1 23 738 23 738 1 FreeSans 40 0 0 0 in4
+flabel metal1 23 911 23 911 1 FreeSans 40 0 0 0 in5
+flabel metal1 23 1084 23 1084 1 FreeSans 40 0 0 0 in6
+flabel metal1 23 1257 23 1257 1 FreeSans 40 0 0 0 in7
+flabel metal2 28 35 28 35 1 FreeSans 40 0 0 0 clk
+flabel metal4 36 135 36 135 1 FreeSans 40 0 0 0 out0
+flabel metal4 36 308 36 308 1 FreeSans 40 0 0 0 out1
+flabel metal4 36 481 36 481 1 FreeSans 40 0 0 0 out2
+flabel metal4 36 654 36 654 1 FreeSans 40 0 0 0 out3
+flabel metal4 36 827 36 827 1 FreeSans 40 0 0 0 out4
+flabel metal4 36 1000 36 1000 1 FreeSans 40 0 0 0 out5
+flabel metal4 36 1173 36 1173 1 FreeSans 40 0 0 0 out6
+flabel metal4 36 1346 36 1346 1 FreeSans 40 0 0 0 out7
+<< end >>
